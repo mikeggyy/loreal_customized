@@ -1,0 +1,256 @@
+@media (min-width: 992px) {
+  #loreal-compaign .zone_o2o {
+    position: relative;
+  }
+  #loreal-compaign .zone_o2o .container_absolute {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50vw;
+    height: 100%;
+    padding-left: 13vw;
+    padding-right: 13vw;
+    padding-bottom: 5vw;
+  }
+  #loreal-compaign .zone_o2o .container_absolute .container_text h6 {
+    display: block;
+    text-align: center;
+    color: white;
+    margin-bottom: 0.5vw;
+    font-size: calc(1.8vw);
+  }
+  #loreal-compaign .zone_o2o .container_absolute .container_text h4 {
+    display: block;
+    text-align: center;
+    font-size: calc(1.8vw);
+    margin-bottom: 2vw;
+    letter-spacing: 0.3vw;
+  }
+  #loreal-compaign .zone_o2o .container_absolute .container_text p {
+    display: block;
+    text-align: left;
+    color: white;
+    font-size: 0.8vw;
+  }
+  #loreal-compaign .zone_o2o .container_absolute .container_text .tips {
+    color: white;
+  }
+  #loreal-compaign .zone_o2o .container_absolute .container_o2o {
+    padding: 2vw;
+    width: 25vw;
+    background-color: #fff;
+  }
+  #loreal-compaign .zone_o2o .container_absolute .container_o2o .formfield_select .f_label {
+    padding-right: 0;
+    width: 4vw;
+  }
+  #loreal-compaign .zone_o2o .container_absolute .container_o2o .formfield_select label {
+    display: block;
+    line-height: 2vw;
+  }
+  #loreal-compaign .zone_o2o .container_absolute .container_o2o .formfield_select .f_label_value {
+    color: #000;
+    font-size: 0.8vw;
+    font-weight: bold;
+  }
+  #loreal-compaign .zone_o2o .container_absolute .container_o2o #dwfrm_registeroto_registercounterSelectBoxItContainer {
+    background-color: #fff;
+    width: 16vw;
+  }
+  #loreal-compaign .zone_o2o .container_absolute .container_o2o .select {
+    border: 1px solid #000;
+    padding: 0;
+    padding-left: 0.5vw;
+    height: auto;
+  }
+  #loreal-compaign .zone_o2o .container_absolute .container_o2o textarea,
+  #loreal-compaign .zone_o2o .container_absolute .container_o2o .select,
+  #loreal-compaign .zone_o2o .container_absolute .container_o2o .og-popup-container #og_reason_other_text {
+    font-size: 0.8vw;
+  }
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.registercounter, #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.formfield_email, #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.formfield.name, #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.registercounter, #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.formfield_oevent_mobile,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.registercounter,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.formfield_email,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.formfield.name,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.registercounter,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.formfield_oevent_mobile {
+    margin-bottom: 0.9vw;
+  }
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.registercounter label, #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.formfield_email label, #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.formfield.name label, #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.registercounter label, #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.formfield_oevent_mobile label,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.registercounter label,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.formfield_email label,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.formfield.name label,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.registercounter label,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.formfield_oevent_mobile label {
+    font-size: calc(0.8vw);
+  }
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.registercounter input, #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.formfield_email input, #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.formfield.name input, #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.registercounter input, #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.formfield_oevent_mobile input,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.registercounter input,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.formfield_email input,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.formfield.name input,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.registercounter input,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.formfield_oevent_mobile input {
+    border: 1px solid #000;
+    font-size: calc(0.8vw);
+    border: 1px solid #000;
+  }
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.registercounter .selectboxit-container .selectboxit-text, #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.formfield_email .selectboxit-container .selectboxit-text, #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.formfield.name .selectboxit-container .selectboxit-text, #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.registercounter .selectboxit-container .selectboxit-text, #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.formfield_oevent_mobile .selectboxit-container .selectboxit-text,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.registercounter .selectboxit-container .selectboxit-text,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.formfield_email .selectboxit-container .selectboxit-text,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.formfield.name .selectboxit-container .selectboxit-text,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.registercounter .selectboxit-container .selectboxit-text,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.formfield_oevent_mobile .selectboxit-container .selectboxit-text {
+    height: 8vw;
+    font-size: calc(4vw);
+  }
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.answer7 .f_label_value a,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.answer7 .f_label_value a {
+    color: #337ab7;
+  }
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.answer7 label.f_label,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.answer7 label.f_label {
+    font-size: calc(0.8vw);
+    padding-left: 22px;
+  }
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.answer7 .checkbox_span,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.answer7 .checkbox_span {
+    border: 1px solid #000;
+    border-radius: 0;
+    top: 5px;
+  }
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .formfield_button .submit_button,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .formfield_button .submit_button {
+    font-size: 12px;
+    height: 2vw;
+  }
+  #loreal-compaign .zone_o2o .container_absolute .event_oto {
+    overflow: inherit;
+  }
+}
+
+@media (max-width: 991.9px) {
+  #loreal-compaign picture img {
+    width: 100%;
+    font-size: 0;
+  }
+  #loreal-compaign .zone_o2o {
+    position: relative;
+    height: 279vw;
+    background: #000;
+  }
+  #loreal-compaign .zone_o2o .container_absolute {
+    position: absolute;
+    top: 102vw;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    padding-left: 13vw;
+    padding-right: 13vw;
+    padding-top: 8vw;
+    padding-bottom: 5vw;
+  }
+  #loreal-compaign .zone_o2o .container_absolute .container_text {
+    width: 100%;
+  }
+  #loreal-compaign .zone_o2o .container_absolute .container_text h6 {
+    display: block;
+    text-align: center;
+    color: white;
+    margin-bottom: 0.5vw;
+    font-size: calc(6.8vw);
+  }
+  #loreal-compaign .zone_o2o .container_absolute .container_text h4 {
+    display: block;
+    text-align: center;
+    margin-bottom: 6vw;
+    color: white;
+    font-size: calc(6.8vw);
+    letter-spacing: 0.3vw;
+  }
+  #loreal-compaign .zone_o2o .container_absolute .container_text p,
+  #loreal-compaign .zone_o2o .container_absolute .container_text .tips {
+    display: block;
+    text-align: left;
+    color: white;
+    font-size: calc(3.8vw);
+    margin-bottom: 6vw;
+  }
+  #loreal-compaign .zone_o2o .container_absolute .container_o2o {
+    width: 100%;
+    padding: 6vw 5vw 1vw 6vw;
+    background-color: #fff;
+  }
+  #loreal-compaign .zone_o2o .container_absolute .container_o2o .formfield {
+    margin: 0;
+    margin-bottom: 5vw;
+    position: relative;
+  }
+  #loreal-compaign .zone_o2o .container_absolute .container_o2o .f_label_label {
+    font-size: 4vw;
+    width: 18vw;
+    padding-top: 1.5vw;
+    color: #000;
+    font-weight: bold;
+    display: inline-block;
+  }
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.registercounter .selectboxit-container, #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.formfield_email .selectboxit-container, #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.formfield.name .selectboxit-container, #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.registercounter .selectboxit-container, #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.formfield_oevent_mobile .selectboxit-container,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.registercounter .selectboxit-container,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.formfield_email .selectboxit-container,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.formfield.name .selectboxit-container,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.registercounter .selectboxit-container,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.formfield_oevent_mobile .selectboxit-container {
+    width: 42vw;
+  }
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.registercounter label, #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.formfield_email label, #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.formfield.name label, #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.registercounter label, #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.formfield_oevent_mobile label,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.registercounter label,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.formfield_email label,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.formfield.name label,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.registercounter label,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.formfield_oevent_mobile label {
+    width: 18vw;
+    font-size: calc(4vw);
+  }
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.registercounter input, #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.formfield_email input, #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.formfield.name input, #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.registercounter input, #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.formfield_oevent_mobile input,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.registercounter input,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.formfield_email input,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.formfield.name input,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.registercounter input,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.formfield_oevent_mobile input {
+    height: 8vw;
+    width: 45vw;
+    padding-left: 0.8vw;
+    font-size: calc(4vw);
+    border: 1px solid #000;
+  }
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.registercounter .selectboxit-container,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.registercounter .selectboxit-container {
+    border: 1px solid #000;
+  }
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.answer7 label.f_label,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.answer7 label.f_label {
+    font-size: calc(4vw);
+    letter-spacing: 0;
+  }
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .f_field.formfield.answer7 .f_label_value a,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .f_field.formfield.answer7 .f_label_value a {
+    color: #337ab7;
+  }
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .formfield_button button,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .formfield_button .submit_button,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .formfield_button button,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .formfield_button .submit_button {
+    width: 100%;
+    background: #000;
+    color: #fff;
+    line-height: 0;
+    height: 8vw;
+  }
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .formfield_button button span,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_content .formfield_button .submit_button span,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .formfield_button button span,
+  #loreal-compaign .zone_o2o .container_absolute .event_oto.event_oto .event_form .formfield_button .submit_button span {
+    font-size: calc(4vw);
+  }
+}
+/*# sourceMappingURL=temp.css.map */

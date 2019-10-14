@@ -1,0 +1,132 @@
+body {
+  font-family: "Open Sans", "Lato", "Roboto", "sans-serif", "微軟正黑體",
+    "Ping-Fang";
+  // padding: 2em;
+  width: 100%;
+  height: 100%;
+  font-size: 15px;
+  overflow-x: hidden;
+  background-color: rgba(#999, 0.2);
+}
+div {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input,
+select {
+  outline: 0;
+}
+input {
+  padding: 4px;
+}
+.input-s {
+  width: 55px;
+}
+.input-ss {
+  width: 45px;
+}
+input[type="text"] {
+  height: 2em;
+  line-height: 2em;
+}
+input[type="checkbox"] {
+  & ~ label {
+    margin-left: 5px;
+  }
+}
+textarea {
+  outline: 0;
+  padding: 8px 5px;
+  border-color: #ccc;
+}
+
+p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  height: auto;
+  width: 100%;
+  // max-width: 100%;
+}
+
+/* === buttons === */
+.btn-row {
+  margin: 20px 0;
+}
+.btn {
+  display: inline-block;
+  padding: 5px 8px;
+  margin: 5px;
+}
+.btn-border {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid lighten(#000, 40%);
+  transition: all 0.25s ease;
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   display: block;
+  //   width: 100%;
+  //   height: 100%;
+  //   left: 0;
+  //   top: 0;
+  //   background-color: lighten(#000, 40%);
+  //   z-index: -1;
+  //   transform: translateX(-101%);
+  //   transition: all 0.25s ease;
+  // }
+  &:hover {
+    color: #fff;
+    background-color: #333;
+    transition: all 0.25s ease;
+    // &::after {
+    //   transform: translateX(0%);
+    //   transition: all 0.25s ease;
+    // }
+  }
+}
+
+.icon-plus {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  // background-color: #ddd;
+  // border: 1px solid #777;
+  span {
+    display: inline-block;
+    @extend %vh-center;
+    background-color: #777;
+    &:first-child {
+      width: 13px;
+      height: 1px;
+    }
+    &:last-child {
+      width: 1px;
+      height: 13px;
+    }
+  }
+}
