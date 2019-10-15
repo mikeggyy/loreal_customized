@@ -639,20 +639,25 @@ var app = new Vue({
           );
         let self = this;
         let flag = true;
-        let w = parseInt(window.getComputedStyle(e).width) / 2;
-        let h = parseInt(window.getComputedStyle(e).height) / 2;
-        console.log(e);
-        zone_target.addEventListener("mousemove", function() {
-          if (flag == true) {
-            let e = event || window.event;
-            let x = e.pageX - left_scene - w;
-            let y = e.pageY - h;
-            self.f_btn_left = x + "px";
-            self.f_btn_top = y + "px";
-          }
-        });
-        zone_target.addEventListener("mouseup", function() {
-          flag = false;
+        // let w = parseInt(window.getComputedStyle(e).width) / 2;
+        // let h = parseInt(window.getComputedStyle(e).height) / 2;
+        zone_target.addEventListener("mousedown", function(e) {
+          let initX = e.offsetX,
+            initY = e.offsetY;
+          zone_target.addEventListener("mousemove", function() {
+            if (flag == true) {
+              let e = event || window.event;
+              // let x = e.pageX - left_scene - w;
+              let x = e.pageX - initX - left_scene;
+              // let y = e.pageY - h;
+              let y = e.pageY - initY;
+              self.f_btn_left = x + "px";
+              self.f_btn_top = y + "px";
+            }
+          });
+          zone_target.addEventListener("mouseup", function() {
+            flag = false;
+          });
         });
       }
     },
@@ -887,8 +892,8 @@ var app = new Vue({
     ImgAddImg: function() {
       const ZONE_DATA = this.fixed_img_count.img_data;
       // 送資料進去陣列
-      let url = location.host;
-      let protocol = location.protocol;
+      let url = document.location.href;
+      const SUB_URL = url.substring(0,url.length-10);
       let style = {
         content: "預設文字",
         foucs: false,
@@ -904,8 +909,8 @@ var app = new Vue({
         top: 0,
         left: 0,
         media: "(min-width:992px)",
-        srcset: protocol + "//" + url + "/images/pc/bg_01.jpg",
-        src: protocol + "//" + url + "/images/pc/bg_01.jpg"
+        srcset:  SUB_URL + "/images/pc/bg_01.jpg",
+        src: SUB_URL + "/images/pc/bg_01.jpg"
       };
       ZONE_DATA.push(style);
       this.CloseImgFocus();
@@ -1020,17 +1025,15 @@ var app = new Vue({
     // 印出程式碼
     PrintCode: function() {
       let code = document.querySelector("#scene").innerHTML;
-      // document.querySelector("#code").style.display = "none";
       document.querySelector("#code").style.display = "block";
-      // this.zone_code = '"' + code + '"';
       this.zone_code = code;
     },
-    closeCode: function() {
+    CloseCode: function() {
       let code = document.querySelector("#code");
       code.style.display = "none";
     },
     // panel trigger
-    togglePanel: function() {
+    TogglePanel: function() {
       console.log("click");
       let panel_tigger = document.querySelector(".panel-trigger");
       let panel = document.querySelector(".panel");

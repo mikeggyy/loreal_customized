@@ -17,7 +17,7 @@
 <body onDRAGSTART="window.event.returnValue=false">
   <div class="container" id="app">
     <div class="panel">
-      <div class="panel-trigger" v-on:click="togglePanel()">
+      <div class="panel-trigger" v-on:click="TogglePanel()">
         <span></span>
       </div>
       <div class="panel-container">
@@ -387,8 +387,8 @@
       </div>
     </div>
     <!-- 產出區 -->
-    <div class="scene" id="scene" draggable="false">
-      <div class="scene-container" id="loreal-compaign">
+    <div class="scene" id="scene" draggable="false" onSelectStart="event.returnValue=false">
+      <div class="scene-container" id="loreal-compaign" onSelectStart="event.returnValue=false">
         <!-- 產生圖片 -->
         <div class="main-img" v-on:mousedown="ImgMouseMoveGetXY()" v-bind:style="fixed_img_count.img_data[index]"
           v-for="(item,index) in fixed_img_count.img_data">
@@ -413,7 +413,7 @@
     <div id="code">
       <div class="blur-bg"></div>
       <div class="code-container">
-        <div class="icon-close" v-on:click="closeCode()"></div>
+        <div class="icon-close" v-on:click="CloseCode()"></div>
         <div class="code-wrapper" v-text="zone_code"></div>
       </div>
     </div>
