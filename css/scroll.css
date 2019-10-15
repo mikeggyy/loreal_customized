@@ -348,15 +348,17 @@ body {
   height: 100%;
   font-size: 15px;
   overflow-x: hidden;
+  background-color: rgba(153, 153, 153, 0.2);
 }
 
-x div::after {
+div::after {
   content: "";
   display: block;
   clear: both;
 }
 
 a {
+  display: inline-block;
   text-decoration: none;
   color: #000;
 }
@@ -398,6 +400,13 @@ textarea {
   border-color: #ccc;
 }
 
+p {
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+}
+
 ul,
 li {
   margin: 0;
@@ -407,7 +416,7 @@ li {
 
 img {
   height: auto;
-  max-width: 100%;
+  width: 100%;
 }
 
 /* === buttons === */
@@ -425,31 +434,13 @@ img {
   position: relative;
   overflow: hidden;
   border: 1px solid #666666;
-}
-
-.btn-border::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  background-color: #666666;
-  z-index: -1;
-  -webkit-transform: translateX(-101%);
-          transform: translateX(-101%);
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
 }
 
 .btn-border:hover {
   color: #fff;
-}
-
-.btn-border:hover::after {
-  -webkit-transform: translateX(0%);
-          transform: translateX(0%);
+  background-color: #333;
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
 }
