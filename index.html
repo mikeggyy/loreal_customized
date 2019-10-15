@@ -21,6 +21,53 @@
         <span></span>
       </div>
       <div class="panel-container">
+          <div class="element">
+              <div class="element-leader">
+                <div class="name">專案設定</div>
+              </div>
+              <div id="block-setting" class="element-setting">
+                  <div class="row row-flex">
+                    <div class="flex-col-m-1">
+                      <div class="row row-flex">
+                        <div class="label">專案名稱</div>
+                        <div class="content">
+                          <input type="text" class="ipnut-s" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row row-flex">
+                      <div class="flex-col-m-1">
+                        <div class="row row-flex">
+                          <div class="label">folder</div>
+                          <div class="content">
+                            <input type="text" class="ipnut-s" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  <div class="row row-flex">
+                      <div class="flex-col-m-1">
+                        <div class="row row-flex">
+                          <div class="label">campaign</div>
+                          <div class="content">
+                            <input type="text" class="ipnut-s" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row row-flex">
+                      <div class="flex-col-m-1">
+                        <div class="row row-flex">
+                          <div class="label">上線日期</div>
+                          <div class="content">
+                            <input type="text" class="ipnut-s" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
         <div class="element">
           <div class="element-leader">
             <div class="name">新增物件</div>
@@ -192,7 +239,7 @@
                 <div class="row row-flex">
                   <div class="label">文字顏色</div>
                   <div class="content">
-                    <input type="text" class="ipnut-s" v-model="f_text_color" placeholder="#ededed" />
+                    <input type="color" class="ipnut-s" v-model="f_text_color" placeholder="#ededed" />
                   </div>
                 </div>
               </div>
@@ -202,7 +249,7 @@
                 <div class="row row-flex">
                   <div class="label">背景顏色</div>
                   <div class="content">
-                    <input type="text" class="ipnut-s" v-model="f_text_backgroundColor" placeholder="#ededed" />
+                    <input type="color" class="ipnut-s" v-model="f_text_backgroundColor" placeholder="#ededed" />
                   </div>
                 </div>
               </div>
@@ -331,7 +378,7 @@
                 <div class="row row-flex">
                   <div class="label">文字顏色</div>
                   <div class="content">
-                    <input type="text" v-model="f_btn_color" class="ipnut-s" />
+                    <input type="color" v-model="f_btn_color" class="ipnut-s" />
                   </div>
                 </div>
               </div>
