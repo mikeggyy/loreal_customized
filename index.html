@@ -110,7 +110,7 @@
                 <div class="row row-flex">
                   <div class="label">寬度</div>
                   <div class="content">
-                    <input type="text" v-model="f_img_width" class="ipnut-s" placeholder="300px" />
+                    <input type="text" v-model="f_img_width" class="ipnut-s" v-on:keydown="KeyDownChangInt_ImgWidth()" placeholder="300px" />
                   </div>
                 </div>
               </div>
@@ -120,7 +120,7 @@
                 <div class="row row-flex">
                   <div class="label">x軸</div>
                   <div class="content">
-                    <input type="text" v-model="f_img_left" class="ipnut-s" />
+                    <input type="text" v-model="f_img_left" v-on:keydown="KeyDownChangInt_ImgLeft()" class="ipnut-s" />
                   </div>
                 </div>
               </div>
@@ -128,7 +128,7 @@
                 <div class="row row-flex">
                   <div class="label">y軸</div>
                   <div class="content">
-                    <input type="text" v-model="f_img_top" class="ipnut-s" />
+                    <input type="text" v-model="f_img_top" v-on:keydown="KeyDownChangInt_ImgTop()" class="ipnut-s" />
                   </div>
                 </div>
               </div>
@@ -277,7 +277,7 @@
                 <div class="row row-flex">
                   <div class="label">x軸</div>
                   <div class="content">
-                    <input type="text" v-model="f_text_left" class="ipnut-s" />
+                    <input type="text" v-on:keydown="KeyDownChangInt_TextLeft()" v-model="f_text_left" class="ipnut-s" />
                   </div>
                 </div>
               </div>
@@ -285,7 +285,7 @@
                 <div class="row row-flex">
                   <div class="label">y軸</div>
                   <div class="content">
-                    <input type="text" class="ipnut-s" v-model="f_text_top" />
+                    <input type="text" v-on:keydown="KeyDownChangInt_TextTop()" class="ipnut-s" v-model="f_text_top" />
                   </div>
                 </div>
               </div>
@@ -407,7 +407,7 @@
                 <div class="row row-flex">
                   <div class="label">x軸</div>
                   <div class="content">
-                    <input type="text" class="ipnut-s" v-model="f_btn_left" />
+                    <input type="text" v-on:keydown="KeyDownChangInt_BtnLeft()" class="ipnut-s" v-model="f_btn_left" />
                   </div>
                 </div>
               </div>
@@ -415,7 +415,7 @@
                 <div class="row row-flex">
                   <div class="label">y軸</div>
                   <div class="content">
-                    <input type="text" class="ipnut-s" v-model="f_btn_top" />
+                    <input type="text" v-on:keydown="KeyDownChangInt_BtnTop()" class="ipnut-s" v-model="f_btn_top" />
                   </div>
                 </div>
               </div>
@@ -450,7 +450,7 @@
           <p v-on:click="TextOutlineOpen(index)" v-html="fixed_text_count.text_data[index].content"></p>
         </div>
         <!-- 產生按鈕 -->
-        <a class="btn" v-on:click="BtnOutlineOpen(index)" v-on:mousedown="BtnMouseMoveGetXY()"
+        <a class="btn" v-on:mousedown="BtnMouseMoveGetXY()" v-on:click="BtnOutlineOpen(index)" 
           onSelectStart="event.returnValue=false" v-bind:style="fixed_btn_count.btn_data[index]"
           v-for="(item,index) in fixed_btn_count.btn_data" v-html="fixed_btn_count.btn_data[index].content"
           target="blank"></a>

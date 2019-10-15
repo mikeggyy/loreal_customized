@@ -57,120 +57,120 @@ var app = new Vue({
   },
   watch: {
     // 圖片區數值改變
-    f_img_width: function() {
+    f_img_width: function () {
       const ZONE_DATA = this.fixed_img_count.img_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.width = this.f_img_width;
       }
     },
-    f_img_left: function() {
+    f_img_left: function () {
       const ZONE_DATA = this.fixed_img_count.img_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.left = this.f_img_left;
       }
     },
-    f_img_top: function() {
+    f_img_top: function () {
       const ZONE_DATA = this.fixed_img_count.img_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.top = this.f_img_top;
       }
     },
-    f_img_zIndex: function() {
+    f_img_zIndex: function () {
       const ZONE_DATA = this.fixed_img_count.img_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.zIndex = this.f_img_zIndex;
       }
     },
-    f_img_backgroundColor: function() {
+    f_img_backgroundColor: function () {
       const ZONE_DATA = this.fixed_img_count.img_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.backgroundColor = this.f_img_backgroundColor;
       }
     },
-    f_img_srcset: function() {
+    f_img_srcset: function () {
       const ZONE_DATA = this.fixed_img_count.img_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.srcset = this.f_img_srcset;
       }
     },
-    f_img_src: function() {
+    f_img_src: function () {
       const ZONE_DATA = this.fixed_img_count.img_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.src = this.f_img_src;
       }
     },
     // 文字區數值改變
-    f_text_content: function() {
+    f_text_content: function () {
       const ZONE_DATA = this.fixed_text_count.text_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.content = this.f_text_content;
       }
     },
 
-    f_text_width: function() {
+    f_text_width: function () {
       const ZONE_DATA = this.fixed_text_count.text_data;
       if (
-        this.fixed_text_count.text_data.find(function(item, index, array) {
+        this.fixed_text_count.text_data.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = this.fixed_text_count.text_data.find(function(
+        let target = this.fixed_text_count.text_data.find(function (
           item,
           index,
           array
@@ -181,509 +181,382 @@ var app = new Vue({
       }
     },
 
-    f_text_heigth: function() {
+    f_text_heigth: function () {
       const ZONE_DATA = this.fixed_text_count.text_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.heigth = this.f_text_heigth;
       }
     },
 
-    f_text_paddingTop: function() {
+    f_text_paddingTop: function () {
       const ZONE_DATA = this.fixed_text_count.text_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.paddingTop = this.f_text_paddingTop;
       }
     },
 
-    f_text_paddingBottom: function() {
+    f_text_paddingBottom: function () {
       const ZONE_DATA = this.fixed_text_count.text_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.paddingBottom = this.f_text_paddingBottom;
       }
     },
 
-    f_text_paddingLeft: function() {
+    f_text_paddingLeft: function () {
       const ZONE_DATA = this.fixed_text_count.text_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.paddingLeft = this.f_text_paddingLeft;
       }
     },
 
-    f_text_paddingRight: function() {
+    f_text_paddingRight: function () {
       const ZONE_DATA = this.fixed_text_count.text_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.paddingRight = this.f_text_paddingRight;
       }
     },
 
-    f_text_border: function() {
+    f_text_border: function () {
       const ZONE_DATA = this.fixed_text_count.text_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.border = this.f_text_border;
       }
     },
 
-    f_text_color: function() {
+    f_text_color: function () {
       const ZONE_DATA = this.fixed_text_count.text_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.color = this.f_text_color;
       }
     },
 
-    f_text_backgroundColor: function() {
+    f_text_backgroundColor: function () {
       const ZONE_DATA = this.fixed_text_count.text_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.backgroundColor = this.f_text_backgroundColor;
       }
     },
 
-    f_text_fontSize: function() {
+    f_text_fontSize: function () {
       const ZONE_DATA = this.fixed_text_count.text_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.fontSize = this.f_text_fontSize;
       }
     },
 
-    f_text_zIndex: function() {
+    f_text_zIndex: function () {
       const ZONE_DATA = this.fixed_text_count.text_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.zIndex = this.f_text_zIndex;
       }
     },
 
-    f_text_top: function() {
+    f_text_top: function () {
       const ZONE_DATA = this.fixed_text_count.text_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.top = this.f_text_top;
       }
     },
 
-    f_text_left: function() {
+    f_text_left: function () {
       const ZONE_DATA = this.fixed_text_count.text_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.left = this.f_text_left;
       }
     },
     // 圖片區數值改變
-    f_btn_content: function() {
+    f_btn_content: function () {
       const ZONE_DATA = this.fixed_btn_count.btn_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.content = this.f_btn_content;
       }
     },
-    f_btn_href: function() {
+    f_btn_href: function () {
       const ZONE_DATA = this.fixed_btn_count.btn_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.href = this.f_btn_href;
       }
     },
-    f_btn_width: function() {
+    f_btn_width: function () {
       const ZONE_DATA = this.fixed_btn_count.btn_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.width = this.f_btn_width;
       }
     },
-    f_btn_zIndex: function() {
+    f_btn_zIndex: function () {
       const ZONE_DATA = this.fixed_btn_count.btn_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.zIndex = this.f_btn_zIndex;
       }
     },
-    f_btn_border: function() {
+    f_btn_border: function () {
       const ZONE_DATA = this.fixed_btn_count.btn_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.border = this.f_btn_border;
       }
     },
-    f_btn_backgroundColor: function() {
+    f_btn_backgroundColor: function () {
       const ZONE_DATA = this.fixed_btn_count.btn_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.backgroundColor = this.f_btn_backgroundColor;
       }
     },
-    f_btn_fontSize: function() {
+    f_btn_fontSize: function () {
       const ZONE_DATA = this.fixed_btn_count.btn_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.fontSize = this.f_btn_fontSize;
       }
     },
-    f_btn_color: function() {
+    f_btn_color: function () {
       const ZONE_DATA = this.fixed_btn_count.btn_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.color = this.f_btn_color;
       }
     },
-    f_btn_paddingTop: function() {
+    f_btn_paddingTop: function () {
       const ZONE_DATA = this.fixed_btn_count.btn_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.paddingTop = this.f_btn_paddingTop;
       }
     },
-    f_btn_paddingRight: function() {
+    f_btn_paddingRight: function () {
       const ZONE_DATA = this.fixed_btn_count.btn_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.paddingRight = this.f_btn_paddingRight;
       }
     },
-    f_btn_paddingBottom: function() {
+    f_btn_paddingBottom: function () {
       const ZONE_DATA = this.fixed_btn_count.btn_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.paddingBottom = this.f_btn_paddingBottom;
       }
     },
-    f_btn_paddingLeft: function() {
+    f_btn_paddingLeft: function () {
       const ZONE_DATA = this.fixed_btn_count.btn_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.paddingLeft = this.f_btn_paddingLeft;
       }
     },
-    f_btn_left: function() {
+    f_btn_left: function () {
       const ZONE_DATA = this.fixed_btn_count.btn_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.left = this.f_btn_left;
       }
     },
-    f_btn_top: function() {
+    f_btn_top: function () {
       const ZONE_DATA = this.fixed_btn_count.btn_data;
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.top = this.f_btn_top;
       }
-    }
+    },
+
   },
   methods: {
-    // 圖片區滑鼠移動抓取x,y事件
-    ImgMouseMoveGetXY: function() {
-      const ZONE_DATA = this.fixed_img_count.img_data;
-      if (
-        ZONE_DATA.find(function(item, index, array) {
-          return item.foucs == true;
-        })
-      ) {
-        let e = event.target;
-        let zone_target = document.querySelector("#scene");
-        let left_scene =
-          parseInt(
-            window.getComputedStyle(document.querySelector("#scene")).marginLeft
-          ) +
-          parseInt(
-            window.getComputedStyle(document.querySelector("#scene"))
-              .paddingLeft
-          );
-        let self = this;
-        let flag = true;
-        // let w = parseInt(window.getComputedStyle(e).width) / 2;
-        // let h = parseInt(window.getComputedStyle(e).height) / 2;
-        zone_target.addEventListener("mousedown", function(e) {
-          let initX = e.offsetX,
-            initY = e.offsetY;
-          // console.log("offsetX: " + e.offsetX);
-          // console.log("offsetY: " + e.offsetY);
-          zone_target.addEventListener("mousemove", function() {
-            if (flag == true) {
-              let e = event || window.event;
-              // let x = e.pageX - left_scene - w;
-              let x = e.pageX - initX - left_scene;
-              // let y = e.pageY - h;
-              let y = e.pageY - initY;
-              self.f_img_left = x + "px";
-              self.f_img_top = y + "px";
-            }
-          });
-          zone_target.addEventListener("mouseup", function() {
-            flag = false;
-          });
-        });
-      }
-    },
-    // 文字區滑鼠移動抓取x,y事件
-    TextMouseMoveGetXY: function() {
-      const ZONE_DATA = this.fixed_text_count.text_data;
-      if (
-        ZONE_DATA.find(function(item, index, array) {
-          return item.foucs == true;
-        })
-      ) {
-        let e = event.target;
-        let zone_target = document.querySelector("#scene");
-        let left_scene =
-          parseInt(
-            window.getComputedStyle(document.querySelector("#scene")).marginLeft
-          ) +
-          parseInt(
-            window.getComputedStyle(document.querySelector("#scene"))
-              .paddingLeft
-          );
-        let self = this;
-        let flag = true;
-        // let w = parseInt(window.getComputedStyle(e).width) / 2;
-        // let h = parseInt(window.getComputedStyle(e).height) / 2;
-        zone_target.addEventListener("mousedown", function(e) {
-          let initX = e.offsetX,
-            initY = e.offsetY;
-          zone_target.addEventListener("mousemove", function() {
-            if (flag == true) {
-              let e = event || window.event;
-              // let x = e.pageX - left_scene - w;
-              let x = e.pageX - initX - left_scene;
-              // let y = e.pageY - h;
-              let y = e.pageY - initY;
-              self.f_text_left = x + "px";
-              self.f_text_top = y + "px";
-            }
-          });
-          zone_target.addEventListener("mouseup", function() {
-            flag = false;
-          });
-        });
-      }
-    },
-    // 按鈕區滑鼠移動抓取x,y事件
-    BtnMouseMoveGetXY: function() {
-      const ZONE_DATA = this.fixed_btn_count.btn_data;
-      if (
-        ZONE_DATA.find(function(item, index, array) {
-          return item.foucs == true;
-        })
-      ) {
-        let e = event.target;
-        let zone_target = document.querySelector("#scene");
-        let left_scene =
-          parseInt(
-            window.getComputedStyle(document.querySelector("#scene")).marginLeft
-          ) +
-          parseInt(
-            window.getComputedStyle(document.querySelector("#scene"))
-              .paddingLeft
-          );
-        let self = this;
-        let flag = true;
-        // let w = parseInt(window.getComputedStyle(e).width) / 2;
-        // let h = parseInt(window.getComputedStyle(e).height) / 2;
-        zone_target.addEventListener("mousedown", function(e) {
-          let initX = e.offsetX,
-            initY = e.offsetY;
-          zone_target.addEventListener("mousemove", function() {
-            if (flag == true) {
-              let e = event || window.event;
-              // let x = e.pageX - left_scene - w;
-              let x = e.pageX - initX - left_scene;
-              // let y = e.pageY - h;
-              let y = e.pageY - initY;
-              self.f_btn_left = x + "px";
-              self.f_btn_top = y + "px";
-            }
-          });
-          zone_target.addEventListener("mouseup", function() {
-            flag = false;
-          });
-        });
-      }
-    },
     // 圖片區面板顯示
-    ImgZoneDisplayOpen: function() {
+    ImgZoneDisplayOpen: function () {
       this.fixed_img_count.display = true;
     },
-    ImgZoneDisplayClose: function() {
+    ImgZoneDisplayClose: function () {
       this.fixed_img_count.display = false;
     },
     // 文字區面板顯示
-    TextZoneDisplayOpen: function() {
+    TextZoneDisplayOpen: function () {
       this.fixed_text_count.display = true;
     },
-    TextZoneDisplayClose: function() {
+    TextZoneDisplayClose: function () {
       this.fixed_text_count.display = false;
     },
     // 按鈕區面板顯示
-    BtnZoneDisplayOpen: function() {
+    BtnZoneDisplayOpen: function () {
       this.fixed_btn_count.display = true;
     },
-    BtnZoneDisplayClose: function() {
+    BtnZoneDisplayClose: function () {
       this.fixed_btn_count.display = false;
     },
     // 創建的新圖片資料傳入input值
-    ImgInsertIntoInput: function() {
+    ImgInsertIntoInput: function () {
       const ZONE_DATA = this.fixed_img_count.img_data;
       this.f_img_width = ZONE_DATA[ZONE_DATA.length - 1].width;
       this.f_img_border = ZONE_DATA[ZONE_DATA.length - 1].border;
@@ -697,7 +570,7 @@ var app = new Vue({
       this.f_img_src = ZONE_DATA[ZONE_DATA.length - 1].src;
     },
     // 創建的新文字資料傳入input值
-    TextInsertIntoInput: function() {
+    TextInsertIntoInput: function () {
       const ZONE_DATA = this.fixed_text_count.text_data;
       this.f_text_content = ZONE_DATA[ZONE_DATA.length - 1].content;
       this.f_text_width = ZONE_DATA[ZONE_DATA.length - 1].width;
@@ -716,7 +589,7 @@ var app = new Vue({
       this.f_text_left = ZONE_DATA[ZONE_DATA.length - 1].left;
     },
     // 創建的新按鈕資料傳入input值
-    BtnInsertIntoInput: function() {
+    BtnInsertIntoInput: function () {
       const ZONE_DATA = this.fixed_btn_count.btn_data;
       this.f_btn_content = ZONE_DATA[ZONE_DATA.length - 1].content;
       this.f_btn_width = ZONE_DATA[ZONE_DATA.length - 1].width;
@@ -735,7 +608,7 @@ var app = new Vue({
       this.f_btn_href = ZONE_DATA[ZONE_DATA.length - 1].href;
     },
     // 圖片表單值輸入到資料中
-    ImgInputInsertIntoData: function(index) {
+    ImgInputInsertIntoData: function (index) {
       const ZONE_DATA = this.fixed_img_count.img_data;
       this.f_img_width = ZONE_DATA[index].width;
       this.f_img_border = ZONE_DATA[index].border;
@@ -748,7 +621,7 @@ var app = new Vue({
       this.f_img_src = ZONE_DATA[index].src;
     },
     // 文字表單值輸入到資料中
-    TextInputInsertIntoData: function(index) {
+    TextInputInsertIntoData: function (index) {
       const ZONE_DATA = this.fixed_text_count.text_data;
       this.f_text_content = ZONE_DATA[index].content;
       this.f_text_width = ZONE_DATA[index].width;
@@ -766,7 +639,7 @@ var app = new Vue({
       this.f_text_left = ZONE_DATA[index].left;
     },
     // 按鈕表單值輸入到資料中
-    BtnInputInsertIntoData: function(index) {
+    BtnInputInsertIntoData: function (index) {
       const ZONE_DATA = this.fixed_btn_count.btn_data;
       this.f_btn_content = ZONE_DATA[index].content;
       this.f_btn_width = ZONE_DATA[index].width;
@@ -784,7 +657,7 @@ var app = new Vue({
       this.f_btn_href = ZONE_DATA[index].href;
     },
     // 關掉所有圖片foucs
-    CloseImgFocus: function() {
+    CloseImgFocus: function () {
       const ZONE_DATA = this.fixed_img_count.img_data;
       ZONE_DATA.forEach((item, array) => {
         ZONE_DATA[array].outline = "0px transparent solid";
@@ -792,7 +665,7 @@ var app = new Vue({
       });
     },
     // 關掉所有文字foucs
-    CloseTextFocus: function() {
+    CloseTextFocus: function () {
       const ZONE_DATA = this.fixed_text_count.text_data;
       ZONE_DATA.forEach((item, array) => {
         ZONE_DATA[array].outline = "0px transparent solid";
@@ -800,7 +673,7 @@ var app = new Vue({
       });
     },
     // 關掉所有按鈕foucs
-    CloseBtnFocus: function() {
+    CloseBtnFocus: function () {
       const ZONE_DATA = this.fixed_btn_count.btn_data;
       ZONE_DATA.forEach((item, array) => {
         ZONE_DATA[array].outline = "0px transparent solid";
@@ -808,43 +681,43 @@ var app = new Vue({
       });
     },
     // 打開新增的圖片outline
-    OpenImgFocus: function() {
+    OpenImgFocus: function () {
       const ZONE_DATA = this.fixed_img_count.img_data;
       ZONE_DATA[ZONE_DATA.length - 1].outline = "1px #aaa dashed";
       ZONE_DATA[ZONE_DATA.length - 1].foucs = true;
     },
     // 打開新增的文字outline
-    OpenTextFocus: function() {
+    OpenTextFocus: function () {
       const ZONE_DATA = this.fixed_text_count.text_data;
       ZONE_DATA[ZONE_DATA.length - 1].outline = "1px #aaa dashed";
       ZONE_DATA[ZONE_DATA.length - 1].foucs = true;
     },
     // 打開新增的按鈕outline
-    OpenBtnFocus: function() {
+    OpenBtnFocus: function () {
       const ZONE_DATA = this.fixed_btn_count.btn_data;
       ZONE_DATA[ZONE_DATA.length - 1].outline = "1px #aaa dashed";
       ZONE_DATA[ZONE_DATA.length - 1].foucs = true;
     },
     // 打開被選取的圖片outline
-    OpenImgClickFocus: function(index) {
+    OpenImgClickFocus: function (index) {
       const ZONE_DATA = this.fixed_img_count.img_data;
       ZONE_DATA[index].outline = "1px #aaa dashed";
       ZONE_DATA[index].foucs = true;
     },
     // 打開被選取的文字outline
-    OpenTextClickFocus: function(index) {
+    OpenTextClickFocus: function (index) {
       const ZONE_DATA = this.fixed_text_count.text_data;
       ZONE_DATA[index].outline = "1px #aaa dashed";
       ZONE_DATA[index].foucs = true;
     },
     // 打開被選取的按鈕outline
-    OpenBtnClickFocus: function(index) {
+    OpenBtnClickFocus: function (index) {
       const ZONE_DATA = this.fixed_btn_count.btn_data;
       ZONE_DATA[index].outline = "1px #aaa dashed";
       ZONE_DATA[index].foucs = true;
     },
     // 清空圖片input值
-    ClearImgInputValue: function() {
+    ClearImgInputValue: function () {
       this.f_img_width = "";
       this.f_img_heigth = "";
       this.f_img_border = "";
@@ -854,7 +727,7 @@ var app = new Vue({
       this.f_img_top = "";
       this.f_img_left = "";
     }, // 清空文字input值
-    ClearTextInputValue: function() {
+    ClearTextInputValue: function () {
       this.f_text_content = "";
       this.f_text_width = "";
       this.f_text_heigth = "";
@@ -871,7 +744,7 @@ var app = new Vue({
       this.f_text_left = "";
     },
     // 清空按鈕input值
-    ClearBtnInputValue: function() {
+    ClearBtnInputValue: function () {
       this.f_btn_content = "";
       this.f_btn_width = "";
       this.f_btn_paddingTop = "";
@@ -887,13 +760,175 @@ var app = new Vue({
       this.f_btn_left = "";
       this.f_btn_href = "";
     },
-
+    // 圖片區鍵盤上下改變數值
+    KeyDownChangInt_ImgLeft: function () {
+      if (event.keyCode == 38) {
+        this.f_img_left = parseInt(this.f_img_left) + 1 + "px";
+      } else if (event.keyCode == 40) {
+        this.f_img_left = parseInt(this.f_img_left) - 1 + "px";
+      }
+    },
+    KeyDownChangInt_ImgTop: function () {
+      if (event.keyCode == 38) {
+        this.f_img_top = parseInt(this.f_img_top) + 1 + "px";
+      } else if (event.keyCode == 40) {
+        this.f_img_top = parseInt(this.f_img_top) - 1 + "px";
+      }
+    },
+    KeyDownChangInt_ImgWidth: function () {
+      if (this.f_img_width == "auto") {
+        this.f_img_width = "100px";
+      }
+      if (event.keyCode == 38) {
+        this.f_img_width = parseInt(this.f_img_width) + 1 + "px";
+      } else if (event.keyCode == 40) {
+        this.f_img_width = parseInt(this.f_img_width) - 1 + "px";
+      }
+    },
+    // 文字區鍵盤上下改變數值
+    KeyDownChangInt_TextLeft: function () {
+      if (event.keyCode == 38) {
+        this.f_text_left = parseInt(this.f_text_left) + 1 + "px";
+      } else if (event.keyCode == 40) {
+        this.f_text_left = parseInt(this.f_text_left) - 1 + "px";
+      }
+    },
+    KeyDownChangInt_TextTop: function () {
+      if (event.keyCode == 38) {
+        this.f_text_top = parseInt(this.f_text_top) + 1 + "px";
+      } else if (event.keyCode == 40) {
+        this.f_text_top = parseInt(this.f_text_top) - 1 + "px";
+      }
+    },
+    // 按鈕區鍵盤上下改變數值
+    KeyDownChangInt_BtnLeft: function () {
+      if (event.keyCode == 38) {
+        this.f_btn_left = parseInt(this.f_btn_left) + 1 + "px";
+      } else if (event.keyCode == 40) {
+        this.f_btn_left = parseInt(this.f_btn_left) - 1 + "px";
+      }
+    },
+    KeyDownChangInt_BtnTop: function () {
+      if (event.keyCode == 38) {
+        this.f_btn_top = parseInt(this.f_btn_top) + 1 + "px";
+      } else if (event.keyCode == 40) {
+        this.f_btn_top = parseInt(this.f_btn_top) - 1 + "px";
+      }
+    },
+    // 圖片區滑鼠移動抓取x,y事件
+    ImgMouseMoveGetXY: function () {
+      let e = event;
+      const ZONE_DATA = this.fixed_img_count.img_data;
+      if (
+        ZONE_DATA.find(function (item, index, array) {
+          return item.foucs == true;
+        })
+      ) {
+        let zone_target = document.querySelector("#scene");
+        let left_scene =
+          parseInt(
+            window.getComputedStyle(document.querySelector("#scene")).marginLeft
+          ) +
+          parseInt(
+            window.getComputedStyle(document.querySelector("#scene"))
+            .paddingLeft
+          );
+        let self = this;
+        let flag = true;
+        let initX = e.offsetX,
+          initY = e.offsetY;
+        zone_target.addEventListener("mousemove", function () {
+          if (flag == true) {
+            let e = event || window.event;
+            let x = e.pageX - initX - left_scene;
+            let y = e.pageY - initY;
+            self.f_img_left = x + "px";
+            self.f_img_top = y + "px";
+          }
+        });
+        zone_target.addEventListener("mouseup", function () {
+          flag = false;
+        });
+      }
+    },
+    // 文字區滑鼠移動抓取x,y事件
+    TextMouseMoveGetXY: function () {
+      let e = event;
+      const ZONE_DATA = this.fixed_text_count.text_data;
+      if (
+        ZONE_DATA.find(function (item, index, array) {
+          return item.foucs == true;
+        })
+      ) {
+        let zone_target = document.querySelector("#scene");
+        let left_scene =
+          parseInt(
+            window.getComputedStyle(document.querySelector("#scene")).marginLeft
+          ) +
+          parseInt(
+            window.getComputedStyle(document.querySelector("#scene"))
+            .paddingLeft
+          );
+        let self = this;
+        let flag = true;
+        let initX = e.offsetX,
+          initY = e.offsetY;
+        zone_target.addEventListener("mousemove", function () {
+          if (flag == true) {
+            let e = event || window.event;
+            let x = e.pageX - initX - left_scene;
+            let y = e.pageY - initY;
+            self.f_text_left = x + "px";
+            self.f_text_top = y + "px";
+          }
+        });
+        zone_target.addEventListener("mouseup", function () {
+          flag = false;
+        });
+      }
+    },
+    // 按鈕區滑鼠移動抓取x,y事件
+    BtnMouseMoveGetXY: function () {
+      let e = event;
+      const ZONE_DATA = this.fixed_btn_count.btn_data;
+      if (
+        ZONE_DATA.find(function (item, index, array) {
+          return item.foucs == true;
+        })
+      ) {
+        let zone_target = document.querySelector("#scene");
+        let left_scene =
+          parseInt(
+            window.getComputedStyle(document.querySelector("#scene")).marginLeft
+          ) +
+          parseInt(
+            window.getComputedStyle(document.querySelector("#scene"))
+            .paddingLeft
+          );
+        let self = this;
+        let flag = true;
+        let initX = e.offsetX,
+          initY = e.offsetY;
+        zone_target.addEventListener("mousemove", function () {
+          if (flag == true) {
+            let e = event || window.event;
+            let x = e.pageX - initX - left_scene;
+            let y = e.pageY - initY;
+            self.f_btn_left = x + "px";
+            self.f_btn_top = y + "px";
+          }
+        });
+        zone_target.addEventListener("mouseup", function () {
+          flag = false;
+        });
+      }
+    },
     // 新增圖片按鈕
-    ImgAddImg: function() {
+    ImgAddImg: function () {
       const ZONE_DATA = this.fixed_img_count.img_data;
       // 送資料進去陣列
       let url = document.location.href;
-      const SUB_URL = url.substring(0,url.length-10);
+      const SUB_URL = url.substring(0, url.length - 10);
       let style = {
         content: "預設文字",
         foucs: false,
@@ -909,7 +944,7 @@ var app = new Vue({
         top: 0,
         left: 0,
         media: "(min-width:992px)",
-        srcset:  SUB_URL + "/images/pc/bg_01.jpg",
+        srcset: SUB_URL + "/images/pc/bg_01.jpg",
         src: SUB_URL + "/images/pc/bg_01.jpg"
       };
       ZONE_DATA.push(style);
@@ -919,7 +954,7 @@ var app = new Vue({
       this.ImgZoneDisplayOpen();
     },
     // 新增文字按鈕
-    TextAddText: function() {
+    TextAddText: function () {
       const ZONE_DATA = this.fixed_text_count.text_data;
       // 送資料進去陣列
       let style = {
@@ -953,7 +988,7 @@ var app = new Vue({
       this.TextZoneDisplayOpen();
     },
     // 新增按鈕的按鈕
-    BtnAddBtn: function() {
+    BtnAddBtn: function () {
       const ZONE_DATA = this.fixed_btn_count.btn_data;
       // 送資料進去陣列
       let style = {
@@ -984,56 +1019,56 @@ var app = new Vue({
       this.BtnZoneDisplayOpen();
     },
     // 打開圖片外框
-    ImgOutlineOpen: function(index) {
+    ImgOutlineOpen: function (index) {
       this.CloseImgFocus();
       this.OpenImgClickFocus(index);
       this.ImgInputInsertIntoData(index);
       this.ImgZoneDisplayOpen();
     },
     // 打開文字外框
-    TextOutlineOpen: function(index) {
+    TextOutlineOpen: function (index) {
       this.CloseTextFocus();
       this.OpenTextClickFocus(index);
       this.TextInputInsertIntoData(index);
       this.TextZoneDisplayOpen();
     },
     // 打開按鈕外框
-    BtnOutlineOpen: function(index) {
+    BtnOutlineOpen: function (index) {
       this.CloseBtnFocus();
       this.OpenBtnClickFocus(index);
       this.BtnInputInsertIntoData(index);
       this.BtnZoneDisplayOpen();
     },
     // 圖片區確定按鈕
-    ImgCheckBtn: function(index) {
+    ImgCheckBtn: function (index) {
       this.CloseImgFocus();
       this.ClearImgInputValue();
       this.ImgZoneDisplayClose();
     },
     // 文字區確定按鈕
-    TextCheckBtn: function(index) {
+    TextCheckBtn: function (index) {
       this.CloseTextFocus();
       this.ClearTextInputValue();
       this.TextZoneDisplayClose();
     },
     // 按鈕區確定按鈕
-    BtnCheckBtn: function(index) {
+    BtnCheckBtn: function (index) {
       this.CloseBtnFocus();
       this.ClearBtnInputValue();
       this.BtnZoneDisplayClose();
     },
     // 印出程式碼
-    PrintCode: function() {
+    PrintCode: function () {
       let code = document.querySelector("#scene").innerHTML;
       document.querySelector("#code").style.display = "block";
       this.zone_code = code;
     },
-    CloseCode: function() {
+    CloseCode: function () {
       let code = document.querySelector("#code");
       code.style.display = "none";
     },
     // panel trigger
-    TogglePanel: function() {
+    TogglePanel: function () {
       console.log("click");
       let panel_tigger = document.querySelector(".panel-trigger");
       let panel = document.querySelector(".panel");
