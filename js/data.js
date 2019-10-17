@@ -952,11 +952,8 @@ var app = new Vue({
     ImgAddImg: function () {
       const ZONE_DATA = this.fixed_img_count.img_data;
       // 送資料進去陣列
-<<<<<<< HEAD
-=======
       let url = document.location.href;
       const SUB_URL = url.substring(0, url.length - 10);
->>>>>>> 30ea250a6c54c6d7c6863df7a7f9d65d7edfb4f6
       let style = {
         content: "預設文字",
         foucs: false,
@@ -972,13 +969,8 @@ var app = new Vue({
         top: 0,
         left: 0,
         media: "(min-width:992px)",
-<<<<<<< HEAD
-        srcset: "./images/pc/bg_01.jpg",
-        src: "./images/xs/bg_01.jpg"
-=======
         srcset: SUB_URL + "/images/pc/bg_01.jpg",
         src: SUB_URL + "/images/pc/bg_01.jpg"
->>>>>>> 30ea250a6c54c6d7c6863df7a7f9d65d7edfb4f6
       };
       ZONE_DATA.push(style);
       this.CloseImgFocus();
@@ -1103,12 +1095,8 @@ var app = new Vue({
       code.style.display = "none";
     },
     // panel trigger
-<<<<<<< HEAD
-    TogglePanel: function () {
-=======
     TogglePanel: function() {
       let panel_tigger = document.querySelector(".panel-trigger");
->>>>>>> 30ea250a6c54c6d7c6863df7a7f9d65d7edfb4f6
       let panel = document.querySelector(".panel");
       let panelSide = document.querySelector(".panelside");
       let scene = document.querySelector(".scene");
