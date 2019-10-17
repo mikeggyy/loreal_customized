@@ -9,8 +9,8 @@
   <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Roboto&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
-  <!-- <link rel="stylesheet" href="css/style.css" /> -->
-  <link rel="stylesheet" href="./sass/style.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- <link rel="stylesheet" href="./sass/style.css" /> -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 
@@ -21,53 +21,58 @@
         <span></span>
       </div>
       <div class="panel-container">
-          <div class="element">
-              <div class="element-leader">
-                <div class="name">專案設定</div>
+          <div class="element active" id="projectElement" v-on:click="ToggleBlock()">
+            <div class="element-leader">
+              <div class="name">專案設定</div>
+              <div class="trigger">
+                <div class="icon-arrow-down">
+                  <span></span>
+                </div>
               </div>
-              <div id="block-setting" class="element-setting">
+            </div>
+            <div id="project-setting" class="element-setting">
+              <div class="row row-flex">
+                <div class="flex-col-m-1">
                   <div class="row row-flex">
-                    <div class="flex-col-m-1">
-                      <div class="row row-flex">
-                        <div class="label">專案名稱</div>
-                        <div class="content">
-                          <input type="text" class="ipnut-s" />
-                        </div>
-                      </div>
+                    <div class="label">專案名稱</div>
+                    <div class="content">
+                      <input type="text" class="ipnut-s" />
                     </div>
                   </div>
-                  <div class="row row-flex">
-                      <div class="flex-col-m-1">
-                        <div class="row row-flex">
-                          <div class="label">folder</div>
-                          <div class="content">
-                            <input type="text" class="ipnut-s" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  <div class="row row-flex">
-                      <div class="flex-col-m-1">
-                        <div class="row row-flex">
-                          <div class="label">campaign</div>
-                          <div class="content">
-                            <input type="text" class="ipnut-s" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row row-flex">
-                      <div class="flex-col-m-1">
-                        <div class="row row-flex">
-                          <div class="label">上線日期</div>
-                          <div class="content">
-                            <input type="text" class="ipnut-s" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                 </div>
+              </div>
+              <div class="row row-flex">
+                <div class="flex-col-m-1">
+                  <div class="row row-flex">
+                    <div class="label">資料夾</div>
+                    <div class="content">
+                      <input type="text" class="ipnut-s" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row row-flex">
+                <div class="flex-col-m-1">
+                  <div class="row row-flex">
+                    <div class="label">campaign</div>
+                    <div class="content">
+                      <input type="text" class="ipnut-s" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row row-flex">
+                <div class="flex-col-m-1">
+                  <div class="row row-flex">
+                    <div class="label">上線日期</div>
+                    <div class="content">
+                      <input type="text" class="ipnut-s" />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         <div class="element">
           <div class="element-leader">
             <div class="name">新增物件</div>

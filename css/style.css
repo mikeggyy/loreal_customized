@@ -466,6 +466,18 @@ img {
   height: 13px;
 }
 
+.icon-arrow-down span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-top: 1px solid #777;
+  border-left: 1px solid #777;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+  -webkit-transition: all 0.45s ease;
+  transition: all 0.45s ease;
+}
+
 .icon-plus span, .container #code .code-container {
   position: absolute;
   -webkit-transform: translate(-50%, -50%);
@@ -756,6 +768,30 @@ img {
 .container .panel .element-button [class^="btn"] {
   width: 40%;
   text-align: center;
+}
+
+.container .panel #projectElement .element-setting {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.45s ease;
+  transition: all 0.45s ease;
+}
+
+.container .panel #projectElement.active .element-setting {
+  max-height: 400px;
+  opacity: 1;
+  -webkit-transition: all 0.65s ease;
+  transition: all 0.65s ease;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+
+.container .panel #projectElement.active .trigger span {
+  -webkit-transform: rotate(45deg) translateY(7px);
+          transform: rotate(45deg) translateY(7px);
+  -webkit-transition: all 0.45s ease;
+  transition: all 0.45s ease;
 }
 
 .container .print_code {

@@ -893,7 +893,7 @@ var app = new Vue({
       const ZONE_DATA = this.fixed_img_count.img_data;
       // 送資料進去陣列
       let url = document.location.href;
-      const SUB_URL = url.substring(0,url.length-10);
+      const SUB_URL = url.substring(0, url.length - 10);
       let style = {
         content: "預設文字",
         foucs: false,
@@ -909,7 +909,7 @@ var app = new Vue({
         top: 0,
         left: 0,
         media: "(min-width:992px)",
-        srcset:  SUB_URL + "/images/pc/bg_01.jpg",
+        srcset: SUB_URL + "/images/pc/bg_01.jpg",
         src: SUB_URL + "/images/pc/bg_01.jpg"
       };
       ZONE_DATA.push(style);
@@ -1034,7 +1034,6 @@ var app = new Vue({
     },
     // panel trigger
     TogglePanel: function() {
-      console.log("click");
       let panel_tigger = document.querySelector(".panel-trigger");
       let panel = document.querySelector(".panel");
       let scene = document.querySelector(".scene");
@@ -1045,6 +1044,19 @@ var app = new Vue({
       } else {
         panel.classList.add("moveLeft");
         scene.classList.add("moveLeft");
+      }
+    },
+    ToggleBlock: function() {
+      let block_tigger = document.querySelector("#projectElement .trigger");
+      let block = document.querySelector("#projectElement");
+      let projectBlock = document.querySelector("#project-setting");
+
+      if (block.classList.contains("active")) {
+        block.classList.remove("active");
+        console.log("remove active");
+      } else {
+        block.classList.add("active");
+        console.log("add active");
       }
     }
   }

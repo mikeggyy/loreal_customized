@@ -213,6 +213,29 @@ $panel-width: 320px;
         text-align: center;
       }
     }
+
+    #projectElement {
+      .element-setting {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: all 0.45s ease;
+      }
+      &.active {
+        .element-setting {
+          max-height: 400px;
+          opacity: 1;
+          transition: all 0.65s ease;
+          transition-delay: 0.2s;
+        }
+        .trigger {
+          span {
+            transform: rotate(45deg) translateY(7px);
+            transition: all 0.45s ease;
+          }
+        }
+      }
+    }
   }
 
   .print_code {

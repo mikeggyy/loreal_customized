@@ -466,6 +466,18 @@ img {
   height: 13px;
 }
 
+.icon-arrow-down span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-top: 1px solid #777;
+  border-left: 1px solid #777;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+  -webkit-transition: all 0.45s ease;
+  transition: all 0.45s ease;
+}
+
 .icon-plus span {
   position: absolute;
   -webkit-transform: translate(-50%, -50%);
