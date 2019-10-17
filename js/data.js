@@ -1090,12 +1090,39 @@ var app = new Vue({
       let textChang = code.replace(new RegExp('.png', 'g'), '.png?$staticlink$').replace(new RegExp('.jpg', 'g'), '.jpg?$staticlink$').replace(new RegExp('.gif', 'g'), '.gif?$staticlink$').replace(new RegExp('./images', 'g'), 'event-o2o-page/' + folder_name + '/images');
       this.zone_code = textChang;
     },
+    // 圖片區取消按鈕
+    ImgRemoveBtn: function () {
+      let i = this.fixed_img_count.img_data.findIndex(function (item) {
+        return item.foucs == true;
+      })
+      this.fixed_img_count.img_data.splice(i, 1)
+      this.ClearImgInputValue();
+      this.ImgZoneDisplayClose();
+    },
+    // 文字區取消按鈕
+    TextRemoveBtn: function () {
+      let i = this.fixed_text_count.text_data.findIndex(function (item) {
+        return item.foucs == true;
+      })
+      this.fixed_text_count.text_data.splice(i, 1)
+      this.ClearTextInputValue();
+      this.TextZoneDisplayClose();
+    },
+    // 按鈕區取消按鈕
+    BtnRemoveBtn: function () {
+      let i = this.fixed_btn_count.btn_data.findIndex(function (item) {
+        return item.foucs == true;
+      })
+      this.fixed_btn_count.btn_data.splice(i, 1)
+      this.ClearBtnInputValue();
+      this.BtnZoneDisplayClose();
+    },
     CloseCode: function () {
       let code = document.querySelector("#code");
       code.style.display = "none";
     },
     // panel trigger
-    TogglePanel: function() {
+    TogglePanel: function () {
       let panel_tigger = document.querySelector(".panel-trigger");
       let panel = document.querySelector(".panel");
       let panelSide = document.querySelector(".panelside");
@@ -1111,7 +1138,7 @@ var app = new Vue({
         scene.classList.add("moveLeft");
       }
     },
-    ToggleBlock: function() {
+    ToggleBlock: function () {
       let block_tigger = document.querySelector("#projectElement .trigger");
       let block = document.querySelector("#projectElement");
       let projectBlock = document.querySelector("#project-setting");
