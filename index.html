@@ -21,53 +21,53 @@
         <span></span>
       </div>
       <div class="panel-container">
-          <div class="element">
-              <div class="element-leader">
-                <div class="name">專案設定</div>
-              </div>
-              <div id="block-setting" class="element-setting">
-                  <div class="row row-flex">
-                    <div class="flex-col-m-1">
-                      <div class="row row-flex">
-                        <div class="label">專案名稱</div>
-                        <div class="content">
-                          <input type="text" v-model="f_name_project" class="ipnut-s" />
-                        </div>
-                      </div>
-                    </div>
+        <div class="element">
+          <div class="element-leader">
+            <div class="name">專案設定</div>
+          </div>
+          <div id="block-setting" class="element-setting">
+            <div class="row row-flex">
+              <div class="flex-col-m-1">
+                <div class="row row-flex">
+                  <div class="label">專案名稱</div>
+                  <div class="content">
+                    <input type="text" v-model="f_name_project" class="ipnut-s" />
                   </div>
-                  <div class="row row-flex">
-                      <div class="flex-col-m-1">
-                        <div class="row row-flex">
-                          <div class="label">folder</div>
-                          <div class="content">
-                            <input type="text" v-model="f_name_folder" class="ipnut-s" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  <div class="row row-flex">
-                      <div class="flex-col-m-1">
-                        <div class="row row-flex">
-                          <div class="label">campaign</div>
-                          <div class="content">
-                            <input type="text" v-model="f_code_campaign" class="ipnut-s" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row row-flex">
-                      <div class="flex-col-m-1">
-                        <div class="row row-flex">
-                          <div class="label">上線日期</div>
-                          <div class="content">
-                            <input type="text" v-model="f_date_start" class="ipnut-s" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                 </div>
+              </div>
             </div>
+            <div class="row row-flex">
+              <div class="flex-col-m-1">
+                <div class="row row-flex">
+                  <div class="label">folder</div>
+                  <div class="content">
+                    <input type="text" v-model="f_name_folder" class="ipnut-s" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row row-flex">
+              <div class="flex-col-m-1">
+                <div class="row row-flex">
+                  <div class="label">campaign</div>
+                  <div class="content">
+                    <input type="text" v-model="f_code_campaign" class="ipnut-s" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row row-flex">
+              <div class="flex-col-m-1">
+                <div class="row row-flex">
+                  <div class="label">上線日期</div>
+                  <div class="content">
+                    <input type="text" v-model="f_date_start" class="ipnut-s" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="element">
           <div class="element-leader">
             <div class="name">新增物件</div>
@@ -110,7 +110,8 @@
                 <div class="row row-flex">
                   <div class="label">寬度</div>
                   <div class="content">
-                    <input type="text" v-model="f_img_width" class="ipnut-s" v-on:keydown="KeyDownChangInt_ImgWidth()" placeholder="300px" />
+                    <input type="text" v-model="f_img_width" class="ipnut-s" v-on:keydown="KeyDownChangInt_ImgWidth()"
+                      placeholder="300px" />
                   </div>
                 </div>
               </div>
@@ -277,7 +278,8 @@
                 <div class="row row-flex">
                   <div class="label">x軸</div>
                   <div class="content">
-                    <input type="text" v-on:keydown="KeyDownChangInt_TextLeft()" v-model="f_text_left" class="ipnut-s" />
+                    <input type="text" v-on:keydown="KeyDownChangInt_TextLeft()" v-model="f_text_left"
+                      class="ipnut-s" />
                   </div>
                 </div>
               </div>
@@ -439,7 +441,7 @@
         <!-- 產生圖片 -->
         <div class="main-img" v-on:mousedown="ImgMouseMoveGetXY()" v-bind:style="fixed_img_count.img_data[index]"
           v-for="(item,index) in fixed_img_count.img_data">
-          <picture class="img" v-on:click="ImgOutlineOpen(index)">
+          <picture class="img" v-on:mousedown="ImgOutlineOpen(index)">
             <source media="(min-width:992px)" v-bind:srcset="fixed_img_count.img_data[index].srcset" />
             <img v-bind:src="fixed_img_count.img_data[index].src" alt="" />
           </picture>
@@ -447,13 +449,15 @@
         <!-- 產生文字 -->
         <div class="text" v-on:mousedown="TextMouseMoveGetXY()" onSelectStart="event.returnValue=false"
           v-bind:style="fixed_text_count.text_data[index]" v-for="(item,index) in fixed_text_count.text_data">
-          <p v-on:click="TextOutlineOpen(index)" v-html="fixed_text_count.text_data[index].content"></p>
+          <p v-on:mousedown="TextOutlineOpen(index)" v-html="fixed_text_count.text_data[index].content"></p>
         </div>
         <!-- 產生按鈕 -->
-        <a class="btn" v-on:mousedown="BtnMouseMoveGetXY()" v-on:click="BtnOutlineOpen(index)" 
-          onSelectStart="event.returnValue=false" v-bind:style="fixed_btn_count.btn_data[index]"
-          v-for="(item,index) in fixed_btn_count.btn_data" v-html="fixed_btn_count.btn_data[index].content"
-          target="blank"></a>
+        <div class="btn" v-on:mousedown="BtnMouseMoveGetXY()">
+          <a v-on:mousedown="BtnOutlineOpen(index)" onSelectStart="event.returnValue=false"
+            v-bind:style="fixed_btn_count.btn_data[index]" v-for="(item,index) in fixed_btn_count.btn_data"
+            v-html="fixed_btn_count.btn_data[index].content" target="blank"></a>
+        </div>
+
 
       </div>
     </div>
