@@ -1090,33 +1090,6 @@ var app = new Vue({
       this.ClearBtnInputValue();
       this.BtnZoneDisplayClose();
     },
-    // 圖片區取消按鈕
-    ImgRemoveBtn: function () {
-      let i = this.fixed_img_count.img_data.findIndex(function (item) {
-        return item.foucs == true;
-      })
-      this.fixed_img_count.img_data.splice(i, 1)
-      this.ClearImgInputValue();
-      this.ImgZoneDisplayClose();
-    },
-    // 文字區取消按鈕
-    TextRemoveBtn: function () {
-      let i = this.fixed_text_count.text_data.findIndex(function (item) {
-        return item.foucs == true;
-      })
-      this.fixed_text_count.text_data.splice(i, 1)
-      this.ClearTextInputValue();
-      this.TextZoneDisplayClose();
-    },
-    // 按鈕區取消按鈕
-    BtnRemoveBtn: function () {
-      let i = this.fixed_btn_count.btn_data.findIndex(function (item) {
-        return item.foucs == true;
-      })
-      this.fixed_btn_count.btn_data.splice(i, 1)
-      this.ClearBtnInputValue();
-      this.BtnZoneDisplayClose();
-    },
     // 印出程式碼
     PrintCode: function () {
       const folder_name = this.fixed_project_data.name_folder;
