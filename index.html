@@ -9,8 +9,8 @@
   <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Roboto&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
-  <!-- <link rel="stylesheet" href="css/style.css" /> -->
-  <link rel="stylesheet" href="./sass/style.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- <link rel="stylesheet" href="./sass/style.css" /> -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 
@@ -21,6 +21,7 @@
         <span></span>
       </div>
       <div class="panel-container">
+<<<<<<< HEAD
         <div class="element">
           <div class="element-leader">
             <div class="name">專案設定</div>
@@ -55,13 +56,60 @@
                   </div>
                 </div>
               </div>
+=======
+        <div class="element active" id="projectElement">
+          <div class="element-leader">
+            <div class="name">專案設定</div>
+            <div class="trigger" v-on:click="ToggleBlock()">
+              <div class="icon-arrow-down">
+                <span></span>
+              </div>
+            </div>
+          </div>
+          <div id="project-setting" class="element-setting">
+            <div class="row row-flex">
+              <div class="flex-col-m-1">
+                <div class="row row-flex">
+                  <div class="label">專案名稱</div>
+                  <div class="content">
+                    <input type="text" class="ipnut-s" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row row-flex">
+              <div class="flex-col-m-1">
+                <div class="row row-flex">
+                  <div class="label">資料夾</div>
+                  <div class="content">
+                    <input type="text" class="ipnut-s" />
+                  </div>
+                </div>
+              </div>
+>>>>>>> 30ea250a6c54c6d7c6863df7a7f9d65d7edfb4f6
+            </div>
+            <div class="row row-flex">
+              <div class="flex-col-m-1">
+                <div class="row row-flex">
+<<<<<<< HEAD
+                  <div class="label">上線日期</div>
+                  <div class="content">
+                    <input type="text" v-model="f_date_start" class="ipnut-s" />
+=======
+                  <div class="label">campaign</div>
+                  <div class="content">
+                    <input type="text" class="ipnut-s" />
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="row row-flex">
               <div class="flex-col-m-1">
                 <div class="row row-flex">
                   <div class="label">上線日期</div>
                   <div class="content">
-                    <input type="text" v-model="f_date_start" class="ipnut-s" />
+                    <input type="text" class="ipnut-s" />
+>>>>>>> 30ea250a6c54c6d7c6863df7a7f9d65d7edfb4f6
                   </div>
                 </div>
               </div>
@@ -435,7 +483,169 @@
         </div>
       </div>
     </div>
+    <!-- 選擇圖片時 panelside 加上 active class -->
+    <div class="panelside">
+      <div class="icon-close">
+        <span></span>
+        <span></span>
+      </div>
+      <div class="panelside-container">
+        <ul class="image-list">
+          <li class="active">
+            <div class="img-self">
+              <div class="image-container">
+                <img src="images/pc/bg_01.jpg" alt="">
+              </div>
+            </div>
+            <div class="img-name"><span>bg_01.jpg</span></div>
+          </li>
+          <li>
+            <div class="img-self"><img src="images/pc/obj_01.png" alt=""></div>
+            <div class="img-name"><span>obj_01.png</span></div>
+          </li>
+          <li>
+            <div class="img-self">
+              <div class="image-container">
+                <img src="images/pc/pic_01.jpg" alt="">
+              </div>
+            </div>
+            <div class="img-name"><span>pic_01.jpg</span></div>
+          </li>
+          <li>
+            <div class="img-self">
+              <div class="image-container">
+                <img src="images/pc/bg_01.jpg" alt="">
+              </div>
+            </div>
+            <div class="img-name"><span>bg_01.jpg</span></div>
+          </li>
+          <li>
+            <div class="img-self"><img src="images/pc/obj_01.png" alt=""></div>
+            <div class="img-name"><span>obj_01.png</span></div>
+          </li>
+          <li>
+            <div class="img-self">
+              <div class="image-container">
+                <img src="images/pc/pic_01.jpg" alt="">
+              </div>
+            </div>
+            <div class="img-name"><span>pic_01.jpg</span></div>
+          </li>
+          <li>
+            <div class="img-self">
+              <div class="image-container">
+                <img src="images/pc/bg_01.jpg" alt="">
+              </div>
+            </div>
+            <div class="img-name"><span>bg_01.jpg</span></div>
+          </li>
+          <li>
+            <div class="img-self"><img src="images/pc/obj_01.png" alt=""></div>
+            <div class="img-name"><span>obj_01.png</span></div>
+          </li>
+          <li>
+            <div class="img-self">
+              <div class="image-container">
+                <img src="images/pc/pic_01.jpg" alt="">
+              </div>
+            </div>
+            <div class="img-name"><span>pic_01.jpg</span></div>
+          </li>
+          <li>
+            <div class="img-self">
+              <div class="image-container">
+                <img src="images/pc/bg_01.jpg" alt="">
+              </div>
+            </div>
+            <div class="img-name"><span>bg_01.jpg</span></div>
+          </li>
+          <li>
+            <div class="img-self"><img src="images/pc/obj_01.png" alt=""></div>
+            <div class="img-name"><span>obj_01.png</span></div>
+          </li>
+          <li>
+            <div class="img-self">
+              <div class="image-container">
+                <img src="images/pc/pic_01.jpg" alt="">
+              </div>
+            </div>
+            <div class="img-name"><span>pic_01.jpg</span></div>
+          </li>
+          <li>
+            <div class="img-self">
+              <div class="image-container">
+                <img src="images/pc/bg_01.jpg" alt="">
+              </div>
+            </div>
+            <div class="img-name"><span>bg_01.jpg</span></div>
+          </li>
+          <li>
+            <div class="img-self"><img src="images/pc/obj_01.png" alt=""></div>
+            <div class="img-name"><span>obj_01.png</span></div>
+          </li>
+          <li>
+            <div class="img-self">
+              <div class="image-container">
+                <img src="images/pc/pic_01.jpg" alt="">
+              </div>
+            </div>
+            <div class="img-name"><span>pic_01.jpg</span></div>
+          </li>
+          <li>
+            <div class="img-self">
+              <div class="image-container">
+                <img src="images/pc/bg_01.jpg" alt="">
+              </div>
+            </div>
+            <div class="img-name"><span>bg_01.jpg</span></div>
+          </li>
+          <li>
+            <div class="img-self"><img src="images/pc/obj_01.png" alt=""></div>
+            <div class="img-name"><span>obj_01.png</span></div>
+          </li>
+          <li>
+            <div class="img-self">
+              <div class="image-container">
+                <img src="images/pc/pic_01.jpg" alt="">
+              </div>
+            </div>
+            <div class="img-name"><span>pic_01.jpg</span></div>
+          </li>
+          <li>
+            <div class="img-self">
+              <div class="image-container">
+                <img src="images/pc/bg_01.jpg" alt="">
+              </div>
+            </div>
+            <div class="img-name"><span>bg_01.jpg</span></div>
+          </li>
+          <li>
+            <div class="img-self"><img src="images/pc/obj_01.png" alt=""></div>
+            <div class="img-name"><span>obj_01.png</span></div>
+          </li>
+          <li>
+            <div class="img-self">
+              <div class="image-container">
+                <img src="images/pc/pic_01.jpg" alt="">
+              </div>
+            </div>
+            <div class="img-name"><span>pic_01.jpg</span></div>
+          </li>
+        </ul>
+        <div class="panelside-control">
+          <ul>
+            <li>
+              <a href="javascript:;" class="btn btn-default btn-border">確定</a>
+            </li>
+            <li>
+              <a href="javascript:;" class="btn btn-default btn-border">取消</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
     <!-- 產出區 -->
+    <!-- 選擇圖片時 scene 加上 panelside-show class -->
     <div class="scene" id="scene" draggable="false" onSelectStart="event.returnValue=false">
       <div class="scene-container" id="loreal-compaign" onSelectStart="event.returnValue=false">
         <!-- 產生圖片 -->
