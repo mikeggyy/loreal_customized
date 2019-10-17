@@ -1,6 +1,7 @@
 @import "_layout";
 
 $panel-width: 320px;
+$panelside-width: 280px;
 
 .container {
   height: 100vh;
@@ -74,6 +75,7 @@ $panel-width: 320px;
 
     .panel-container {
       overflow: auto;
+      -webkit-overflow-scrolling: touch;
       height: 100%;
     }
 
@@ -238,6 +240,92 @@ $panel-width: 320px;
     }
   }
 
+  .panelside {
+    position: fixed;
+    top: 0;
+    left: $panel-width;
+    height: 100%;
+    width: $panelside-width;
+    border-right: 1px solid #dedede;
+    background-color: rgba(#fff, 0.8);
+    box-shadow: 0 1px 6px 0 rgba(#333, 0.2);
+    transform: translateX(-#{$panelside-width});
+    transition: all 0.25s ease;
+    transition-delay: 0.3s;
+    // width: 0;
+    visibility: hidden;
+    z-index: 99;
+    &.active {
+      transform: translateX(0);
+      transition: all 0.25s ease;
+      // width: 0;
+      visibility: visible;
+    }
+    &.moveLeft {
+      transform: translateX(-#{$panelside-width});
+      transition: all 0.25s ease;
+      // visibility: hidden;
+    }
+    .icon-close {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      cursor: pointer;
+    }
+    .panelside-container {
+      padding: 0px 7px;
+      margin: 35px 0 50%;
+      height: calc(100% - 40px - 50px);
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+      .image-list {
+        li {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 8px 10px 8px 4px;
+          font-size: 13px;
+          color: #333;
+          cursor: pointer;
+          border-bottom: 1px solid #cccccc;
+          background-color: transparent;
+          transition: all 0.2s ease;
+          &.active,
+          &:hover {
+            background-color: #dedede;
+            transition: all 0.2s ease;
+          }
+        }
+        .img-self {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 80px;
+          border: 1px solid #aaa;
+        }
+        .image-container {
+          padding-top: 56.25%;
+        }
+      }
+    }
+    .panelside-control {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      padding: 10px 15px 7px;
+      text-align: right;
+      border-top: 1px solid #ddd;
+      li {
+        display: inline-block;
+        .btn {
+          margin: 0;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+
   .print_code {
     display: flex;
     justify-content: center;
@@ -252,6 +340,10 @@ $panel-width: 320px;
     // margin-left: 400px;
     // padding: 0 30px;
     transition: all 0.4s ease;
+
+    &.panelside-show {
+      padding-left: $panel-width + $panelside-width;
+    }
 
     &.moveLeft {
       padding-left: 0;
@@ -297,6 +389,7 @@ $panel-width: 320px;
       max-height: 100%;
       padding-right: 10px;
       overflow: auto;
+      -webkit-overflow-scrolling: touch;
     }
     .icon-close {
       position: absolute;

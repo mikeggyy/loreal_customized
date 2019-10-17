@@ -1036,13 +1036,16 @@ var app = new Vue({
     TogglePanel: function() {
       let panel_tigger = document.querySelector(".panel-trigger");
       let panel = document.querySelector(".panel");
+      let panelSide = document.querySelector(".panelside");
       let scene = document.querySelector(".scene");
 
       if (panel.classList.contains("moveLeft")) {
         panel.classList.remove("moveLeft");
+        panelSide.classList.remove("moveLeft");
         scene.classList.remove("moveLeft");
       } else {
         panel.classList.add("moveLeft");
+        panelSide.classList.add("moveLeft");
         scene.classList.add("moveLeft");
       }
     },
@@ -1050,6 +1053,8 @@ var app = new Vue({
       let block_tigger = document.querySelector("#projectElement .trigger");
       let block = document.querySelector("#projectElement");
       let projectBlock = document.querySelector("#project-setting");
+
+      console.log("click trigger");
 
       if (block.classList.contains("active")) {
         block.classList.remove("active");

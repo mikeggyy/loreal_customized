@@ -419,6 +419,18 @@ img {
   width: 100%;
 }
 
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  display: block;
+}
+
+.image-container img {
+  width: auto;
+  max-height: 100%;
+}
+
 /* === buttons === */
 .btn-row {
   margin: 20px 0;
@@ -478,7 +490,34 @@ img {
   transition: all 0.45s ease;
 }
 
-.icon-plus span, .container #code .code-container {
+.icon-close {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+.icon-close span {
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  height: 1px;
+  top: 50%;
+  background-color: #777;
+}
+
+.icon-close span:first-child {
+  position: aboslute;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.icon-close span:last-child {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.image-container img, .icon-plus span, .container #code .code-container {
   position: absolute;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -630,6 +669,7 @@ img {
 
 .container .panel .panel-container {
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
   height: 100%;
 }
 
@@ -794,6 +834,119 @@ img {
   transition: all 0.45s ease;
 }
 
+.container .panelside {
+  position: fixed;
+  top: 0;
+  left: 320px;
+  height: 100%;
+  width: 280px;
+  border-right: 1px solid #dedede;
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-box-shadow: 0 1px 6px 0 rgba(51, 51, 51, 0.2);
+          box-shadow: 0 1px 6px 0 rgba(51, 51, 51, 0.2);
+  -webkit-transform: translateX(-280px);
+          transform: translateX(-280px);
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+  visibility: hidden;
+  z-index: 99;
+}
+
+.container .panelside.active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  visibility: visible;
+}
+
+.container .panelside.moveLeft {
+  -webkit-transform: translateX(-280px);
+          transform: translateX(-280px);
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.container .panelside .icon-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+.container .panelside .panelside-container {
+  padding: 0px 7px;
+  margin: 35px 0 50%;
+  height: calc(100% - 40px - 50px);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.container .panelside .panelside-container .image-list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 8px 10px 8px 4px;
+  font-size: 13px;
+  color: #333;
+  cursor: pointer;
+  border-bottom: 1px solid #cccccc;
+  background-color: transparent;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.container .panelside .panelside-container .image-list li.active, .container .panelside .panelside-container .image-list li:hover {
+  background-color: #dedede;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.container .panelside .panelside-container .image-list .img-self {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 80px;
+  border: 1px solid #aaa;
+}
+
+.container .panelside .panelside-container .image-list .image-container {
+  padding-top: 56.25%;
+}
+
+.container .panelside .panelside-control {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 10px 15px 7px;
+  text-align: right;
+  border-top: 1px solid #ddd;
+}
+
+.container .panelside .panelside-control li {
+  display: inline-block;
+}
+
+.container .panelside .panelside-control li .btn {
+  margin: 0;
+  margin-left: 10px;
+}
+
 .container .print_code {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -812,6 +965,10 @@ img {
   padding-left: 320px;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
+}
+
+.container .scene.panelside-show {
+  padding-left: 600px;
 }
 
 .container .scene.moveLeft {
@@ -860,6 +1017,7 @@ img {
   max-height: 100%;
   padding-right: 10px;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .container #code .icon-close {
