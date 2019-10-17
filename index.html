@@ -178,7 +178,7 @@
           <div class="element-button">
             <div class="row row-flex">
               <a href="javascript:;" class="btn btn-border btn-check" v-on:click="ImgCheckBtn()">確定</a>
-              <a href="javascript:;" class="btn btn-border btn-cancel">取消</a>
+              <a href="javascript:;" class="btn btn-border btn-cancel" v-on:click="ImgRemoveBtn()">刪除</a>
             </div>
           </div>
         </div>
@@ -296,7 +296,7 @@
           <div class="element-button">
             <div class="row row-flex">
               <a href="javascript:;" v-on:click="TextCheckBtn()" class="btn btn-border btn-check">確定</a>
-              <a href="javascript:;" class="btn btn-border btn-cancel">取消</a>
+              <a href="javascript:;" v-on:click="TextRemoveBtn()" class="btn btn-border btn-cancel">刪除</a>
             </div>
           </div>
         </div>
@@ -426,7 +426,7 @@
           <div class="element-button">
             <div class="row row-flex">
               <a href="javascript:;" v-on:click="BtnCheckBtn()" class="btn btn-border btn-check">確定</a>
-              <a href="javascript:;" class="btn btn-border btn-cancel">取消</a>
+              <a href="javascript:;" v-on:click="BtnRemoveBtn()" class="btn btn-border btn-cancel">刪除</a>
             </div>
           </div>
         </div>
@@ -452,9 +452,9 @@
           <p v-on:mousedown="TextOutlineOpen(index)" v-html="fixed_text_count.text_data[index].content"></p>
         </div>
         <!-- 產生按鈕 -->
-        <div class="btn" v-on:mousedown="BtnMouseMoveGetXY()">
-          <a v-on:mousedown="BtnOutlineOpen(index)" onSelectStart="event.returnValue=false"
-            v-bind:style="fixed_btn_count.btn_data[index]" v-for="(item,index) in fixed_btn_count.btn_data"
+        <div class="btn" v-on:mousedown="BtnMouseMoveGetXY()" onSelectStart="event.returnValue=false" v-for="(item,index) in fixed_btn_count.btn_data">
+          <a v-on:mousedown="BtnOutlineOpen(index)" 
+            v-bind:style="fixed_btn_count.btn_data[index]" 
             v-html="fixed_btn_count.btn_data[index].content" target="blank"></a>
         </div>
 
