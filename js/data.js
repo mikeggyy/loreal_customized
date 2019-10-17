@@ -841,13 +841,13 @@ var app = new Vue({
     },
     // 圖片區滑鼠移動抓取x,y事件
     ImgMouseMoveGetXY: function () {
-      let e = event;
       const ZONE_DATA = this.fixed_img_count.img_data;
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
+        let e = event;
         let zone_target = document.querySelector("#scene");
         let left_scene =
           parseInt(
@@ -869,6 +869,7 @@ var app = new Vue({
             self.f_img_left = x + "px";
             self.f_img_top = y + "px";
           }
+
         });
         zone_target.addEventListener("mouseup", function () {
           flag = false;
@@ -1082,7 +1083,6 @@ var app = new Vue({
     // 印出程式碼
     PrintCode: function () {
       const folder_name = this.fixed_project_data.name_folder;
-      console.log(folder_name)
       let code = document.querySelector("#scene").innerHTML;
       document.querySelector("#code").style.display = "block";
       let textChang = code.replace(new RegExp('.png', 'g'), '.png?$staticlink$').replace(new RegExp('.jpg', 'g'), '.jpg?$staticlink$').replace(new RegExp('.gif', 'g'), '.gif?$staticlink$').replace(new RegExp('./images', 'g'), 'event-o2o-page/' + folder_name + '/images');
@@ -1105,5 +1105,5 @@ var app = new Vue({
         scene.classList.add("moveLeft");
       }
     }
-  }
+  },
 });
