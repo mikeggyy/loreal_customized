@@ -1,6 +1,17 @@
 var app = new Vue({
   el: "#app",
   data: {
+    // 專案資料
+    fixed_project_data: {
+      name_project: "",
+      name_folder: "",
+      code_campaign: "",
+      date_start: ""
+    },
+    f_name_project: "",
+    f_name_folder: "",
+    f_code_campaign: "",
+    f_date_start: "",
     // 圖片區資料
     fixed_img_count: {
       display: false,
@@ -56,6 +67,19 @@ var app = new Vue({
     zone_code: ""
   },
   watch: {
+    // 專案資料數值改變
+    f_name_project: function () {
+      this.fixed_project_data.name_project = this.f_name_project;
+    },
+    f_name_folder: function () {
+      this.fixed_project_data.name_folder = this.f_name_folder;
+    },
+    f_code_campaign: function () {
+      this.fixed_project_data.code_campaign = this.f_code_campaign;
+    },
+    f_date_start: function () {
+      this.fixed_project_data.date_start = this.f_date_start;
+    },
     // 圖片區數值改變
     f_img_width: function () {
       const ZONE_DATA = this.fixed_img_count.img_data;
@@ -927,8 +951,6 @@ var app = new Vue({
     ImgAddImg: function () {
       const ZONE_DATA = this.fixed_img_count.img_data;
       // 送資料進去陣列
-      let url = document.location.href;
-      const SUB_URL = url.substring(0, url.length - 10);
       let style = {
         content: "預設文字",
         foucs: false,
@@ -944,8 +966,8 @@ var app = new Vue({
         top: 0,
         left: 0,
         media: "(min-width:992px)",
-        srcset: SUB_URL + "/images/pc/bg_01.jpg",
-        src: SUB_URL + "/images/pc/bg_01.jpg"
+        srcset: "./images/pc/bg_01.jpg",
+        src: "./images/xs/bg_01.jpg"
       };
       ZONE_DATA.push(style);
       this.CloseImgFocus();
@@ -1059,9 +1081,12 @@ var app = new Vue({
     },
     // 印出程式碼
     PrintCode: function () {
+      const folder_name = this.fixed_project_data.name_folder;
+      console.log(folder_name)
       let code = document.querySelector("#scene").innerHTML;
       document.querySelector("#code").style.display = "block";
-      this.zone_code = code;
+      let textChang = code.replace(new RegExp('.png', 'g'), '.png?$staticlink$').replace(new RegExp('.jpg', 'g'), '.jpg?$staticlink$').replace(new RegExp('.gif', 'g'), '.gif?$staticlink$').replace(new RegExp('./images', 'g'), 'event-o2o-page/' + folder_name + '/images');
+      this.zone_code = textChang;
     },
     CloseCode: function () {
       let code = document.querySelector("#code");
@@ -1069,8 +1094,6 @@ var app = new Vue({
     },
     // panel trigger
     TogglePanel: function () {
-      console.log("click");
-      let panel_tigger = document.querySelector(".panel-trigger");
       let panel = document.querySelector(".panel");
       let scene = document.querySelector(".scene");
 
