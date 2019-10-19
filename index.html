@@ -165,6 +165,7 @@
                   <div class="label">圖片路徑(pc)</div>
                   <div class="content">
                     <input type="text" class="ipnut-s" v-model="f_img_srcset" />
+                    <input type="file" id="pc_file_name" v-on:change="ImgPcFileName()">
                   </div>
                 </div>
               </div>
@@ -175,6 +176,7 @@
                   <div class="label">圖片路徑(xs)</div>
                   <div class="content">
                     <input type="text" class="ipnut-s" v-model="f_img_src" />
+                    <input type="file" id="xs_file_name" v-on:change="ImgXsFileName()">
                   </div>
                 </div>
               </div>
