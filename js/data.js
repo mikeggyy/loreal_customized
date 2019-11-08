@@ -969,8 +969,8 @@ var app = new Vue({
         top: 0,
         left: 0,
         media: "(min-width:992px)",
-        srcset: SUB_URL + "/images/pc/bg_01.jpg",
-        src: SUB_URL + "/images/pc/bg_01.jpg"
+        srcset: "./images/pc/bg_01.jpg",
+        src: "./images/pc/bg_01.jpg"
       };
       ZONE_DATA.push(style);
       this.CloseImgFocus();
