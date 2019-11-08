@@ -15,6 +15,7 @@ var app = new Vue({
     // 圖片區資料
     fixed_img_count: {
       display: false,
+      img_file_name: "",
       img_data: []
     },
     f_img_width: "",
@@ -558,6 +559,51 @@ var app = new Vue({
 
   },
   methods: {
+    // 上傳圖片路徑
+    ImgPcFileName: function () {
+      const FILE_NAME = document.querySelector('#pc_file_name').files[0].name;
+      if (FILE_NAME == "") {
+        return;
+      } else if (FILE_NAME != "") {
+        let url = document.location.href;
+        const SUB_URL = url.substring(0, url.length - 10);
+        const ZONE_DATA = this.fixed_img_count.img_data;
+        if (
+          ZONE_DATA.find(function (item, index, array) {
+            return item.foucs == true;
+          })
+        ) {
+          let target = ZONE_DATA.find(function (item, index, array) {
+            return item.foucs == true;
+          });
+          this.f_img_srcset = SUB_URL + "/images/pc/" + FILE_NAME;
+          target.srcset = SUB_URL + "/images/pc/" + FILE_NAME;
+        }
+      }
+
+
+    },
+    ImgXsFileName: function () {
+      const FILE_NAME = document.querySelector('#xs_file_name').files[0].name;
+      if (FILE_NAME == "") {
+        return;
+      } else if (FILE_NAME != "") {
+        let url = document.location.href;
+        const SUB_URL = url.substring(0, url.length - 10);
+        const ZONE_DATA = this.fixed_img_count.img_data;
+        if (
+          ZONE_DATA.find(function (item, index, array) {
+            return item.foucs == true;
+          })
+        ) {
+          let target = ZONE_DATA.find(function (item, index, array) {
+            return item.foucs == true;
+          });
+          this.f_img_src = SUB_URL + "/images/xs/" + FILE_NAME;
+          target.src = SUB_URL + "/images/xs/" + FILE_NAME;
+        }
+      }
+    },
     // 圖片區面板顯示
     ImgZoneDisplayOpen: function () {
       this.fixed_img_count.display = true;
@@ -855,7 +901,7 @@ var app = new Vue({
           ) +
           parseInt(
             window.getComputedStyle(document.querySelector("#scene"))
-            .paddingLeft
+              .paddingLeft
           );
         let self = this;
         let flag = true;
@@ -892,7 +938,7 @@ var app = new Vue({
           ) +
           parseInt(
             window.getComputedStyle(document.querySelector("#scene"))
-            .paddingLeft
+              .paddingLeft
           );
         let self = this;
         let flag = true;
@@ -928,7 +974,7 @@ var app = new Vue({
           ) +
           parseInt(
             window.getComputedStyle(document.querySelector("#scene"))
-            .paddingLeft
+              .paddingLeft
           );
         let self = this;
         let flag = true;
@@ -1143,14 +1189,10 @@ var app = new Vue({
       let block = document.querySelector("#projectElement");
       let projectBlock = document.querySelector("#project-setting");
 
-      console.log("click trigger");
-
       if (block.classList.contains("active")) {
         block.classList.remove("active");
-        console.log("remove active");
       } else {
         block.classList.add("active");
-        console.log("add active");
       }
     }
   },
