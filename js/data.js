@@ -1,6 +1,9 @@
 var app = new Vue({
   el: "#zone_desktop",
   data: {
+    // 桌機版手機版狀態
+    pc_status: true,
+    mobile_status: false,
     // 專案資料
     fixed_project_data: {
       name_project: "",
@@ -16,7 +19,8 @@ var app = new Vue({
     fixed_img_count: {
       display: false,
       img_file_name: "",
-      pc_img_data: []
+      pc_img_data: [],
+      mob_img_data: [],
     },
     f_img_width: "",
     f_img_border: "",
@@ -29,7 +33,8 @@ var app = new Vue({
     // 文字區資料
     fixed_text_count: {
       display: false,
-      pc_text_data: []
+      pc_text_data: [],
+      mob_text_data: [],
     },
     f_text_content: "",
     f_text_width: "",
@@ -48,7 +53,8 @@ var app = new Vue({
     // 按鈕區資料
     fixed_btn_count: {
       display: false,
-      pc_btn_data: []
+      pc_btn_data: [],
+      mob_btn_data: [],
     },
     f_btn_content: "",
     f_btn_width: "",
@@ -559,6 +565,35 @@ var app = new Vue({
 
   },
   methods: {
+    // 桌機手機圖片判斷
+    JudgePcMobile_Img: function () {
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_img_count.pc_img_data;
+        console.log(ZONE_DATA);
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_img_count.mob_img_data;
+        console.log(ZONE_DATA);
+      }
+    },
+    // 桌機手機文字判斷
+    JudgePcMobile_Text: function () {
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_text_count.pc_text_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_text_count.mob_text_data;
+      }
+    },
+    // 桌機手機按鈕判斷
+    JudgePcMobile_Btn: function () {
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_btn_count.mob_btn_data;
+      }
+    },
     // 上傳圖片路徑
     ImgPcFileName: function () {
       const FILE_NAME = document.querySelector('#pc_file_name').files[0].name;
@@ -901,7 +936,7 @@ var app = new Vue({
           ) +
           parseInt(
             window.getComputedStyle(document.querySelector("#scene"))
-              .paddingLeft
+            .paddingLeft
           );
         let self = this;
         let flag = true;
@@ -938,7 +973,7 @@ var app = new Vue({
           ) +
           parseInt(
             window.getComputedStyle(document.querySelector("#scene"))
-              .paddingLeft
+            .paddingLeft
           );
         let self = this;
         let flag = true;
@@ -974,7 +1009,7 @@ var app = new Vue({
           ) +
           parseInt(
             window.getComputedStyle(document.querySelector("#scene"))
-              .paddingLeft
+            .paddingLeft
           );
         let self = this;
         let flag = true;
@@ -1194,6 +1229,16 @@ var app = new Vue({
       } else {
         block.classList.add("active");
       }
+    },
+    ToggleDestop: function () {
+      this.pc_status = true;
+      this.mobile_status = false;
+      this.JudgePcMobile_Img();
+    },
+    ToggleMobile: function () {
+      this.pc_status = false;
+      this.mobile_status = true;
+      this.JudgePcMobile_Img();
     }
   },
 });
