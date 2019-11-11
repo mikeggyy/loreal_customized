@@ -89,7 +89,12 @@ var app = new Vue({
     },
     // 圖片區數值改變
     f_img_width: function () {
-      const ZONE_DATA = this.fixed_img_count.pc_img_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_img_count.pc_img_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_img_count.mob_img_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -102,7 +107,12 @@ var app = new Vue({
       }
     },
     f_img_left: function () {
-      const ZONE_DATA = this.fixed_img_count.pc_img_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_img_count.pc_img_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_img_count.mob_img_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -115,7 +125,12 @@ var app = new Vue({
       }
     },
     f_img_top: function () {
-      const ZONE_DATA = this.fixed_img_count.pc_img_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_img_count.pc_img_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_img_count.mob_img_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -128,7 +143,12 @@ var app = new Vue({
       }
     },
     f_img_zIndex: function () {
-      const ZONE_DATA = this.fixed_img_count.pc_img_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_img_count.pc_img_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_img_count.mob_img_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -141,7 +161,12 @@ var app = new Vue({
       }
     },
     f_img_backgroundColor: function () {
-      const ZONE_DATA = this.fixed_img_count.pc_img_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_img_count.pc_img_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_img_count.mob_img_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -154,7 +179,12 @@ var app = new Vue({
       }
     },
     f_img_srcset: function () {
-      const ZONE_DATA = this.fixed_img_count.pc_img_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_img_count.pc_img_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_img_count.mob_img_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -167,7 +197,12 @@ var app = new Vue({
       }
     },
     f_img_src: function () {
-      const ZONE_DATA = this.fixed_img_count.pc_img_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_img_count.pc_img_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_img_count.mob_img_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -181,7 +216,12 @@ var app = new Vue({
     },
     // 文字區數值改變
     f_text_content: function () {
-      const ZONE_DATA = this.fixed_text_count.pc_text_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_text_count.pc_text_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_text_count.mob_text_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -195,7 +235,12 @@ var app = new Vue({
     },
 
     f_text_width: function () {
-      const ZONE_DATA = this.fixed_text_count.pc_text_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_text_count.pc_text_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_text_count.mob_text_data;
+      }
       if (
         this.fixed_text_count.pc_text_data.find(function (item, index, array) {
           return item.foucs == true;
@@ -213,7 +258,12 @@ var app = new Vue({
     },
 
     f_text_heigth: function () {
-      const ZONE_DATA = this.fixed_text_count.pc_text_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_text_count.pc_text_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_text_count.mob_text_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -227,7 +277,12 @@ var app = new Vue({
     },
 
     f_text_paddingTop: function () {
-      const ZONE_DATA = this.fixed_text_count.pc_text_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_text_count.pc_text_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_text_count.mob_text_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -241,7 +296,12 @@ var app = new Vue({
     },
 
     f_text_paddingBottom: function () {
-      const ZONE_DATA = this.fixed_text_count.pc_text_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_text_count.pc_text_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_text_count.mob_text_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -255,7 +315,12 @@ var app = new Vue({
     },
 
     f_text_paddingLeft: function () {
-      const ZONE_DATA = this.fixed_text_count.pc_text_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_text_count.pc_text_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_text_count.mob_text_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -269,7 +334,12 @@ var app = new Vue({
     },
 
     f_text_paddingRight: function () {
-      const ZONE_DATA = this.fixed_text_count.pc_text_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_text_count.pc_text_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_text_count.mob_text_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -283,7 +353,12 @@ var app = new Vue({
     },
 
     f_text_border: function () {
-      const ZONE_DATA = this.fixed_text_count.pc_text_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_text_count.pc_text_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_text_count.mob_text_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -297,7 +372,12 @@ var app = new Vue({
     },
 
     f_text_color: function () {
-      const ZONE_DATA = this.fixed_text_count.pc_text_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_text_count.pc_text_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_text_count.mob_text_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -311,7 +391,12 @@ var app = new Vue({
     },
 
     f_text_backgroundColor: function () {
-      const ZONE_DATA = this.fixed_text_count.pc_text_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_text_count.pc_text_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_text_count.mob_text_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -325,7 +410,12 @@ var app = new Vue({
     },
 
     f_text_fontSize: function () {
-      const ZONE_DATA = this.fixed_text_count.pc_text_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_text_count.pc_text_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_text_count.mob_text_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -339,7 +429,12 @@ var app = new Vue({
     },
 
     f_text_zIndex: function () {
-      const ZONE_DATA = this.fixed_text_count.pc_text_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_text_count.pc_text_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_text_count.mob_text_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -353,7 +448,12 @@ var app = new Vue({
     },
 
     f_text_top: function () {
-      const ZONE_DATA = this.fixed_text_count.pc_text_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_text_count.pc_text_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_text_count.mob_text_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -367,7 +467,12 @@ var app = new Vue({
     },
 
     f_text_left: function () {
-      const ZONE_DATA = this.fixed_text_count.pc_text_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_text_count.pc_text_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_text_count.mob_text_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -381,7 +486,12 @@ var app = new Vue({
     },
     // 圖片區數值改變
     f_btn_content: function () {
-      const ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_btn_count.mob_btn_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -394,7 +504,12 @@ var app = new Vue({
       }
     },
     f_btn_href: function () {
-      const ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_btn_count.mob_btn_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -407,7 +522,12 @@ var app = new Vue({
       }
     },
     f_btn_width: function () {
-      const ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_btn_count.mob_btn_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -420,7 +540,12 @@ var app = new Vue({
       }
     },
     f_btn_zIndex: function () {
-      const ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_btn_count.mob_btn_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -433,7 +558,12 @@ var app = new Vue({
       }
     },
     f_btn_border: function () {
-      const ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_btn_count.mob_btn_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -446,7 +576,12 @@ var app = new Vue({
       }
     },
     f_btn_backgroundColor: function () {
-      const ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_btn_count.mob_btn_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -459,7 +594,12 @@ var app = new Vue({
       }
     },
     f_btn_fontSize: function () {
-      const ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_btn_count.mob_btn_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -472,7 +612,12 @@ var app = new Vue({
       }
     },
     f_btn_color: function () {
-      const ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_btn_count.mob_btn_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -485,7 +630,12 @@ var app = new Vue({
       }
     },
     f_btn_paddingTop: function () {
-      const ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_btn_count.mob_btn_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -498,7 +648,12 @@ var app = new Vue({
       }
     },
     f_btn_paddingRight: function () {
-      const ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_btn_count.mob_btn_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -511,7 +666,12 @@ var app = new Vue({
       }
     },
     f_btn_paddingBottom: function () {
-      const ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_btn_count.mob_btn_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -524,7 +684,12 @@ var app = new Vue({
       }
     },
     f_btn_paddingLeft: function () {
-      const ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_btn_count.mob_btn_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -537,7 +702,12 @@ var app = new Vue({
       }
     },
     f_btn_left: function () {
-      const ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_btn_count.mob_btn_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -550,7 +720,12 @@ var app = new Vue({
       }
     },
     f_btn_top: function () {
-      const ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_btn_count.mob_btn_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -570,10 +745,8 @@ var app = new Vue({
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_img_count.pc_img_data;
-        console.log(ZONE_DATA);
       } else if (this.mobile_status == true) {
         ZONE_DATA = this.fixed_img_count.mob_img_data;
-        console.log(ZONE_DATA);
       }
     },
     // 桌機手機文字判斷
@@ -602,7 +775,12 @@ var app = new Vue({
       } else if (FILE_NAME != "") {
         let url = document.location.href;
         const SUB_URL = url.substring(0, url.length - 10);
-        const ZONE_DATA = this.fixed_img_count.pc_img_data;
+        let ZONE_DATA;
+        if (this.pc_status == true) {
+          ZONE_DATA = this.fixed_img_count.pc_img_data;
+        } else if (this.mobile_status == true) {
+          ZONE_DATA = this.fixed_img_count.mob_img_data;
+        }
         if (
           ZONE_DATA.find(function (item, index, array) {
             return item.foucs == true;
@@ -625,7 +803,12 @@ var app = new Vue({
       } else if (FILE_NAME != "") {
         let url = document.location.href;
         const SUB_URL = url.substring(0, url.length - 10);
-        const ZONE_DATA = this.fixed_img_count.pc_img_data;
+        let ZONE_DATA;
+        if (this.pc_status == true) {
+          ZONE_DATA = this.fixed_img_count.pc_img_data;
+        } else if (this.mobile_status == true) {
+          ZONE_DATA = this.fixed_img_count.mob_img_data;
+        }
         if (
           ZONE_DATA.find(function (item, index, array) {
             return item.foucs == true;
@@ -662,7 +845,12 @@ var app = new Vue({
     },
     // 創建的新圖片資料傳入input值
     ImgInsertIntoInput: function () {
-      const ZONE_DATA = this.fixed_img_count.pc_img_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_img_count.pc_img_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_img_count.mob_img_data;
+      }
       this.f_img_width = ZONE_DATA[ZONE_DATA.length - 1].width;
       this.f_img_border = ZONE_DATA[ZONE_DATA.length - 1].border;
       this.f_img_backgroundColor =
@@ -676,7 +864,12 @@ var app = new Vue({
     },
     // 創建的新文字資料傳入input值
     TextInsertIntoInput: function () {
-      const ZONE_DATA = this.fixed_text_count.pc_text_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_text_count.pc_text_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_text_count.mob_text_data;
+      }
       this.f_text_content = ZONE_DATA[ZONE_DATA.length - 1].content;
       this.f_text_width = ZONE_DATA[ZONE_DATA.length - 1].width;
       this.f_text_heigth = ZONE_DATA[ZONE_DATA.length - 1].heigth;
@@ -695,7 +888,12 @@ var app = new Vue({
     },
     // 創建的新按鈕資料傳入input值
     BtnInsertIntoInput: function () {
-      const ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_btn_count.mob_btn_data;
+      }
       this.f_btn_content = ZONE_DATA[ZONE_DATA.length - 1].content;
       this.f_btn_width = ZONE_DATA[ZONE_DATA.length - 1].width;
       this.f_btn_paddingTop = ZONE_DATA[ZONE_DATA.length - 1].paddingTop;
@@ -714,7 +912,12 @@ var app = new Vue({
     },
     // 圖片表單值輸入到資料中
     ImgInputInsertIntoData: function (index) {
-      const ZONE_DATA = this.fixed_img_count.pc_img_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_img_count.pc_img_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_img_count.mob_img_data;
+      }
       this.f_img_width = ZONE_DATA[index].width;
       this.f_img_border = ZONE_DATA[index].border;
       this.f_img_backgroundColor = ZONE_DATA[index].backgroundColor;
@@ -727,7 +930,12 @@ var app = new Vue({
     },
     // 文字表單值輸入到資料中
     TextInputInsertIntoData: function (index) {
-      const ZONE_DATA = this.fixed_text_count.pc_text_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_text_count.pc_text_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_text_count.mob_text_data;
+      }
       this.f_text_content = ZONE_DATA[index].content;
       this.f_text_width = ZONE_DATA[index].width;
       this.f_text_heigth = ZONE_DATA[index].heigth;
@@ -745,7 +953,12 @@ var app = new Vue({
     },
     // 按鈕表單值輸入到資料中
     BtnInputInsertIntoData: function (index) {
-      const ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_btn_count.mob_btn_data;
+      }
       this.f_btn_content = ZONE_DATA[index].content;
       this.f_btn_width = ZONE_DATA[index].width;
       this.f_btn_paddingTop = ZONE_DATA[index].paddingTop;
@@ -763,7 +976,12 @@ var app = new Vue({
     },
     // 關掉所有圖片foucs
     CloseImgFocus: function () {
-      const ZONE_DATA = this.fixed_img_count.pc_img_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_img_count.pc_img_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_img_count.mob_img_data;
+      }
       ZONE_DATA.forEach((item, array) => {
         ZONE_DATA[array].outline = "0px transparent solid";
         ZONE_DATA[array].foucs = "false";
@@ -771,7 +989,12 @@ var app = new Vue({
     },
     // 關掉所有文字foucs
     CloseTextFocus: function () {
-      const ZONE_DATA = this.fixed_text_count.pc_text_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_text_count.pc_text_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_text_count.mob_text_data;
+      }
       ZONE_DATA.forEach((item, array) => {
         ZONE_DATA[array].outline = "0px transparent solid";
         ZONE_DATA[array].foucs = "false";
@@ -779,7 +1002,12 @@ var app = new Vue({
     },
     // 關掉所有按鈕foucs
     CloseBtnFocus: function () {
-      const ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_btn_count.mob_btn_data;
+      }
       ZONE_DATA.forEach((item, array) => {
         ZONE_DATA[array].outline = "0px transparent solid";
         ZONE_DATA[array].foucs = "false";
@@ -787,37 +1015,67 @@ var app = new Vue({
     },
     // 打開新增的圖片outline
     OpenImgFocus: function () {
-      const ZONE_DATA = this.fixed_img_count.pc_img_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_img_count.pc_img_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_img_count.mob_img_data;
+      }
       ZONE_DATA[ZONE_DATA.length - 1].outline = "1px #aaa dashed";
       ZONE_DATA[ZONE_DATA.length - 1].foucs = true;
     },
     // 打開新增的文字outline
     OpenTextFocus: function () {
-      const ZONE_DATA = this.fixed_text_count.pc_text_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_text_count.pc_text_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_text_count.mob_text_data;
+      }
       ZONE_DATA[ZONE_DATA.length - 1].outline = "1px #aaa dashed";
       ZONE_DATA[ZONE_DATA.length - 1].foucs = true;
     },
     // 打開新增的按鈕outline
     OpenBtnFocus: function () {
-      const ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_btn_count.mob_btn_data;
+      }
       ZONE_DATA[ZONE_DATA.length - 1].outline = "1px #aaa dashed";
       ZONE_DATA[ZONE_DATA.length - 1].foucs = true;
     },
     // 打開被選取的圖片outline
     OpenImgClickFocus: function (index) {
-      const ZONE_DATA = this.fixed_img_count.pc_img_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_img_count.pc_img_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_img_count.mob_img_data;
+      }
       ZONE_DATA[index].outline = "1px #aaa dashed";
       ZONE_DATA[index].foucs = true;
     },
     // 打開被選取的文字outline
     OpenTextClickFocus: function (index) {
-      const ZONE_DATA = this.fixed_text_count.pc_text_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_text_count.pc_text_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_text_count.mob_text_data;
+      }
       ZONE_DATA[index].outline = "1px #aaa dashed";
       ZONE_DATA[index].foucs = true;
     },
     // 打開被選取的按鈕outline
     OpenBtnClickFocus: function (index) {
-      const ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_btn_count.mob_btn_data;
+      }
       ZONE_DATA[index].outline = "1px #aaa dashed";
       ZONE_DATA[index].foucs = true;
     },
@@ -922,7 +1180,12 @@ var app = new Vue({
     },
     // 圖片區滑鼠移動抓取x,y事件
     ImgMouseMoveGetXY: function () {
-      const ZONE_DATA = this.fixed_img_count.pc_img_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_img_count.pc_img_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_img_count.mob_img_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -960,7 +1223,12 @@ var app = new Vue({
     // 文字區滑鼠移動抓取x,y事件
     TextMouseMoveGetXY: function () {
       let e = event;
-      const ZONE_DATA = this.fixed_text_count.pc_text_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_text_count.pc_text_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_text_count.mob_text_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -996,7 +1264,12 @@ var app = new Vue({
     // 按鈕區滑鼠移動抓取x,y事件
     BtnMouseMoveGetXY: function () {
       let e = event;
-      const ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_btn_count.mob_btn_data;
+      }
       if (
         ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
@@ -1031,7 +1304,12 @@ var app = new Vue({
     },
     // 新增圖片按鈕
     ImgAddImg: function () {
-      const ZONE_DATA = this.fixed_img_count.pc_img_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_img_count.pc_img_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_img_count.mob_img_data;
+      }
       // 送資料進去陣列
       let url = document.location.href;
       const SUB_URL = url.substring(0, url.length - 10);
@@ -1061,7 +1339,12 @@ var app = new Vue({
     },
     // 新增文字按鈕
     TextAddText: function () {
-      const ZONE_DATA = this.fixed_text_count.pc_text_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_text_count.pc_text_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_text_count.mob_text_data;
+      }
       // 送資料進去陣列
       let style = {
         content: "文字",
@@ -1095,7 +1378,12 @@ var app = new Vue({
     },
     // 新增按鈕的按鈕
     BtnAddBtn: function () {
-      const ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_btn_count.mob_btn_data;
+      }
       // 送資料進去陣列
       let style = {
         content: "按鈕",
@@ -1173,28 +1461,46 @@ var app = new Vue({
     },
     // 圖片區取消按鈕
     ImgRemoveBtn: function () {
-      let i = this.fixed_img_count.pc_img_data.findIndex(function (item) {
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_img_count.pc_img_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_img_count.mob_img_data;
+      }
+      let i = ZONE_DATA.findIndex(function (item) {
         return item.foucs == true;
-      })
-      this.fixed_img_count.pc_img_data.splice(i, 1)
+      });
+      ZONE_DATA.splice(i, 1)
       this.ClearImgInputValue();
       this.ImgZoneDisplayClose();
     },
     // 文字區取消按鈕
     TextRemoveBtn: function () {
-      let i = this.fixed_text_count.pc_text_data.findIndex(function (item) {
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_text_count.pc_text_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_text_count.mob_text_data;
+      }
+      let i = ZONE_DATA.findIndex(function (item) {
         return item.foucs == true;
-      })
-      this.fixed_text_count.pc_text_data.splice(i, 1)
+      });
+      ZONE_DATA.splice(i, 1)
       this.ClearTextInputValue();
       this.TextZoneDisplayClose();
     },
     // 按鈕區取消按鈕
     BtnRemoveBtn: function () {
-      let i = this.fixed_btn_count.pc_btn_data.findIndex(function (item) {
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_btn_count.mob_btn_data;
+      }
+      let i = ZONE_DATA.findIndex(function (item) {
         return item.foucs == true;
-      })
-      this.fixed_btn_count.pc_btn_data.splice(i, 1)
+      });
+      ZONE_DATA.splice(i, 1)
       this.ClearBtnInputValue();
       this.BtnZoneDisplayClose();
     },
@@ -1231,14 +1537,36 @@ var app = new Vue({
       }
     },
     ToggleDestop: function () {
+      let toggle_destop_moblie = document.querySelector('.toggle-destop-moblie');
+      toggle_destop_moblie.querySelectorAll('div')[0].style.backgroundColor='red';
+      toggle_destop_moblie.querySelectorAll('div')[1].style.backgroundColor='transparent';
       this.pc_status = true;
       this.mobile_status = false;
-      this.JudgePcMobile_Img();
+      this.CloseImgFocus();
+      this.ClearImgInputValue();
+      this.ImgZoneDisplayClose();
+      this.CloseTextFocus();
+      this.ClearTextInputValue();
+      this.TextZoneDisplayClose();
+      this.CloseBtnFocus();
+      this.ClearBtnInputValue();
+      this.BtnZoneDisplayClose();
     },
     ToggleMobile: function () {
+      let toggle_destop_moblie = document.querySelector('.toggle-destop-moblie');
+      toggle_destop_moblie.querySelectorAll('div')[0].style.backgroundColor='transparent';
+      toggle_destop_moblie.querySelectorAll('div')[1].style.backgroundColor='red';
       this.pc_status = false;
       this.mobile_status = true;
-      this.JudgePcMobile_Img();
+      this.CloseImgFocus();
+      this.ClearImgInputValue();
+      this.ImgZoneDisplayClose();
+      this.CloseTextFocus();
+      this.ClearTextInputValue();
+      this.TextZoneDisplayClose();
+      this.CloseBtnFocus();
+      this.ClearBtnInputValue();
+      this.BtnZoneDisplayClose();
     }
   },
 });

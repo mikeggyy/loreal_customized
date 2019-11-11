@@ -631,7 +631,25 @@
         </div>
         <!-- 手機區 -->
         <div class="display_zone_mobile" v-show="mobile_status">
-
+          <!-- 產生圖片 -->
+          <div class="main-img" v-on:mousedown="ImgMouseMoveGetXY()" v-bind:style="fixed_img_count.mob_img_data[index]"
+            v-for="(item,index) in fixed_img_count.mob_img_data">
+            <picture class="img" v-on:mousedown="ImgOutlineOpen(index)">
+              <source media="(min-width:992px)" v-bind:srcset="fixed_img_count.mob_img_data[index].srcset" />
+              <img v-bind:src="fixed_img_count.mob_img_data[index].src" alt="" />
+            </picture>
+          </div>
+          <!-- 產生文字 -->
+          <div class="text" v-on:mousedown="TextMouseMoveGetXY()" onSelectStart="event.returnValue=false"
+            v-bind:style="fixed_text_count.mob_text_data[index]" v-for="(item,index) in fixed_text_count.mob_text_data">
+            <p v-on:mousedown="TextOutlineOpen(index)" v-html="fixed_text_count.mob_text_data[index].content"></p>
+          </div>
+          <!-- 產生按鈕 -->
+          <div class="btn" v-on:mousedown="BtnMouseMoveGetXY()">
+            <a v-on:mousedown="BtnOutlineOpen(index)" onSelectStart="event.returnValue=false"
+              v-bind:style="fixed_btn_count.mob_btn_data[index]" v-for="(item,index) in fixed_btn_count.mob_btn_data"
+              v-html="fixed_btn_count.mob_btn_data[index].content" target="blank"></a>
+          </div>
         </div>
       </div>
     </div>
@@ -646,7 +664,7 @@
     </div>
     <!-- 桌機版手機板切換 -->
     <div class="toggle-destop-moblie">
-      <div v-on:click="ToggleDestop()">桌機版</div>
+      <div style="background-color: red;" v-on:click="ToggleDestop()">桌機版</div>
       <div v-on:click="ToggleMobile()">手機板</div>
     </div>
   </div>
@@ -659,7 +677,6 @@
       right: 0;
       top: 35%;
     }
-
     .toggle-destop-moblie div {
       padding-top: 15px;
       padding-bottom: 15px;
