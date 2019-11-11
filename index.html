@@ -15,7 +15,7 @@
 </head>
 
 <body onDRAGSTART="window.event.returnValue=false">
-  <div class="container" id="app">
+  <div class="container" id="zone_desktop">
     <div class="panel">
       <div class="panel-trigger" v-on:click="TogglePanel()">
         <span></span>
@@ -608,28 +608,27 @@
     <div class="scene" id="scene" draggable="false" onSelectStart="event.returnValue=false">
       <div class="scene-container" id="loreal-compaign" onSelectStart="event.returnValue=false">
         <!-- 產生圖片 -->
-        <div class="main-img" v-on:mousedown="ImgMouseMoveGetXY()" v-bind:style="fixed_img_count.img_data[index]"
-          v-for="(item,index) in fixed_img_count.img_data">
+        <div class="main-img" v-on:mousedown="ImgMouseMoveGetXY()" v-bind:style="fixed_img_count.pc_img_data[index]"
+          v-for="(item,index) in fixed_img_count.pc_img_data">
           <picture class="img" v-on:mousedown="ImgOutlineOpen(index)">
-            <source media="(min-width:992px)" v-bind:srcset="fixed_img_count.img_data[index].srcset" />
-            <img v-bind:src="fixed_img_count.img_data[index].src" alt="" />
+            <source media="(min-width:992px)" v-bind:srcset="fixed_img_count.pc_img_data[index].srcset" />
+            <img v-bind:src="fixed_img_count.pc_img_data[index].src" alt="" />
           </picture>
         </div>
         <!-- 產生文字 -->
         <div class="text" v-on:mousedown="TextMouseMoveGetXY()" onSelectStart="event.returnValue=false"
-          v-bind:style="fixed_text_count.text_data[index]" v-for="(item,index) in fixed_text_count.text_data">
-          <p v-on:mousedown="TextOutlineOpen(index)" v-html="fixed_text_count.text_data[index].content"></p>
+          v-bind:style="fixed_text_count.pc_text_data[index]" v-for="(item,index) in fixed_text_count.pc_text_data">
+          <p v-on:mousedown="TextOutlineOpen(index)" v-html="fixed_text_count.pc_text_data[index].content"></p>
         </div>
         <!-- 產生按鈕 -->
         <div class="btn" v-on:mousedown="BtnMouseMoveGetXY()">
           <a v-on:mousedown="BtnOutlineOpen(index)" onSelectStart="event.returnValue=false"
-            v-bind:style="fixed_btn_count.btn_data[index]" v-for="(item,index) in fixed_btn_count.btn_data"
-            v-html="fixed_btn_count.btn_data[index].content" target="blank"></a>
+            v-bind:style="fixed_btn_count.pc_btn_data[index]" v-for="(item,index) in fixed_btn_count.pc_btn_data"
+            v-html="fixed_btn_count.pc_btn_data[index].content" target="blank"></a>
         </div>
-
-
       </div>
     </div>
+    <!-- 程式碼顯示 -->
     <div id="code">
       <div class="blur-bg"></div>
       <div class="code-container">
@@ -637,10 +636,30 @@
         <div class="code-wrapper" v-text="zone_code"></div>
       </div>
     </div>
+    <!-- 桌機版手機板切換 -->
+    <div class="toggle-destop-moblie">
+      <div>桌機版</div>
+      <div>手機板</div>
+    </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/js/all.min.js"></script>
   <script src="./js/data.js"></script>
+  <style>
+    .toggle-destop-moblie {
+      position: fixed;
+      right: 0;
+      top: 35%;
+    }
+
+    .toggle-destop-moblie div {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-left: 5px;
+      padding-right: 5px;
+      border: 1px black solid;
+    }
+  </style>
 </body>
 
 </html>
