@@ -1459,34 +1459,7 @@ var app = new Vue({
       document.querySelector("#code").style.display = "block";
       let pc_textChang = pc_code.replace(new RegExp('.png', 'g'), '.png?$staticlink$').replace(new RegExp('.jpg', 'g'), '.jpg?$staticlink$').replace(new RegExp('.gif', 'g'), '.gif?$staticlink$').replace(new RegExp('./images', 'g'), 'event-o2o-page/' + folder_name + '/images');
       let mob_textChang = mob_code.replace(new RegExp('.png', 'g'), '.png?$staticlink$').replace(new RegExp('.jpg', 'g'), '.jpg?$staticlink$').replace(new RegExp('.gif', 'g'), '.gif?$staticlink$').replace(new RegExp('./images', 'g'), 'event-o2o-page/' + folder_name + '/images');
-      this.zone_code = `<style>
-      @media (min-width:992px) {
-        .display_zone_mobile {
-          display: none;
-        }
-      }
-    
-      @media (max-width:991.9px) {
-        .display_zone_destop {
-          display: none;
-        }
-      }
-    
-      .toggle-destop-moblie {
-        position: fixed;
-        right: 0;
-        top: 35%;
-      }
-    
-      .toggle-destop-moblie div {
-        padding-top: 15px;
-        padding-bottom: 15px;
-        padding-left: 5px;
-        padding-right: 5px;
-        border: 1px black solid;
-        cursor: pointer;
-      }
-    </style>` + pc_textChang + mob_textChang;
+      this.zone_code = `<style>@media (min-width:992px){.display_zone_mobile {display: none;}}@media (max-width:991.9px) {.display_zone_destop {display: none;}}.toggle-destop-moblie {position: fixed;right: 0;top: 35%;} .toggle-destop-moblie div {padding-top: 15px;padding-bottom: 15px; padding-left: 5px;padding-right: 5px; border: 1px black solid; cursor: pointer;}</style>` + pc_textChang + mob_textChang;
     },
     // 圖片區取消按鈕
     ImgRemoveBtn: function () {
