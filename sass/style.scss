@@ -103,6 +103,7 @@ $panelside-width: 280px;
         cursor: pointer;
         z-index: 6;
         transition: all 0.35s ease;
+        margin-top: -2px;
       }
     }
 
@@ -356,6 +357,78 @@ $panelside-width: 280px;
       margin: auto;
       // border: 1px solid blue;
       // background-color: rgba(darkblue, 0.3);
+    }
+  }
+
+  // mobile / desktop mode
+  .toggle-destop-moblie {
+    position: fixed;
+    right: 0;
+    top: 0;
+    // background-color: #eee;
+    border: 1px solid #aaa;
+    color: #bbb;
+    text-align: center;
+    line-height: 1;
+    font-size: 0;
+    &::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      left: 0;
+      top: 0;
+      background-color: #36b9e0;
+      z-index: 0;
+      transition: all 0.25s ease;
+    }
+    &.is-desktop {
+      div {
+        &:first-child {
+          color: #333;
+          transition: all 0.1s ease;
+          transition-delay: 0.1s;
+        }
+        &:nth-child(2) {
+          color: #bbb;
+          transition: all 0.1s ease;
+          transition-delay: 0.1s;
+        }
+      }
+    }
+    &.is-mobile {
+      &::before {
+        transform: translateX(28px);
+        transition: all 0.25s ease;
+      }
+      div {
+        &:first-child {
+          color: #bbb;
+          transition: all 0.1s ease;
+          transition-delay: 0.1s;
+        }
+        &:nth-child(2) {
+          color: #333;
+          transition: all 0.1s ease;
+          transition-delay: 0.1s;
+        }
+      }
+    }
+    div {
+      position: relative;
+      width: 28px;
+      height: 28px;
+      margin: 0;
+      padding: 6px 1px 4px;
+      display: inline-block;
+      cursor: pointer;
+      font-size: 15px;
+      box-sizing: border-box;
+      svg {
+        position: relative;
+        z-index: 1;
+      }
     }
   }
 
