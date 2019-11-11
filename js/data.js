@@ -1454,10 +1454,39 @@ var app = new Vue({
     // 印出程式碼
     PrintCode: function () {
       const folder_name = this.fixed_project_data.name_folder;
-      let code = document.querySelector("#scene").innerHTML;
+      let pc_code = document.querySelector(".display_zone_destop").innerHTML;
+      let mob_code = document.querySelector(".display_zone_mobile").innerHTML;
       document.querySelector("#code").style.display = "block";
-      let textChang = code.replace(new RegExp('.png', 'g'), '.png?$staticlink$').replace(new RegExp('.jpg', 'g'), '.jpg?$staticlink$').replace(new RegExp('.gif', 'g'), '.gif?$staticlink$').replace(new RegExp('./images', 'g'), 'event-o2o-page/' + folder_name + '/images');
-      this.zone_code = textChang;
+      let pc_textChang = pc_code.replace(new RegExp('.png', 'g'), '.png?$staticlink$').replace(new RegExp('.jpg', 'g'), '.jpg?$staticlink$').replace(new RegExp('.gif', 'g'), '.gif?$staticlink$').replace(new RegExp('./images', 'g'), 'event-o2o-page/' + folder_name + '/images');
+      let mob_textChang = mob_code.replace(new RegExp('.png', 'g'), '.png?$staticlink$').replace(new RegExp('.jpg', 'g'), '.jpg?$staticlink$').replace(new RegExp('.gif', 'g'), '.gif?$staticlink$').replace(new RegExp('./images', 'g'), 'event-o2o-page/' + folder_name + '/images');
+      this.zone_code = `<style>
+      @media (min-width:992px) {
+        .display_zone_mobile {
+          display: none;
+        }
+      }
+    
+      @media (max-width:991.9px) {
+        .display_zone_destop {
+          display: none;
+        }
+      }
+    
+      .toggle-destop-moblie {
+        position: fixed;
+        right: 0;
+        top: 35%;
+      }
+    
+      .toggle-destop-moblie div {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 5px;
+        padding-right: 5px;
+        border: 1px black solid;
+        cursor: pointer;
+      }
+    </style>` + pc_textChang + mob_textChang;
     },
     // 圖片區取消按鈕
     ImgRemoveBtn: function () {
@@ -1514,7 +1543,6 @@ var app = new Vue({
       let panel = document.querySelector(".panel");
       let panelSide = document.querySelector(".panelside");
       let scene = document.querySelector(".scene");
-
       if (panel.classList.contains("moveLeft")) {
         panel.classList.remove("moveLeft");
         panelSide.classList.remove("moveLeft");
@@ -1538,8 +1566,8 @@ var app = new Vue({
     },
     ToggleDestop: function () {
       let toggle_destop_moblie = document.querySelector('.toggle-destop-moblie');
-      toggle_destop_moblie.querySelectorAll('div')[0].style.backgroundColor='red';
-      toggle_destop_moblie.querySelectorAll('div')[1].style.backgroundColor='transparent';
+      toggle_destop_moblie.querySelectorAll('div')[0].style.backgroundColor = 'red';
+      toggle_destop_moblie.querySelectorAll('div')[1].style.backgroundColor = 'transparent';
       this.pc_status = true;
       this.mobile_status = false;
       this.CloseImgFocus();
@@ -1554,8 +1582,8 @@ var app = new Vue({
     },
     ToggleMobile: function () {
       let toggle_destop_moblie = document.querySelector('.toggle-destop-moblie');
-      toggle_destop_moblie.querySelectorAll('div')[0].style.backgroundColor='transparent';
-      toggle_destop_moblie.querySelectorAll('div')[1].style.backgroundColor='red';
+      toggle_destop_moblie.querySelectorAll('div')[0].style.backgroundColor = 'transparent';
+      toggle_destop_moblie.querySelectorAll('div')[1].style.backgroundColor = 'red';
       this.pc_status = false;
       this.mobile_status = true;
       this.CloseImgFocus();
