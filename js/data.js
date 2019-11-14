@@ -87,6 +87,14 @@ var app = new Vue({
   // 
   // 
   // 
+  // 
+  // 
+  // 
+  // 
+  // 
+  // 
+  // 
+  // 
   watch: {
     // 專案資料數值改變
     f_name_project: function () {
@@ -752,6 +760,12 @@ var app = new Vue({
       }
     }
   },
+  // 
+  // 
+  // 
+  // 
+  // 
+  // 
   // 
   // 
   // 
@@ -1503,7 +1517,8 @@ var app = new Vue({
         .replace(
           new RegExp("./images", "g"),
           "event-o2o-page/" + folder_name + "/images"
-        ).replace(new RegExp("margin: initial;", "g"), "margin: 0 auto;");
+        ).replace(new RegExp("margin: initial;", "g"), "margin: 0 auto;")
+        .replace(new RegExp('onclick="return false;"', "g"), '""');
       this.zone_code =
         `<style>@media (min-width:992px){.display_zone_mobile {display: none;margin:0 auto;}}@media (max-width:991.9px) {.display_zone_destop {display: none;}}</style>` +
         textChang
@@ -1591,13 +1606,12 @@ var app = new Vue({
       }
     },
     ToggleDestop: function () {
+      this.BodyHeight();
       let toggle_destop_moblie = document.querySelector(
         ".toggle-destop-moblie"
       );
-      toggle_destop_moblie.querySelectorAll("div")[0].style.backgroundColor =
-        "red";
-      toggle_destop_moblie.querySelectorAll("div")[1].style.backgroundColor =
-        "transparent";
+      toggle_destop_moblie.classList = "toggle-destop-moblie is-desktop";
+      // toggle_destop_moblie.querySelectorAll("div")[1].style.backgroundColor ="transparent";
       this.pc_status = true;
       this.mobile_status = false;
       this.CloseImgFocus();
@@ -1609,16 +1623,17 @@ var app = new Vue({
       this.CloseBtnFocus();
       this.ClearBtnInputValue();
       this.BtnZoneDisplayClose();
-      this.BodyHeight();
+
     },
     ToggleMobile: function () {
+      this.BodyHeight();
       let toggle_destop_moblie = document.querySelector(
         ".toggle-destop-moblie"
       );
-      toggle_destop_moblie.querySelectorAll("div")[0].style.backgroundColor =
-        "transparent";
-      toggle_destop_moblie.querySelectorAll("div")[1].style.backgroundColor =
-        "red";
+      toggle_destop_moblie.classList = "toggle-destop-moblie is-mobile";
+      // toggle_destop_moblie.querySelectorAll("div")[0].style.backgroundColor = "transparent";
+      // toggle_destop_moblie.querySelectorAll("div")[1].style.backgroundColor = "rgb(231, 187, 187)";
+      // toggle_destop_moblie.querySelectorAll("div")[1].style.backgroundColor ="transparent";
       this.pc_status = false;
       this.mobile_status = true;
       this.CloseImgFocus();
@@ -1630,7 +1645,6 @@ var app = new Vue({
       this.CloseBtnFocus();
       this.ClearBtnInputValue();
       this.BtnZoneDisplayClose();
-      this.BodyHeight();
     }
   }
 });

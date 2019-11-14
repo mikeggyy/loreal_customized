@@ -624,9 +624,9 @@
           </div>
           <!-- 產生按鈕 -->
           <div class="btn" v-on:mousedown="BtnMouseMoveGetXY()">
-            <a v-on:mousedown="BtnOutlineOpen(index)" onSelectStart="event.returnValue=false"
+            <a v-on:mousedown="BtnOutlineOpen(index)" onclick="return false;" onSelectStart="event.returnValue=false"
               v-bind:style="fixed_btn_count.pc_btn_data[index]" v-for="(item,index) in fixed_btn_count.pc_btn_data"
-              v-html="fixed_btn_count.pc_btn_data[index].content" target="blank"></a>
+              v-html="fixed_btn_count.pc_btn_data[index].content" v-bind:href="fixed_btn_count.pc_btn_data[index].href" target="_blank"></a>
           </div>
         </div>
         <!-- 手機區 -->
@@ -646,9 +646,9 @@
           </div>
           <!-- 產生按鈕 -->
           <div class="btn" v-on:mousedown="BtnMouseMoveGetXY()">
-            <a v-on:mousedown="BtnOutlineOpen(index)" onSelectStart="event.returnValue=false"
+            <a v-on:mousedown="BtnOutlineOpen(index)" onclick="return false;" v-bind:href="fixed_btn_count.mob_btn_data[index].href" onSelectStart="event.returnValue=false"
               v-bind:style="fixed_btn_count.mob_btn_data[index]" v-for="(item,index) in fixed_btn_count.mob_btn_data"
-              v-html="fixed_btn_count.mob_btn_data[index].content" target="blank"></a>
+              v-html="fixed_btn_count.mob_btn_data[index].content" target="_blank"></a>
           </div>
         </div>
       </div>
@@ -662,31 +662,15 @@
       </div>
     </div>
     <!-- 桌機版手機板切換 -->
-    <div class="toggle-destop-moblie">
-      <div style="background-color: red;" v-on:click="ToggleDestop()">桌機版</div>
-      <div v-on:click="ToggleMobile()">手機板</div>
+    <div class="toggle-destop-moblie is-desktop">
+      <div v-on:click="ToggleDestop()"><i class="fas fa-desktop"></i></div>
+      <div v-on:click="ToggleMobile()"><i class="fas fa-mobile-alt"></i></div>
     </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/js/all.min.js"></script>
   <script src="./js/data.js"></script>
-  <style>
-    .toggle-destop-moblie {
-      position: fixed;
-      right: 0;
-      top: 35%;
-    }
 
-    .toggle-destop-moblie div {
-      padding-top: 15px;
-      padding-bottom: 15px;
-      padding-left: 5px;
-      padding-right: 5px;
-      border: 1px black solid;
-      cursor: pointer;
-      
-    }
-  </style>
 </body>
 
 </html>
