@@ -44,7 +44,7 @@
             <div class="row row-flex">
               <div class="flex-col-m-1">
                 <div class="row row-flex">
-                  <div class="label">資料夾</div>
+                  <div class="label">資料夾<div class="required">*</div></div>
                   <div class="content">
                     <input type="text" class="ipnut-s" />
                   </div>
@@ -109,6 +109,8 @@
               <span>圖片設定</span>
             </div>
           </div>
+          <!-- 判斷手機/電腦 -->
+          <!-- <div id="block-setting" class="element-setting" :class="{'is-desktop':this.pc_status, 'is-mobile':this.mobile_status}"> -->
           <div id="block-setting" class="element-setting">
             <div class="row row-flex">
               <div class="flex-col-m-2">
@@ -161,8 +163,8 @@
             </div>
             <div class="row row-flex">
               <div class="flex-col-m-1">
-                <div class="row row-flex">
-                  <div class="label">圖片路徑(pc)</div>
+                <div class="row row-flex flex-top">
+                  <div class="label">圖片路徑</div>
                   <div class="content">
                     <input type="text" class="ipnut-s" v-model="f_img_srcset" />
                     <input type="file" id="pc_file_name" v-on:change="ImgPcFileName()">
@@ -172,8 +174,8 @@
             </div>
             <div class="row row-flex">
               <div class="flex-col-m-1">
-                <div class="row row-flex">
-                  <div class="label">圖片路徑(xs)</div>
+                <div class="row row-flex flex-top">
+                  <div class="label">圖片路徑</div>
                   <div class="content">
                     <input type="text" class="ipnut-s" v-model="f_img_src" />
                     <input type="file" id="xs_file_name" v-on:change="ImgXsFileName()">
@@ -663,8 +665,8 @@
     </div>
     <!-- 桌機版手機板切換 -->
     <div class="toggle-destop-moblie is-desktop">
-      <div v-on:click="ToggleDestop()"><i class="fas fa-desktop"></i></div>
-      <div v-on:click="ToggleMobile()"><i class="fas fa-mobile-alt"></i></div>
+      <div v-on:click="ToggleDestop()" title="電腦版"><i class="fas fa-desktop"></i></div>
+      <div v-on:click="ToggleMobile()" title="手機版"><i class="fas fa-mobile-alt"></i></div>
     </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

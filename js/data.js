@@ -1325,7 +1325,7 @@ var app = new Vue({
         left: 0,
         media: "(min-width:992px)",
         srcset: "./images/pc/bg_01.jpg",
-        src: "./images/pc/bg_01.jpg"
+        src: "./images/xs/bg_01.jpg"
       };
       ZONE_DATA.push(style);
       this.CloseImgFocus();

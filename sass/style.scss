@@ -187,6 +187,12 @@ $panelside-width: 280px;
             }
           }
 
+          .flex-top {
+            .label {
+              padding-top: 7px;
+            }
+          }
+
           .label {
             width: 65px;
             padding-right: 10px;
@@ -198,6 +204,28 @@ $panelside-width: 280px;
               textarea {
                 width: 100%;
               }
+            }
+
+            .required {
+              display: inline-block;
+              color: #a01515;
+              vertical-align: super;
+            }
+          }
+        }
+      }
+      #block-setting {
+        &.is-desktop {
+          > .row-flex {
+            &:nth-last-of-type(1) {
+              display: none;
+            }
+          }
+        }
+        &.is-mobile {
+          > .row-flex {
+            &:nth-last-of-type(2) {
+              display: none;
             }
           }
         }
@@ -365,12 +393,12 @@ $panelside-width: 280px;
     position: fixed;
     right: 0;
     top: 0;
-    // background-color: #eee;
     border: 1px solid #aaa;
     color: #bbb;
     text-align: center;
     line-height: 1;
     font-size: 0;
+    z-index: 90;
     &::before {
       content: "";
       display: inline-block;
