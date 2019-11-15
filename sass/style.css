@@ -698,6 +698,7 @@ img {
   z-index: 6;
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
+  margin-top: -2px;
 }
 
 .container .panel .element {
@@ -983,6 +984,88 @@ img {
   width: 100%;
   position: relative;
   margin: auto;
+}
+
+.container .toggle-destop-moblie {
+  position: fixed;
+  right: 0;
+  top: 0;
+  border: 1px solid #aaa;
+  color: #bbb;
+  text-align: center;
+  line-height: 1;
+  font-size: 0;
+}
+
+.container .toggle-destop-moblie::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  left: 0;
+  top: 0;
+  background-color: #36b9e0;
+  z-index: 0;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.container .toggle-destop-moblie.is-desktop div:first-child {
+  color: #333;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+}
+
+.container .toggle-destop-moblie.is-desktop div:nth-child(2) {
+  color: #bbb;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+}
+
+.container .toggle-destop-moblie.is-mobile::before {
+  -webkit-transform: translateX(28px);
+          transform: translateX(28px);
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.container .toggle-destop-moblie.is-mobile div:first-child {
+  color: #bbb;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+}
+
+.container .toggle-destop-moblie.is-mobile div:nth-child(2) {
+  color: #333;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+}
+
+.container .toggle-destop-moblie div {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  padding: 6px 1px 4px;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container .toggle-destop-moblie div svg {
+  position: relative;
+  z-index: 1;
 }
 
 .container #code {
