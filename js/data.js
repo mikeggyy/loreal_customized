@@ -782,6 +782,11 @@ var app = new Vue({
   // 
   // 
   methods: {
+    //視窗置頂
+    GoScrollTop:function(){
+      document.querySelector('html').scrollTop=0;
+    },
+    // 給予桌機手機節點高度
     BodyHeight: function () {
       let body_height = document.body.scrollHeight;
       if (this.pc_status == true) {
@@ -839,8 +844,8 @@ var app = new Vue({
           let target = ZONE_DATA.find(function (item, index, array) {
             return item.foucs == true;
           });
-          this.f_img_srcset = SUB_URL + "/images/pc/" + FILE_NAME;
-          target.srcset = SUB_URL + "/images/pc/" + FILE_NAME;
+          this.f_img_srcset =  "./images/pc/" + FILE_NAME;
+          target.srcset = "./images/pc/" + FILE_NAME;
         }
       }
     },
@@ -849,8 +854,6 @@ var app = new Vue({
       if (FILE_NAME == "") {
         return;
       } else if (FILE_NAME != "") {
-        let url = document.location.href;
-        const SUB_URL = url.substring(0, url.length - 10);
         let ZONE_DATA;
         if (this.pc_status == true) {
           ZONE_DATA = this.fixed_img_count.pc_img_data;
@@ -865,8 +868,8 @@ var app = new Vue({
           let target = ZONE_DATA.find(function (item, index, array) {
             return item.foucs == true;
           });
-          this.f_img_src = SUB_URL + "/images/xs/" + FILE_NAME;
-          target.src = SUB_URL + "/images/xs/" + FILE_NAME;
+          this.f_img_src = "./images/xs/" + FILE_NAME;
+          target.src = "./images/xs/" + FILE_NAME;
         }
       }
     },
@@ -1362,7 +1365,7 @@ var app = new Vue({
       let url = document.location.href;
       const SUB_URL = url.substring(0, url.length - 10);
       let style = {
-        content: "預設文字",
+        content: "文字",
         foucs: false,
         display: "block",
         outline: "0px transparent solid",
@@ -1384,6 +1387,7 @@ var app = new Vue({
       this.OpenImgFocus();
       this.ImgInsertIntoInput();
       this.ImgZoneDisplayOpen();
+      this.GoScrollTop();
     },
     // 新增文字按鈕
     TextAddText: function () {
@@ -1395,7 +1399,7 @@ var app = new Vue({
       }
       // 送資料進去陣列
       let style = {
-        content: "文字",
+        content: "新增文字",
         foucs: false,
         display: "block",
         outline: "0px transparent solid",
@@ -1412,7 +1416,7 @@ var app = new Vue({
         border: "0px #000 solid",
         color: "black",
         backgroundColor: "transparent",
-        fontSize: "16px",
+        fontSize: "22px",
         zIndex: "2",
         position: "absolute",
         top: 0,
@@ -1423,6 +1427,7 @@ var app = new Vue({
       this.OpenTextFocus();
       this.TextInsertIntoInput();
       this.TextZoneDisplayOpen();
+      this.GoScrollTop();
     },
     // 新增按鈕的按鈕
     BtnAddBtn: function () {
@@ -1434,7 +1439,7 @@ var app = new Vue({
       }
       // 送資料進去陣列
       let style = {
-        content: "按鈕",
+        content: "新增按鈕",
         foucs: false,
         display: "block",
         outline: "0px transparent solid",
@@ -1447,7 +1452,7 @@ var app = new Vue({
         border: "0px #000 solid",
         color: "black",
         backgroundColor: "transparent",
-        fontSize: "16px",
+        fontSize: "22px",
         zIndex: "2",
         position: "absolute",
         top: 0,
@@ -1459,6 +1464,7 @@ var app = new Vue({
       this.OpenBtnFocus();
       this.BtnInsertIntoInput();
       this.BtnZoneDisplayOpen();
+      this.GoScrollTop();
     },
     // 打開圖片外框
     ImgOutlineOpen: function (index) {
@@ -1511,16 +1517,17 @@ var app = new Vue({
         document.querySelector('#add_size').media = "(min-width:992px)";
       }
       let textChang = code
-        .replace(new RegExp(".png", "g"), ".png?$staticlink$")
-        .replace(new RegExp(".jpg", "g"), ".jpg?$staticlink$")
-        .replace(new RegExp(".gif", "g"), ".gif?$staticlink$")
+        .replace(new RegExp('.png', 'g'), '.png?$staticlink$')
+        .replace(new RegExp('.jpg', 'g'), '.jpg?$staticlink$')
+        .replace(new RegExp('.gif', 'g'), '.gif?$staticlink$')
         .replace(
-          new RegExp("./images", "g"),
-          "event-o2o-page/" + folder_name + "/images"
-        ).replace(new RegExp("margin: initial;", "g"), "margin: 0 auto;")
-        .replace(new RegExp('onclick="return false;"', "g"), '""');
+          new RegExp('./images', 'g'),
+          'event-o2o-page/' + folder_name + '/images'
+        ).replace(new RegExp('margin: initial;', 'g'), 'margin: 0 auto;')
+        .replace(new RegExp('onclick="return false;"', 'g'), '""')
+        .replace(new RegExp('display: none;','g'),'display:block');
       this.zone_code =
-        `<style>@media (min-width:992px){.display_zone_mobile {display: none;margin:0 auto;}}@media (max-width:991.9px) {.display_zone_destop {display: none;}}</style>` +
+        `<style>@media (min-width:992px){.display_zone_mobile {display: none !important;margin:0 auto;}}@media (max-width:991.9px) {.display_zone_destop {display: none !important;}}</style>` +
         textChang
     },
     // 圖片區取消按鈕
