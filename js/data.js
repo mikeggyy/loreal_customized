@@ -1511,10 +1511,10 @@ var app = new Vue({
     // 印出程式碼
     PrintCode: function () {
       let folder_name = this.fixed_project_data.name_folder;
-      let code = document.querySelector("#loreal-compaign").innerHTML;
-      document.querySelector("#code").style.display = "block";
+      let code = document.querySelector('#loreal-compaign').innerHTML;
+      document.querySelector('#code').style.display = 'block';
       if (document.querySelector('#add_size') != null) {
-        document.querySelector('#add_size').media = "(min-width:992px)";
+        document.querySelector('#add_size').media = '(min-width:992px)';
       }
       let textChang = code
         .replace(new RegExp('.png', 'g'), '.png?$staticlink$')
