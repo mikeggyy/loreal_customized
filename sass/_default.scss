@@ -48,6 +48,30 @@ input[type="checkbox"] {
     margin-left: 5px;
   }
 }
+input.radio-button[type="radio"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  outline: 0;
+  appearance: none;
+  cursor: pointer;
+  &:checked {
+    color: #fff;
+    & ~ label {
+      color: #fff;
+      background-color: #333;
+    }
+  }
+  & ~ label {
+    display: inline-block;
+    width: 96%;
+    max-width: 120px;
+    padding: 3px;
+    border: 1px solid #333;
+    text-align: center;
+    cursor: pointer;
+  }
+}
 textarea {
   outline: 0;
   padding: 8px 5px;
@@ -90,8 +114,11 @@ img {
 }
 .btn {
   display: inline-block;
-  padding: 5px 8px;
+  padding: 3px 8px;
   margin: 5px;
+  &.btn-lg {
+    padding: 3px 12px;
+  }
 }
 .btn-border {
   position: relative;
@@ -119,6 +146,18 @@ img {
     //   transform: translateX(0%);
     //   transition: all 0.25s ease;
     // }
+  }
+}
+.btn-check {
+  &:hover {
+    border-color: $check-color;
+    background-color: $check-color;
+  }
+}
+.btn-cancel {
+  &:hover {
+    border-color: $cancel-color;
+    background-color: $cancel-color;
   }
 }
 
@@ -160,6 +199,7 @@ img {
   display: inline-block;
   width: 20px;
   height: 20px;
+  cursor: pointer;
   span {
     position: absolute;
     display: inline-block;
