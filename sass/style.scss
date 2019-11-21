@@ -42,7 +42,7 @@ $panelside-width: 280px;
     border-right: 1px solid #dedede;
     background-color: #fff;
     box-shadow: 0 1px 6px 0 rgba(#333, 0.2);
-    z-index: 100;
+    z-index: 10;
     transition: all 0.4s ease;
     transition-delay: 0.3s;
 
@@ -138,7 +138,7 @@ $panelside-width: 280px;
 
       .setting-leader {
         position: relative;
-        padding: 25px 0 15px;
+        padding: 20px 0 15px;
         color: #333;
         font-size: 16px;
         // border-top: 1px solid #eee;
@@ -389,6 +389,37 @@ $panelside-width: 280px;
   }
 
   // mobile / desktop mode
+  .preview-setting {
+    .link-view {
+      position: fixed;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 30px;
+      top: 0;
+      right: 56px;
+      border: 1px solid #aaa;
+      cursor: pointer;
+      .fa-eye {
+        position: absolute;
+        opacity: 0;
+      }
+      svg {
+        path {
+          fill: #3a3a3a;
+        }
+      }
+      &.show {
+        .fa-eye {
+          opacity: 1;
+        }
+        .fa-eye-slash {
+          opacity: 0;
+        }
+      }
+    }
+  }
   .toggle-destop-moblie {
     position: fixed;
     right: 0;
@@ -516,6 +547,105 @@ $panelside-width: 280px;
       &::after {
         transform: rotate(-45deg) translate(-9px, 9px);
       }
+    }
+  }
+}
+
+.lightbox {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 11;
+  &.lightbox-s {
+    .lightbox-container {
+      max-width: 200px;
+      max-height: 180px;
+    }
+  }
+  &.lightbox-m {
+    .lightbox-container {
+      max-width: 360px;
+      max-height: 280px;
+    }
+  }
+  &.lightbox-l {
+    .lightbox-container {
+      max-width: 720px;
+      max-height: 480px;
+    }
+  }
+  .bg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(#000, 0.5);
+  }
+  .lightbox-container {
+    width: 80%;
+    height: 80%;
+    max-width: 360px;
+    max-height: 280px;
+    @extend %vh-center;
+    background-color: #fff;
+    line-height: 1.5;
+    padding: 30px 8px 52px 20px;
+    .icon-close {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+  }
+  .lightbox-inner {
+    position: relative;
+    height: 100%;
+    padding-right: 10px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    .control-bar {
+      position: fixed;
+      width: 100%;
+      padding: 2px 10px 0;
+      bottom: 0;
+      left: 0;
+      background-color: #fff;
+      text-align: right;
+      border-top: 1px solid #b7b7b7;
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .container {
+    .panel {
+      width: 260px;
+      &.moveLeft {
+        left: -260px;
+      }
+      .element {
+        font-size: 12px;
+        .element-setting {
+          > .row-flex {
+            .label {
+              width: 60px;
+              padding-right: 5px;
+              & ~ .content {
+                width: calc(100% - 60px);
+              }
+            }
+          }
+        }
+      }
+    }
+    .panelside {
+      left: 260px;
+    }
+    .scene {
+      width: 260px;
+      padding-left: 260px;
     }
   }
 }

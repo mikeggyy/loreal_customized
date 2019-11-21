@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
-  <!-- <link rel="stylesheet" href="./sass/style.css" /> -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 
@@ -34,9 +33,23 @@
             <div class="row row-flex">
               <div class="flex-col-m-1">
                 <div class="row row-flex">
-                  <div class="label">專案名稱</div>
+                  <div class="label">品牌名稱</div>
                   <div class="content">
-                    <input v-model="f_name_project" type="text" class="ipnut-s" />
+                    <!-- <input v-model="f_name_project" type="text" class="ipnut-s" /> -->
+                    <div class="row row-flex">
+                      <div class="flex-col-m-3">
+                        <input class="radio-button" type="radio" name="project" id="project-a">
+                        <label for="project-a">YSL</label>
+                      </div>
+                      <div class="flex-col-m-3">
+                        <input class="radio-button" type="radio" name="project" id="project-b">
+                        <label for="project-b">GAB</label>
+                      </div>
+                      <div class="flex-col-m-3">
+                        <input class="radio-button" type="radio" name="project" id="project-c">
+                        <label for="project-c">KLS</label>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -86,24 +99,13 @@
                 <a href="javascript:;" v-on:click="TextAddText()">文字</a>
               </li>
               <li>
-                <a href="javascript:;" v-on:click="BtnAddBtn()">按鈕</a>
+                <a href="javascript:;" v-on:click="BtnAddBtn()">連結</a>
               </li>
             </ul>
           </div>
         </div>
         <!-- 圖片 -->
         <div class="element" v-show="fixed_img_count.display">
-          <!-- <div class="element-leader">
-              <div class="name">
-                <i class="far fa-image"></i><input type="text" value="物件名稱" />
-              </div>
-              <div class="trigger">
-                <div class="icon-plus">
-                  <span></span>
-                  <span></span>
-                </div>
-              </div>
-            </div> -->
           <div class="setting-leader setting-leader-selection">
             <div class="row row-flex">
               <span>圖片設定</span>
@@ -111,7 +113,24 @@
           </div>
           <!-- 判斷手機/電腦 -->
           <div id="block-setting" class="element-setting" :class="{'is-desktop':this.pc_status, 'is-mobile':this.mobile_status}">
-          <!-- <div id="block-setting" class="element-setting"> -->
+            <div class="row row-flex">
+              <div class="flex-col-m-2">
+                <div class="row row-flex">
+                  <div class="label">id</div>
+                  <div class="content">
+                    <input type="text" class="ipnut-s" />
+                  </div>
+                </div>
+              </div>
+              <div class="flex-col-m-2">
+                <div class="row row-flex">
+                  <div class="label">class</div>
+                  <div class="content">
+                    <input type="text" class="ipnut-s" />
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="row row-flex">
               <div class="flex-col-m-2">
                 <div class="row row-flex">
@@ -150,16 +169,14 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="row row-flex">
               <div class="flex-col-m-2">
-                <div class="row row-flex">
-                  <div class="label">背景色</div>
-                  <div class="content">
-                    <input type="text" v-model="f_img_backgroundColor" class="ipnut-s" placeholder="#ededed" />
+                  <div class="row row-flex">
+                    <div class="label">背景色</div>
+                    <div class="content">
+                      <input type="text" v-model="f_img_backgroundColor" class="ipnut-s" placeholder="#ededed" />
+                    </div>
                   </div>
                 </div>
-              </div>
             </div>
             <div class="row row-flex">
               <div class="flex-col-m-1">
@@ -193,23 +210,30 @@
         </div>
         <!-- 文字 -->
         <div class="element" v-show="fixed_text_count.display">
-          <!-- <div class="element-leader">
-              <div class="name">
-                <i class="fas fa-paragraph"></i><input type="text" value="物件名稱" />
-              </div>
-              <div class="trigger">
-                <div class="icon-plus">
-                  <span></span>
-                  <span></span>
-                </div>
-              </div>
-            </div> -->
           <div class="setting-leader setting-leader-selection">
             <div class="row row-flex">
               <span>文字設定</span>
             </div>
           </div>
           <div id="text-setting" class="element-setting">
+            <div class="row row-flex">
+              <div class="flex-col-m-2">
+                <div class="row row-flex">
+                  <div class="label">id</div>
+                  <div class="content">
+                    <input type="text" class="ipnut-s" />
+                  </div>
+                </div>
+              </div>
+              <div class="flex-col-m-2">
+                <div class="row row-flex">
+                  <div class="label">class</div>
+                  <div class="content">
+                    <input type="text" class="ipnut-s" />
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="row row-flex">
               <div class="label">標題</div>
               <div class="content">
@@ -259,7 +283,7 @@
                 <div class="row row-flex">
                   <div class="label">背景顏色</div>
                   <div class="content">
-                    <input type="color" class="ipnut-s" v-model="f_text_backgroundColor" placeholder="#ededed" />
+                    <input type="text" class="ipnut-s" v-model="f_text_backgroundColor" placeholder="#ededed" />
                   </div>
                 </div>
               </div>
@@ -309,25 +333,32 @@
             </div>
           </div>
         </div>
-        <!-- 按鈕 -->
+        <!-- 連結 -->
         <div class="element" v-show="fixed_btn_count.display">
-          <!-- <div class="element-leader">
-              <div class="name">
-                <i class="fas fa-mouse-pointer"></i><input type="text" value="物件名稱" />
-              </div>
-              <div class="trigger">
-                <div class="icon-plus">
-                  <span></span>
-                  <span></span>
-                </div>
-              </div>
-            </div> -->
           <div class="setting-leader setting-leader-selection">
             <div class="row row-flex">
-              <span>按鈕設定</span>
+              <span>連結設定</span>
             </div>
           </div>
           <div id="button-setting" class="element-setting">
+            <div class="row row-flex">
+              <div class="flex-col-m-2">
+                <div class="row row-flex">
+                  <div class="label">id</div>
+                  <div class="content">
+                    <input type="text" class="ipnut-s" />
+                  </div>
+                </div>
+              </div>
+              <div class="flex-col-m-2">
+                <div class="row row-flex">
+                  <div class="label">class</div>
+                  <div class="content">
+                    <input type="text" class="ipnut-s" />
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="row row-flex">
               <div class="label">文字</div>
               <div class="content">
@@ -351,29 +382,47 @@
               </div>
               <div class="flex-col-m-2">
                 <div class="row row-flex">
-                  <div class="label">z-index</div>
+                  <div class="label">高度</div>
                   <div class="content">
-                    <input type="number" v-model="f_btn_zIndex" class="ipnut-s" />
+                    <input type="number" class="ipnut-s" />
                   </div>
                 </div>
               </div>
             </div>
             <div class="row row-flex">
               <div class="flex-col-m-2">
-                <div class="row row-flex">
-                  <div class="label">外框</div>
-                  <div class="content">
-                    <input type="text" class="ipnut-s" v-model="f_btn_border" placeholder="大小 顏色 線條" />
-                  </div>
-                </div>
+                  <div class="row row-flex">
+                      <div class="label">z-index</div>
+                      <div class="content">
+                        <input type="number" v-model="f_btn_zIndex" class="ipnut-s" />
+                      </div>
+                    </div>
               </div>
               <div class="flex-col-m-2">
-                <div class="row row-flex">
-                  <div class="label">背景</div>
-                  <div class="content">
-                    <input type="text" class="ipnut-s" v-model="f_btn_backgroundColor" placeholder="#ededed" />
-                  </div>
-                </div>
+                  <div class="row row-flex">
+                      <div class="label">外框</div>
+                      <div class="content">
+                        <input type="text" class="ipnut-s" v-model="f_btn_border" placeholder="大小 顏色 線條" />
+                      </div>
+                    </div>
+              </div>
+            </div>
+            <div class="row row-flex">
+              <div class="flex-col-m-2">
+                  <div class="row row-flex">
+                      <div class="label">背景</div>
+                      <div class="content">
+                        <input type="text" class="ipnut-s" v-model="f_btn_backgroundColor" placeholder="#ededed" />
+                      </div>
+                    </div>
+              </div>
+              <div class="flex-col-m-2">
+                  <div class="row row-flex">
+                      <div class="label">文字顏色</div>
+                      <div class="content">
+                        <input type="color" v-model="f_btn_color" class="ipnut-s" />
+                      </div>
+                    </div>
               </div>
             </div>
             <div class="row row-flex">
@@ -386,15 +435,9 @@
                 </div>
               </div>
               <div class="flex-col-m-2">
-                <div class="row row-flex">
-                  <div class="label">文字顏色</div>
-                  <div class="content">
-                    <input type="color" v-model="f_btn_color" class="ipnut-s" />
-                  </div>
-                </div>
               </div>
             </div>
-            <div class="row row-flex">
+            <div class="row row-flex" style="display: none">
               <div class="label">內距</div>
               <div class="content">
                 <div class="row row-flex">
@@ -470,7 +513,7 @@
             v-bind:style="fixed_text_count.pc_text_data[index]" v-for="(item,index) in fixed_text_count.pc_text_data">
             <p v-on:mousedown="TextOutlineOpen(index)" v-html="fixed_text_count.pc_text_data[index].content"></p>
           </div>
-          <!-- 產生按鈕 -->
+          <!-- 產生連結 -->
           <div class="btn" v-on:mousedown="BtnMouseMoveGetXY()">
             <a v-on:mousedown="BtnOutlineOpen(index)" onclick="return false;" onSelectStart="event.returnValue=false"
               v-bind:style="fixed_btn_count.pc_btn_data[index]" v-for="(item,index) in fixed_btn_count.pc_btn_data"
@@ -492,7 +535,7 @@
             v-bind:style="fixed_text_count.mob_text_data[index]" v-for="(item,index) in fixed_text_count.mob_text_data">
             <p v-on:mousedown="TextOutlineOpen(index)" v-html="fixed_text_count.mob_text_data[index].content"></p>
           </div>
-          <!-- 產生按鈕 -->
+          <!-- 產生連結 -->
           <div class="btn" v-on:mousedown="BtnMouseMoveGetXY()">
             <a v-on:mousedown="BtnOutlineOpen(index)" onclick="return false;" v-bind:href="fixed_btn_count.mob_btn_data[index].href" onSelectStart="event.returnValue=false"
               v-bind:style="fixed_btn_count.mob_btn_data[index]" v-for="(item,index) in fixed_btn_count.mob_btn_data"
@@ -510,11 +553,36 @@
       </div>
     </div>
     <!-- 桌機版手機板切換 -->
-    <div class="toggle-destop-moblie is-desktop">
-      <div v-on:click="ToggleDestop()" title="電腦版"><i class="fas fa-desktop"></i></div>
-      <div v-on:click="ToggleMobile()" title="手機版"><i class="fas fa-mobile-alt"></i></div>
+    <div class="preview-setting">
+      <!-- toggle class "show" -->
+      <div class="link-view" title="連結區塊預覽">
+          <i class="fas fa-eye"></i>
+          <i class="fas fa-eye-slash"></i>
+      </div>
+      <div class="toggle-destop-moblie is-desktop">
+        <div v-on:click="ToggleDestop()" title="電腦版"><i class="fas fa-desktop"></i></div>
+        <div v-on:click="ToggleMobile()" title="手機版"><i class="fas fa-mobile-alt"></i></div>
+      </div>
     </div>
   </div>
+
+  <!-- lightbox - size: s/m/l -->
+  <div class="lightbox lightbox-s" style="display: none;">
+    <div class="bg"></div>
+    <div class="lightbox-container">
+      <div class="icon-close">
+        <span></span>
+        <span></span>
+      </div>
+      <div class="lightbox-inner">
+        <p>確認要刪除元素？</p>
+        <div class="control-bar">
+          <a href="javascript:;" class="btn btn-lg btn-border btn-check">確定</a>
+          <a href="javascript:;" class="btn btn-lg btn-border btn-cancel">取消</a>
+        </div>
+        </div>
+      </div>
+    </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/js/all.min.js"></script>
   <script src="./js/data.js"></script>
