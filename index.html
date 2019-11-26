@@ -38,15 +38,15 @@
                     <!-- <input v-model="f_name_project" type="text" class="ipnut-s" /> -->
                     <div class="row row-flex">
                       <div class="flex-col-m-3">
-                        <input class="radio-button" type="radio" name="project" id="project-a">
+                        <input class="radio-button" type="radio" v-model="fixed_project_data.type_project" value="YSL" name="project" id="project-a">
                         <label for="project-a">YSL</label>
                       </div>
                       <div class="flex-col-m-3">
-                        <input class="radio-button" type="radio" name="project" id="project-b">
+                        <input class="radio-button" type="radio" v-model="fixed_project_data.type_project" value="GAB" name="project" id="project-b">
                         <label for="project-b">GAB</label>
                       </div>
                       <div class="flex-col-m-3">
-                        <input class="radio-button" type="radio" name="project" id="project-c">
+                        <input class="radio-button" type="radio" v-model="fixed_project_data.type_project" value="KLS" name="project" id="project-c">
                         <label for="project-c">KLS</label>
                       </div>
                     </div>
