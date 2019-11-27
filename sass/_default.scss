@@ -32,16 +32,27 @@ select {
 }
 input {
   padding: 4px;
+  margin-right: 5px;
+  &:only-of-type {
+    margin-right: 0;
+  }
 }
 .input-s {
-  width: 55px;
+  width: 50px;
 }
 .input-ss {
-  width: 45px;
+  width: 40px;
 }
 input[type="text"] {
+  width: 100%;
   height: 2em;
   line-height: 2em;
+  &.input-s {
+    width: 50px;
+  }
+  &.input-ss {
+    width: 40px;
+  }
 }
 input[type="checkbox"] {
   & ~ label {
