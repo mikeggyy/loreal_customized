@@ -39,7 +39,7 @@ var app = new Vue({
     },
     f_text_content: "",
     f_text_width: "",
-    f_text_heigth: "",
+    f_text_height: "",
     f_text_paddingTop: "",
     f_text_paddingBottom: "",
     f_text_paddingLeft: "",
@@ -59,6 +59,7 @@ var app = new Vue({
     },
     f_btn_content: "",
     f_btn_width: "",
+    f_btn_height: "",
     f_btn_paddingTop: "",
     f_btn_paddingBottom: "",
     f_btn_paddingLeft: "",
@@ -280,7 +281,7 @@ var app = new Vue({
       }
     },
 
-    f_text_heigth: function () {
+    f_text_height: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_text_count.pc_text_data;
@@ -295,7 +296,7 @@ var app = new Vue({
         let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
-        target.heigth = this.f_text_heigth;
+        target.height = this.f_text_height;
       }
     },
 
@@ -562,6 +563,24 @@ var app = new Vue({
         target.width = this.f_btn_width;
       }
     },
+    f_btn_height: function () {
+      let ZONE_DATA;
+      if (this.pc_status == true) {
+        ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+      } else if (this.mobile_status == true) {
+        ZONE_DATA = this.fixed_btn_count.mob_btn_data;
+      }
+      if (
+        ZONE_DATA.find(function (item, index, array) {
+          return item.foucs == true;
+        })
+      ) {
+        let target = ZONE_DATA.find(function (item, index, array) {
+          return item.foucs == true;
+        });
+        target.height = this.f_btn_height;
+      }
+    },
     f_btn_zIndex: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
@@ -783,15 +802,7 @@ var app = new Vue({
   //
   //
   methods: {
-    // 判斷專案類型決定要給px還是vw
-    Type_Project_Give_Unit: function () {
-      let unit;
-      if (this.fixed_project_data.type_project == "YSL") {
-        unit = "vw";
-      } else if (this.fixed_project_data.type_project == "GAB" || fixed_project_data.type_project == "KLS") {
-        unit = "px";
-      }
-    },
+
     //視窗置頂
     GoScrollTop: function () {
       document.querySelector("html").scrollTop = 0;
@@ -805,33 +816,6 @@ var app = new Vue({
       } else if (this.mobile_status == true) {
         document.querySelector(".display_zone_mobile").style.height =
           body_height + "px";
-      }
-    },
-    // 桌機手機圖片判斷
-    JudgePcMobile_Img: function () {
-      let ZONE_DATA;
-      if (this.pc_status == true) {
-        ZONE_DATA = this.fixed_img_count.pc_img_data;
-      } else if (this.mobile_status == true) {
-        ZONE_DATA = this.fixed_img_count.mob_img_data;
-      }
-    },
-    // 桌機手機文字判斷
-    JudgePcMobile_Text: function () {
-      let ZONE_DATA;
-      if (this.pc_status == true) {
-        ZONE_DATA = this.fixed_text_count.pc_text_data;
-      } else if (this.mobile_status == true) {
-        ZONE_DATA = this.fixed_text_count.mob_text_data;
-      }
-    },
-    // 桌機手機按鈕判斷
-    JudgePcMobile_Btn: function () {
-      let ZONE_DATA;
-      if (this.pc_status == true) {
-        ZONE_DATA = this.fixed_btn_count.pc_btn_data;
-      } else if (this.mobile_status == true) {
-        ZONE_DATA = this.fixed_btn_count.mob_btn_data;
       }
     },
     // 上傳圖片路徑
@@ -935,7 +919,7 @@ var app = new Vue({
       }
       this.f_text_content = ZONE_DATA[ZONE_DATA.length - 1].content;
       this.f_text_width = ZONE_DATA[ZONE_DATA.length - 1].width;
-      this.f_text_heigth = ZONE_DATA[ZONE_DATA.length - 1].heigth;
+      this.f_text_height = ZONE_DATA[ZONE_DATA.length - 1].height;
       this.f_text_paddingTop = ZONE_DATA[ZONE_DATA.length - 1].paddingTop;
       this.f_text_paddingBottom = ZONE_DATA[ZONE_DATA.length - 1].paddingBottom;
       this.f_text_paddingLeft = ZONE_DATA[ZONE_DATA.length - 1].paddingLeft;
@@ -959,6 +943,7 @@ var app = new Vue({
       }
       this.f_btn_content = ZONE_DATA[ZONE_DATA.length - 1].content;
       this.f_btn_width = ZONE_DATA[ZONE_DATA.length - 1].width;
+      this.f_btn_height = ZONE_DATA[ZONE_DATA.length - 1].height;
       this.f_btn_paddingTop = ZONE_DATA[ZONE_DATA.length - 1].paddingTop;
       this.f_btn_paddingBottom = ZONE_DATA[ZONE_DATA.length - 1].paddingBottom;
       this.f_btn_paddingLeft = ZONE_DATA[ZONE_DATA.length - 1].paddingLeft;
@@ -1001,7 +986,7 @@ var app = new Vue({
       }
       this.f_text_content = ZONE_DATA[index].content;
       this.f_text_width = ZONE_DATA[index].width;
-      this.f_text_heigth = ZONE_DATA[index].heigth;
+      this.f_text_height = ZONE_DATA[index].height;
       this.f_text_paddingTop = ZONE_DATA[index].paddingTop;
       this.f_text_paddingBottom = ZONE_DATA[index].paddingBottom;
       this.f_text_paddingLeft = ZONE_DATA[index].paddingLeft;
@@ -1024,6 +1009,7 @@ var app = new Vue({
       }
       this.f_btn_content = ZONE_DATA[index].content;
       this.f_btn_width = ZONE_DATA[index].width;
+      this.f_btn_height = ZONE_DATA[index].height;
       this.f_btn_paddingTop = ZONE_DATA[index].paddingTop;
       this.f_btn_paddingBottom = ZONE_DATA[index].paddingBottom;
       this.f_btn_paddingLeft = ZONE_DATA[index].paddingLeft;
@@ -1145,7 +1131,7 @@ var app = new Vue({
     // 清空圖片input值
     ClearImgInputValue: function () {
       this.f_img_width = "";
-      this.f_img_heigth = "";
+      this.f_img_height = "";
       this.f_img_border = "";
       this.f_img_backgroundColor = "";
       this.f_img_fontSize = "";
@@ -1156,7 +1142,7 @@ var app = new Vue({
     ClearTextInputValue: function () {
       this.f_text_content = "";
       this.f_text_width = "";
-      this.f_text_heigth = "";
+      this.f_text_height = "";
       this.f_text_paddingTop = "";
       this.f_text_paddingBottom = "";
       this.f_text_paddingLeft = "";
@@ -1173,6 +1159,7 @@ var app = new Vue({
     ClearBtnInputValue: function () {
       this.f_btn_content = "";
       this.f_btn_width = "";
+      this.f_btn_height = "";
       this.f_btn_paddingTop = "";
       this.f_btn_paddingBottom = "";
       this.f_btn_paddingLeft = "";
@@ -1382,7 +1369,7 @@ var app = new Vue({
         display: "block",
         outline: "0px transparent solid",
         width: "100%", // auto會導致拖曳到右邊時縮小
-        heigth: "auto",
+        height: "auto",
         border: "0px #000 solid",
         backgroundColor: "transparent",
         fontSize: "0",
@@ -1416,7 +1403,7 @@ var app = new Vue({
         display: "block",
         outline: "0px transparent solid",
         width: "auto",
-        heigth: "auto",
+        height: "auto",
         paddingTop: "auto",
         paddingBottom: "auto",
         paddingLeft: "auto",
@@ -1453,14 +1440,16 @@ var app = new Vue({
       let style = {
         content: "新增連結",
         foucs: false,
-        display: "block",
+        display: "flex",
         outline: "0px transparent solid",
-        width: "auto",
-        heigth: "auto",
-        paddingTop: "10px",
-        paddingBottom: "10px",
-        paddingLeft: "20px",
-        paddingRight: "20px",
+        width: "150px",
+        height: "50px",
+        justifyContent: "center",
+        alignItems: "center",
+        paddingTop: "auto",
+        paddingBottom: "auto",
+        paddingLeft: "auto",
+        paddingRight: "auto",
         border: "0px #000 solid",
         color: "black",
         backgroundColor: "transparent",
