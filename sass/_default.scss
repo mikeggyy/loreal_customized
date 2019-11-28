@@ -35,7 +35,11 @@ input {
   margin-right: 5px;
   &:only-of-type {
     margin-right: 0;
+    width: 100%;
   }
+}
+.input-m {
+  width: 60px;
 }
 .input-s {
   width: 50px;
@@ -47,6 +51,9 @@ input[type="text"] {
   width: 100%;
   height: 2em;
   line-height: 2em;
+  &.input-m {
+    width: 60px;
+  }
   &.input-s {
     width: 50px;
   }
@@ -82,6 +89,9 @@ input.radio-button[type="radio"] {
     text-align: center;
     cursor: pointer;
   }
+}
+input[type="file"] {
+  width: 100%;
 }
 textarea {
   outline: 0;
