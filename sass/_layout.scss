@@ -29,6 +29,10 @@
   align-items: flex-start;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
 @media only screen and (max-width: 991.9px) {
   .row-flex {
     .flex-col-s-1 {

@@ -375,19 +375,33 @@ select {
 
 input {
   padding: 4px;
+  margin-right: 5px;
+}
+
+input:only-of-type {
+  margin-right: 0;
 }
 
 .input-s {
-  width: 55px;
+  width: 50px;
 }
 
 .input-ss {
-  width: 45px;
+  width: 40px;
 }
 
 input[type="text"] {
+  width: 100%;
   height: 2em;
   line-height: 2em;
+}
+
+input[type="text"].input-s {
+  width: 50px;
+}
+
+input[type="text"].input-ss {
+  width: 40px;
 }
 
 input[type="checkbox"] ~ label {
@@ -615,6 +629,12 @@ img {
           align-items: flex-start;
 }
 
+.justify-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 @media only screen and (max-width: 991.9px) {
   .row-flex .flex-col-s-1 {
     width: 100%;
@@ -729,7 +749,8 @@ img {
 
 .container .panel .element-leader {
   position: relative;
-  padding: 15px 0;
+  padding: 12px 0;
+  font-size: 15px;
 }
 
 .container .panel .element-leader svg,
@@ -790,10 +811,6 @@ img {
   font-size: 16px;
 }
 
-.container .panel .element .setting-leader-selection {
-  cursor: pointer;
-}
-
 .container .panel .element .setting-leader-selection span {
   display: inline-block;
 }
@@ -806,16 +823,19 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .container .panel .element .element-catagory ul li {
   width: 30%;
-  margin: 0 3.3%;
   background-color: #eee;
   text-align: center;
+}
+
+.container .panel .element .element-catagory ul li:nth-of-type(2) {
+  margin: 0 5px;
 }
 
 .container .panel .element .element-catagory ul li a {
@@ -832,8 +852,12 @@ img {
   padding-bottom: 10px;
 }
 
-.container .panel .element .element-setting > .row-flex .flex-col-m-2:first-of-type {
-  padding-right: 12px;
+.container .panel .element .element-setting > .row-flex [class^="flex-col"] {
+  padding-right: 5px;
+}
+
+.container .panel .element .element-setting > .row-flex [class^="flex-col"]:last-of-type {
+  padding-right: 0;
 }
 
 .container .panel .element .element-setting > .row-flex .flex-top .label {
@@ -847,11 +871,6 @@ img {
 
 .container .panel .element .element-setting > .row-flex .label ~ .content {
   width: calc(100% - 65px);
-}
-
-.container .panel .element .element-setting > .row-flex .label ~ .content > input,
-.container .panel .element .element-setting > .row-flex .label ~ .content textarea {
-  width: 100%;
 }
 
 .container .panel .element .element-setting > .row-flex .label .required {
@@ -1074,6 +1093,7 @@ img {
   top: 0;
   right: 56px;
   border: 1px solid #aaa;
+  z-index: 88;
   cursor: pointer;
 }
 
@@ -1083,7 +1103,7 @@ img {
 }
 
 .container .preview-setting .link-view svg path {
-  fill: #3a3a3a;
+  fill: #bbb;
 }
 
 .container .preview-setting .link-view.show .fa-eye {
@@ -1330,7 +1350,7 @@ img {
     left: 260px;
   }
   .container .scene {
-    width: 260px;
+    width: 100%;
     padding-left: 260px;
   }
 }
