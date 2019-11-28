@@ -802,7 +802,6 @@ var app = new Vue({
   //
   //
   methods: {
-
     //視窗置頂
     GoScrollTop: function () {
       document.querySelector("html").scrollTop = 0;
@@ -1517,6 +1516,7 @@ var app = new Vue({
       if (document.querySelector("#add_size") != null) {
         document.querySelector("#add_size").media = "(min-width:992px)";
       }
+
       let textChang = code
         .replace(new RegExp(".png", "g"), ".png?$staticlink$")
         .replace(new RegExp(".jpg", "g"), ".jpg?$staticlink$")
@@ -1531,6 +1531,7 @@ var app = new Vue({
       this.zone_code =
         `<style>@media (min-width:992px){.display_zone_mobile {display: none !important;margin:0 auto;}}@media (max-width:991.9px) {.display_zone_destop {display: none !important;}}</style>` +
         textChang;
+
     },
     // 圖片區取消按鈕
     ImgRemoveBtn: function () {
@@ -1653,6 +1654,18 @@ var app = new Vue({
       this.CloseBtnFocus();
       this.ClearBtnInputValue();
       this.BtnZoneDisplayClose();
+    },
+    testfunction: function () {
+      let pc_img_left =
+        this.fixed_img_count.pc_img_data.map(item => {
+          item.left = (parseInt(item.left) / 1000) * 100 + "vw";
+          return item.left
+        });
+      let pc_img_top =
+        this.fixed_img_count.pc_img_data.map(item => {
+          item.top = (parseInt(item.top) / 1000) * 100 + "vw";
+          return item.top
+        });
     }
   }
 });
