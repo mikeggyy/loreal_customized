@@ -118,7 +118,7 @@
                 <div class="row row-flex">
                   <div class="label">id</div>
                   <div class="content">
-                    <input type="text" class="input-s" />
+                    <input type="text" />
                   </div>
                 </div>
               </div>
@@ -126,7 +126,7 @@
                 <div class="row row-flex">
                   <div class="label">class</div>
                   <div class="content">
-                    <input type="text" class="input-s" />
+                    <input type="text" />
                   </div>
                 </div>
               </div>
@@ -136,18 +136,19 @@
                 <div class="row row-flex">
                   <div class="label">寬度</div>
                   <div class="content">
-                    <input type="text" v-model="f_img_width" class="input-s" v-on:keydown="KeyDownChangInt_ImgWidth()"
+                    <input type="text" v-model="f_img_width" v-on:keydown="KeyDownChangInt_ImgWidth()"
                       placeholder="300px" />
                   </div>
                 </div>
               </div>
+              <div class="flex-col-m-2"></div>
             </div>
             <div class="row row-flex">
               <div class="flex-col-m-2">
                 <div class="row row-flex">
                   <div class="label">x軸</div>
                   <div class="content">
-                    <input type="text" v-model="f_img_left" v-on:keydown="KeyDownChangInt_ImgLeft()" class="input-s" />
+                    <input type="text" v-model="f_img_left" v-on:keydown="KeyDownChangInt_ImgLeft()" />
                   </div>
                 </div>
               </div>
@@ -155,7 +156,7 @@
                 <div class="row row-flex">
                   <div class="label">y軸</div>
                   <div class="content">
-                    <input type="text" v-model="f_img_top" v-on:keydown="KeyDownChangInt_ImgTop()" class="input-s" />
+                    <input type="text" v-model="f_img_top" v-on:keydown="KeyDownChangInt_ImgTop()" />
                   </div>
                 </div>
               </div>
@@ -165,7 +166,7 @@
                 <div class="row row-flex">
                   <div class="label">z-index</div>
                   <div class="content">
-                    <input type="number" v-model="f_img_zIndex" class="input-s" />
+                    <input type="number" v-model="f_img_zIndex" />
                   </div>
                 </div>
               </div>
@@ -173,7 +174,7 @@
                   <div class="row row-flex">
                     <div class="label">背景色</div>
                     <div class="content">
-                      <input type="text" v-model="f_img_backgroundColor" class="input-s" placeholder="#ededed" />
+                      <input type="text" v-model="f_img_backgroundColor" placeholder="#ededed" />
                     </div>
                   </div>
                 </div>
@@ -183,7 +184,7 @@
                 <div class="row row-flex flex-top">
                   <div class="label">圖片路徑</div>
                   <div class="content">
-                    <input type="text" class="input-s" v-model="f_img_srcset" />
+                    <input type="text" v-model="f_img_srcset" />
                     <input type="file" id="pc_file_name" v-on:change="ImgPcFileName()">
                   </div>
                 </div>
@@ -194,7 +195,7 @@
                 <div class="row row-flex flex-top">
                   <div class="label">圖片路徑</div>
                   <div class="content">
-                    <input type="text" class="input-s" v-model="f_img_src" />
+                    <input type="text" v-model="f_img_src" />
                     <input type="file" id="xs_file_name" v-on:change="ImgXsFileName()">
                   </div>
                 </div>
@@ -221,7 +222,7 @@
                 <div class="row row-flex">
                   <div class="label">id</div>
                   <div class="content">
-                    <input type="text" class="input-s" />
+                    <input type="text" />
                   </div>
                 </div>
               </div>
@@ -229,7 +230,7 @@
                 <div class="row row-flex">
                   <div class="label">class</div>
                   <div class="content">
-                    <input type="text" class="input-s" />
+                    <input type="text" />
                   </div>
                 </div>
               </div>
@@ -267,7 +268,7 @@
                 <div class="row row-flex">
                   <div class="label">字型大小</div>
                   <div class="content">
-                    <input type="text" class="input-s" v-model="f_text_fontSize" placeholder="12px" />
+                    <input type="text" v-model="f_text_fontSize" placeholder="12px" />
                   </div>
                 </div>
               </div>
@@ -275,7 +276,7 @@
                 <div class="row row-flex">
                   <div class="label">文字顏色</div>
                   <div class="content">
-                    <input type="color" class="input-s" v-model="f_text_color" placeholder="#ededed" />
+                    <input type="color" v-model="f_text_color" placeholder="#ededed" />
                   </div>
                 </div>
               </div>
@@ -285,7 +286,7 @@
                 <div class="row row-flex">
                   <div class="label">背景顏色</div>
                   <div class="content">
-                    <input type="text" class="input-s" v-model="f_text_backgroundColor" placeholder="#ededed" />
+                    <input type="text" v-model="f_text_backgroundColor" placeholder="#ededed" />
                   </div>
                 </div>
               </div>
@@ -293,7 +294,7 @@
                 <div class="row row-flex">
                   <div class="label">外框</div>
                   <div class="content">
-                    <input type="text" class="input-s" v-model="f_text_border" placeholder="#ededed" />
+                    <input type="text" v-model="f_text_border" placeholder="#ededed" />
                   </div>
                 </div>
               </div>
@@ -303,18 +304,18 @@
                 <div class="row row-flex">
                   <div class="label">z-index</div>
                   <div class="content">
-                    <input type="number" class="input-s" v-model="f_text_zIndex" />
+                    <input type="number" v-model="f_text_zIndex" />
                   </div>
                 </div>
               </div>
+              <div class="flex-col-m-2"></div>
             </div>
             <div class="row row-flex">
               <div class="flex-col-m-2">
                 <div class="row row-flex">
                   <div class="label">x軸</div>
                   <div class="content">
-                    <input type="text" v-on:keydown="KeyDownChangInt_TextLeft()" v-model="f_text_left"
-                      class="input-s" />
+                    <input type="text" v-on:keydown="KeyDownChangInt_TextLeft()" v-model="f_text_left" />
                   </div>
                 </div>
               </div>
@@ -322,7 +323,7 @@
                 <div class="row row-flex">
                   <div class="label">y軸</div>
                   <div class="content">
-                    <input type="text" v-on:keydown="KeyDownChangInt_TextTop()" class="input-s" v-model="f_text_top" />
+                    <input type="text" v-on:keydown="KeyDownChangInt_TextTop()" v-model="f_text_top" />
                   </div>
                 </div>
               </div>
@@ -348,7 +349,7 @@
                 <div class="row row-flex">
                   <div class="label">id</div>
                   <div class="content">
-                    <input type="text" class="input-s" />
+                    <input type="text" />
                   </div>
                 </div>
               </div>
@@ -356,7 +357,7 @@
                 <div class="row row-flex">
                   <div class="label">class</div>
                   <div class="content">
-                    <input type="text" class="input-s" />
+                    <input type="text" />
                   </div>
                 </div>
               </div>
@@ -378,7 +379,7 @@
                 <div class="row row-flex">
                   <div class="label">寬度</div>
                   <div class="content">
-                    <input type="text" v-model="f_btn_width" class="input-s" placeholder="300px" />
+                    <input type="text" v-model="f_btn_width" placeholder="300px" />
                   </div>
                 </div>
               </div>
@@ -386,11 +387,7 @@
                 <div class="row row-flex">
                   <div class="label">高度</div>
                   <div class="content">
-<<<<<<< HEAD
-                    <input type="text" v-model="f_btn_height" class="ipnut-s" />
-=======
-                    <input type="number" class="input-s" />
->>>>>>> 406a31b5070dd31f341617abc7328d1a94e64dfa
+                    <input type="text" v-model="f_btn_height" />
                   </div>
                 </div>
               </div>
@@ -400,7 +397,7 @@
                   <div class="row row-flex">
                       <div class="label">z-index</div>
                       <div class="content">
-                        <input type="number" v-model="f_btn_zIndex" class="input-s" />
+                        <input type="number" v-model="f_btn_zIndex" />
                       </div>
                     </div>
               </div>
@@ -408,7 +405,7 @@
                   <div class="row row-flex">
                       <div class="label">外框</div>
                       <div class="content">
-                        <input type="text" class="input-s" v-model="f_btn_border" placeholder="大小 顏色 線條" />
+                        <input type="text" v-model="f_btn_border" placeholder="大小 顏色 線條" />
                       </div>
                     </div>
               </div>
@@ -418,7 +415,7 @@
                   <div class="row row-flex">
                       <div class="label">背景</div>
                       <div class="content">
-                        <input type="text" class="input-s" v-model="f_btn_backgroundColor" placeholder="#ededed" />
+                        <input type="text" v-model="f_btn_backgroundColor" placeholder="#ededed" />
                       </div>
                     </div>
               </div>
@@ -426,7 +423,7 @@
                   <div class="row row-flex">
                       <div class="label">文字顏色</div>
                       <div class="content">
-                        <input type="color" v-model="f_btn_color" class="input-s" />
+                        <input type="color" v-model="f_btn_color" />
                       </div>
                     </div>
               </div>
@@ -436,7 +433,7 @@
                 <div class="row row-flex">
                   <div class="label">字型大小</div>
                   <div class="content">
-                    <input type="text" v-model="f_btn_fontSize" class="input-s" placeholder="12px" />
+                    <input type="text" v-model="f_btn_fontSize" placeholder="12px" />
                   </div>
                 </div>
               </div>
@@ -469,7 +466,7 @@
                 <div class="row row-flex">
                   <div class="label">x軸</div>
                   <div class="content">
-                    <input type="text" v-on:keydown="KeyDownChangInt_BtnLeft()" class="input-s" v-model="f_btn_left" />
+                    <input type="text" v-on:keydown="KeyDownChangInt_BtnLeft()"v-model="f_btn_left" />
                   </div>
                 </div>
               </div>
@@ -477,7 +474,7 @@
                 <div class="row row-flex">
                   <div class="label">y軸</div>
                   <div class="content">
-                    <input type="text" v-on:keydown="KeyDownChangInt_BtnTop()" class="input-s" v-model="f_btn_top" />
+                    <input type="text" v-on:keydown="KeyDownChangInt_BtnTop()" v-model="f_btn_top" />
                   </div>
                 </div>
               </div>
