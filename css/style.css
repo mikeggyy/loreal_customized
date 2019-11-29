@@ -706,10 +706,11 @@ img {
 
 .container .panel {
   position: fixed;
+  left: 0;
   right: 0;
-  top: 0;
-  width: 320px;
-  height: 100%;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
   border-right: 1px solid #dedede;
   background-color: #fff;
   -webkit-box-shadow: 0 1px 6px 0 rgba(51, 51, 51, 0.2);
@@ -722,7 +723,6 @@ img {
 }
 
 .container .panel.moveLeft {
-  left: -320px;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
@@ -942,7 +942,6 @@ img {
 .container .panelside {
   position: fixed;
   top: 0;
-  left: 320px;
   height: 100%;
   width: 280px;
   border-right: 1px solid #dedede;
@@ -1067,13 +1066,8 @@ img {
 
 .container .scene {
   min-height: 100vh;
-  padding-left: 0;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
-}
-
-.container .scene.panelside-show {
-  padding-left: 600px;
 }
 
 .container .scene.moveLeft {
@@ -1364,6 +1358,6 @@ img {
   }
   .container .scene {
     width: 100%;
-    padding-left: 0;
+    padding-left: 260px;
   }
 }
