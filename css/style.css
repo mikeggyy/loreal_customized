@@ -706,7 +706,7 @@ img {
 
 .container .panel {
   position: fixed;
-  left: 0;
+  right: 0;
   top: 0;
   width: 320px;
   height: 100%;
@@ -1067,7 +1067,7 @@ img {
 
 .container .scene {
   min-height: 100vh;
-  padding-left: 320px;
+  padding-left: 0;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
@@ -1364,6 +1364,6 @@ img {
   }
   .container .scene {
     width: 100%;
-    padding-left: 260px;
+    padding-left: 0;
   }
 }

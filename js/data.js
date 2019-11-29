@@ -802,6 +802,124 @@ var app = new Vue({
   //
   //
   methods: {
+    // 單位轉換
+    ChangeUnit: function () {
+      if (this.fixed_project_data.type_project == "YSL") {
+        // 桌機版單位轉換
+        let pc_img_left =
+          this.fixed_img_count.pc_img_data.map(item => {
+            item.left = (parseInt(item.left) / 950) * 100 + 'vw';
+            return item.left
+          });
+        let pc_img_top =
+          this.fixed_img_count.pc_img_data.map(item => {
+            item.top = (parseInt(item.top) / 950) * 100 + 'vw';
+            return item.top
+          });
+        let pc_img_width =
+          this.fixed_img_count.pc_img_data.map(item => {
+            item.width = (parseInt(item.width) / 950) * 100 + 'vw';
+            return item.width
+          });
+        let pc_text_left =
+          this.fixed_text_count.pc_text_data.map(item => {
+            item.left = (parseInt(item.left) / 950) * 100 + 'vw';
+            return item.left
+          });
+        let pc_text_top =
+          this.fixed_text_count.pc_text_data.map(item => {
+            item.top = (parseInt(item.top) / 950) * 100 + 'vw';
+            return item.top
+          });
+        let pc_text_font =
+          this.fixed_text_count.pc_text_data.map(item => {
+            item.fontSize = 'calc(' + (parseInt(item.fontSize) / 950) * 100 + 'vw)';
+            return item.fontSize
+          });
+        let pc_btn_left =
+          this.fixed_btn_count.pc_btn_data.map(item => {
+            item.left = (parseInt(item.left) / 950) * 100 + 'vw';
+            return item.left
+          });
+        let pc_btn_top =
+          this.fixed_btn_count.pc_btn_data.map(item => {
+            item.top = (parseInt(item.top) / 950) * 100 + 'vw';
+            return item.top
+          });
+        let pc_btn_width =
+          this.fixed_btn_count.pc_btn_data.map(item => {
+            item.width = (parseInt(item.width) / 950) * 100 + 'vw';
+            return item.width
+          });
+        let pc_btn_height =
+          this.fixed_btn_count.pc_btn_data.map(item => {
+            item.height = (parseInt(item.height) / 950) * 100 + 'vw';
+            return item.height
+          });
+        let pc_btn_fontSize =
+          this.fixed_btn_count.pc_btn_data.map(item => {
+            item.fontSize = 'calc(' + (parseInt(item.fontSize) / 950) * 100 + 'vw)';
+            return item.fontSize
+          });
+      }
+      // 手機版單位轉換
+      let mob_img_left =
+        this.fixed_img_count.mob_img_data.map(item => {
+          item.left = (parseInt(item.left) / 375) * 100 + 'vw';
+          return item.left
+        });
+      let mob_img_top =
+        this.fixed_img_count.mob_img_data.map(item => {
+          item.top = (parseInt(item.top) / 375) * 100 + 'vw';
+          return item.top
+        });
+      let mob_text_left =
+        this.fixed_text_count.mob_text_data.map(item => {
+          item.left = (parseInt(item.left) / 375) * 100 + 'vw';
+          return item.left
+        });
+      let mob_text_top =
+        this.fixed_text_count.mob_text_data.map(item => {
+          item.top = (parseInt(item.top) / 375) * 100 + 'vw';
+          return item.top
+        });
+      let mob_text_font =
+        this.fixed_text_count.mob_text_data.map(item => {
+          item.fontSize = 'calc(' + (parseInt(item.fontSize) / 375) * 100 + 'vw)';
+          return item.fontSize
+        });
+      let mob_btn_left =
+        this.fixed_btn_count.mob_btn_data.map(item => {
+          item.left = (parseInt(item.left) / 375) * 100 + 'vw';
+          return item.left
+        });
+      let mob_btn_top =
+        this.fixed_btn_count.mob_btn_data.map(item => {
+          item.top = (parseInt(item.top) / 375) * 100 + 'vw';
+          return item.top
+        });
+      let mob_btn_width =
+        this.fixed_btn_count.mob_btn_data.map(item => {
+          item.width = (parseInt(item.width) / 375) * 100 + 'vw';
+          return item.width
+        });
+      let mob_btn_height =
+        this.fixed_btn_count.mob_btn_data.map(item => {
+          item.height = (parseInt(item.height) / 375) * 100 + 'vw';
+          return item.height
+        });
+      let mob_btn_fontSize =
+        this.fixed_btn_count.mob_btn_data.map(item => {
+          item.fontSize = 'calc(' + (parseInt(item.fontSize) / 375) * 100 + 'vw)';
+          return item.fontSize
+        });
+    },
+    // 改變外框寬度
+    ChangeFrameWidth: function () {
+      if (this.fixed_project_data.type_project == "YSL") {
+        document.querySelector('.display_zone_destop').style.width = "100%";
+      }
+    },
     //視窗置頂
     GoScrollTop: function () {
       document.querySelector("html").scrollTop = 0;
@@ -1360,14 +1478,13 @@ var app = new Vue({
         ZONE_DATA = this.fixed_img_count.mob_img_data;
       }
       // 送資料進去陣列
-      let url = document.location.href;
-      const SUB_URL = url.substring(0, url.length - 10);
-      let style = {
+      let style
+      style = {
         content: "文字",
         foucs: false,
         display: "block",
         outline: "0px transparent solid",
-        width: "100%", // auto會導致拖曳到右邊時縮小
+        width: "950px", // auto會導致拖曳到右邊時縮小
         height: "auto",
         border: "0px #000 solid",
         backgroundColor: "transparent",
@@ -1380,6 +1497,7 @@ var app = new Vue({
         srcset: "./images/pc/bg_01.jpg",
         src: "./images/xs/bg_01.jpg"
       };
+
       ZONE_DATA.push(style);
       this.CloseImgFocus();
       this.OpenImgFocus();
@@ -1510,27 +1628,36 @@ var app = new Vue({
     },
     // 印出程式碼
     PrintCode: function () {
-      let folder_name = this.fixed_project_data.name_folder;
-      let code = document.querySelector("#loreal-compaign").innerHTML;
-      document.querySelector("#code").style.display = "block";
-      if (document.querySelector("#add_size") != null) {
-        document.querySelector("#add_size").media = "(min-width:992px)";
+      this.ChangeUnit();  
+      this.ChangeFrameWidth();
+      let self = this;
+      let execute = ()=>{
+        let folder_name = self.fixed_project_data.name_folder;
+        let code = document.querySelector("#loreal-compaign").innerHTML;
+        document.querySelector("#code").style.display = "block";
+        if (document.querySelector("#add_size") != null) {
+          document.querySelector("#add_size").media = "(min-width:992px)";
+        }
+  
+        let textChang = code
+          .replace(new RegExp(".png", "g"), ".png?$staticlink$")
+          .replace(new RegExp(".jpg", "g"), ".jpg?$staticlink$")
+          .replace(new RegExp(".gif", "g"), ".gif?$staticlink$")
+          .replace(
+            new RegExp("./images", "g"),
+            "event-o2o-page/" + folder_name + "/images"
+          )
+          .replace(new RegExp("margin: initial;", "g"), "margin: 0 auto;")
+          .replace(new RegExp('onclick="return false;"', "g"), '""')
+          .replace(new RegExp("display: none;", "g"), "display:block");
+        self.zone_code =
+          `<style>@media (min-width:992px){.display_zone_mobile {display: none !important;margin:0 auto;}}@media (max-width:991.9px) {.display_zone_destop {display: none !important;}}</style>` +
+          textChang;
       }
+      setTimeout(function(){
+        execute();
+      },300);
 
-      let textChang = code
-        .replace(new RegExp(".png", "g"), ".png?$staticlink$")
-        .replace(new RegExp(".jpg", "g"), ".jpg?$staticlink$")
-        .replace(new RegExp(".gif", "g"), ".gif?$staticlink$")
-        .replace(
-          new RegExp("./images", "g"),
-          "event-o2o-page/" + folder_name + "/images"
-        )
-        .replace(new RegExp("margin: initial;", "g"), "margin: 0 auto;")
-        .replace(new RegExp('onclick="return false;"', "g"), '""')
-        .replace(new RegExp("display: none;", "g"), "display:block");
-      this.zone_code =
-        `<style>@media (min-width:992px){.display_zone_mobile {display: none !important;margin:0 auto;}}@media (max-width:991.9px) {.display_zone_destop {display: none !important;}}</style>` +
-        textChang;
 
     },
     // 圖片區取消按鈕
@@ -1655,17 +1782,5 @@ var app = new Vue({
       this.ClearBtnInputValue();
       this.BtnZoneDisplayClose();
     },
-    testfunction: function () {
-      let pc_img_left =
-        this.fixed_img_count.pc_img_data.map(item => {
-          item.left = (parseInt(item.left) / 1000) * 100 + "vw";
-          return item.left
-        });
-      let pc_img_top =
-        this.fixed_img_count.pc_img_data.map(item => {
-          item.top = (parseInt(item.top) / 1000) * 100 + "vw";
-          return item.top
-        });
-    }
   }
 });
