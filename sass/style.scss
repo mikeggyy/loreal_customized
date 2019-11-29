@@ -622,9 +622,10 @@ $panelside-width: 280px;
 @media screen and (max-width: 1300px) {
   .container {
     .panel {
-      width: 260px;
+      // width: 260px;
+      height: 160px;
       &.moveLeft {
-        left: -260px;
+        // left: -260px;
       }
       .element {
         font-size: 12px;
@@ -642,12 +643,12 @@ $panelside-width: 280px;
       }
     }
     .panelside {
-      left: 260px;
+      // left: 260px;
     }
     .scene {
       // width: 260px;
       width: 100%;
-      padding-left: 260px;
+      // padding-left: 260px;
     }
   }
 }

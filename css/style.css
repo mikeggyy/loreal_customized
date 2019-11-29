@@ -1338,10 +1338,7 @@ img {
 
 @media screen and (max-width: 1300px) {
   .container .panel {
-    width: 260px;
-  }
-  .container .panel.moveLeft {
-    left: -260px;
+    height: 160px;
   }
   .container .panel .element {
     font-size: 12px;
@@ -1353,11 +1350,7 @@ img {
   .container .panel .element .element-setting > .row-flex .label ~ .content {
     width: calc(100% - 60px);
   }
-  .container .panelside {
-    left: 260px;
-  }
   .container .scene {
     width: 100%;
-    padding-left: 260px;
   }
 }
