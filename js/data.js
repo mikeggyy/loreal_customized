@@ -818,12 +818,12 @@ var app = new Vue({
   methods: {
     // 資料拷貝
     CopyData:function(){
-      this.fixed_img_count.pc_img_temporarily_data = {...this.fixed_img_count.pc_img_data};
-      this.fixed_img_count.mob_img_temporarily_data = {...this.fixed_img_count.mob_img_data};
-      this.fixed_text_count.pc_text_temporarily_data = {...this.fixed_text_count.pc_text_data};
-      this.fixed_text_count.mob_text_temporarily_data = {...this.fixed_text_count.mob_text_data};
-      this.fixed_btn_count.pc_btn_temporarily_data = {...this.fixed_btn_count.pc_btn_data};
-      this.fixed_btn_count.mob_btn_temporarily_data = {...this.fixed_btn_count.mob_btn_data};
+      this.fixed_img_count.pc_img_temporarily_data = JSON.parse(JSON.stringify(this.fixed_img_count.pc_img_data));
+      this.fixed_img_count.mob_img_temporarily_data = JSON.parse(JSON.stringify(this.fixed_img_count.mob_img_data));
+      this.fixed_text_count.pc_text_temporarily_data = JSON.parse(JSON.stringify(this.fixed_text_count.pc_text_data));
+      this.fixed_text_count.mob_text_temporarily_data = JSON.parse(JSON.stringify(this.fixed_text_count.mob_text_data));
+      this.fixed_btn_count.pc_btn_temporarily_data = JSON.parse(JSON.stringify(this.fixed_btn_count.pc_btn_data));
+      this.fixed_btn_count.mob_btn_temporarily_data = JSON.parse(JSON.stringify(this.fixed_btn_count.mob_btn_data));
     },
     // 單位轉換
     ChangeUnit: function () {
