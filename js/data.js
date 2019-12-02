@@ -21,7 +21,9 @@ var app = new Vue({
       display: false,
       img_file_name: "",
       pc_img_data: [],
-      mob_img_data: []
+      mob_img_data: [],
+      pc_img_temporarily_data:[],
+      mob_img_temporarily_data:[],
     },
     f_img_width: "",
     f_img_border: "",
@@ -35,7 +37,9 @@ var app = new Vue({
     fixed_text_count: {
       display: false,
       pc_text_data: [],
-      mob_text_data: []
+      mob_text_data: [],
+      pc_text_temporarily_data:[],
+      mob_text_temporarily_data:[],
     },
     f_text_content: "",
     f_text_width: "",
@@ -55,7 +59,9 @@ var app = new Vue({
     fixed_btn_count: {
       display: false,
       pc_btn_data: [],
-      mob_btn_data: []
+      mob_btn_data: [],
+      pc_btn_temporarily_data:[],
+      mob_btn_temporarily_data:[],
     },
     f_btn_content: "",
     f_btn_width: "",
@@ -81,12 +87,15 @@ var app = new Vue({
   //
   //
   //
+  //-
   //
   //
   //
   //
   //
-  //
+  // 
+  // 
+  // 
   //
   //
   //
@@ -788,13 +797,18 @@ var app = new Vue({
   //
   //
   //
+  // 
   //
   //
   //
   //
   //
   //
-  //
+  // 
+  // 
+  // 
+  // 
+  // 
   //
   //
   //
@@ -802,114 +816,123 @@ var app = new Vue({
   //
   //
   methods: {
+    // 資料拷貝
+    CopyData:function(){
+      this.fixed_img_count.pc_img_temporarily_data = {...this.fixed_img_count.pc_img_data};
+      this.fixed_img_count.mob_img_temporarily_data = {...this.fixed_img_count.mob_img_data};
+      this.fixed_text_count.pc_text_temporarily_data = {...this.fixed_text_count.pc_text_data};
+      this.fixed_text_count.mob_text_temporarily_data = {...this.fixed_text_count.mob_text_data};
+      this.fixed_btn_count.pc_btn_temporarily_data = {...this.fixed_btn_count.pc_btn_data};
+      this.fixed_btn_count.mob_btn_temporarily_data = {...this.fixed_btn_count.mob_btn_data};
+    },
     // 單位轉換
     ChangeUnit: function () {
       if (this.fixed_project_data.type_project == "YSL") {
         // 桌機版單位轉換
         let pc_img_left =
-          this.fixed_img_count.pc_img_data.map(item => {
+          this.fixed_img_count.pc_img_temporarily_data.map(item => {
             item.left = (parseInt(item.left) / 950) * 100 + 'vw';
             return item.left
           });
         let pc_img_top =
-          this.fixed_img_count.pc_img_data.map(item => {
+          this.fixed_img_count.pc_img_temporarily_data.map(item => {
             item.top = (parseInt(item.top) / 950) * 100 + 'vw';
             return item.top
           });
         let pc_img_width =
-          this.fixed_img_count.pc_img_data.map(item => {
+          this.fixed_img_count.pc_img_temporarily_data.map(item => {
             item.width = (parseInt(item.width) / 950) * 100 + 'vw';
             return item.width
           });
         let pc_text_left =
-          this.fixed_text_count.pc_text_data.map(item => {
+          this.fixed_text_count.pc_text_temporarily_data.map(item => {
             item.left = (parseInt(item.left) / 950) * 100 + 'vw';
             return item.left
           });
         let pc_text_top =
-          this.fixed_text_count.pc_text_data.map(item => {
+          this.fixed_text_count.pc_text_temporarily_data.map(item => {
             item.top = (parseInt(item.top) / 950) * 100 + 'vw';
             return item.top
           });
         let pc_text_font =
-          this.fixed_text_count.pc_text_data.map(item => {
+          this.fixed_text_count.pc_text_temporarily_data.map(item => {
             item.fontSize = 'calc(' + (parseInt(item.fontSize) / 950) * 100 + 'vw)';
             return item.fontSize
           });
         let pc_btn_left =
-          this.fixed_btn_count.pc_btn_data.map(item => {
+          this.fixed_btn_count.pc_btn_temporarily_data.map(item => {
             item.left = (parseInt(item.left) / 950) * 100 + 'vw';
             return item.left
           });
         let pc_btn_top =
-          this.fixed_btn_count.pc_btn_data.map(item => {
+          this.fixed_btn_count.pc_btn_temporarily_data.map(item => {
             item.top = (parseInt(item.top) / 950) * 100 + 'vw';
             return item.top
           });
         let pc_btn_width =
-          this.fixed_btn_count.pc_btn_data.map(item => {
+          this.fixed_btn_count.pc_btn_temporarily_data.map(item => {
             item.width = (parseInt(item.width) / 950) * 100 + 'vw';
             return item.width
           });
         let pc_btn_height =
-          this.fixed_btn_count.pc_btn_data.map(item => {
+          this.fixed_btn_count.pc_btn_temporarily_data.map(item => {
             item.height = (parseInt(item.height) / 950) * 100 + 'vw';
             return item.height
           });
         let pc_btn_fontSize =
-          this.fixed_btn_count.pc_btn_data.map(item => {
+          this.fixed_btn_count.pc_btn_temporarily_data.map(item => {
             item.fontSize = 'calc(' + (parseInt(item.fontSize) / 950) * 100 + 'vw)';
             return item.fontSize
           });
       }
       // 手機版單位轉換
       let mob_img_left =
-        this.fixed_img_count.mob_img_data.map(item => {
+        this.fixed_img_count.mob_img_temporarily_data.map(item => {
           item.left = (parseInt(item.left) / 375) * 100 + 'vw';
           return item.left
         });
       let mob_img_top =
-        this.fixed_img_count.mob_img_data.map(item => {
+        this.fixed_img_count.mob_img_temporarily_data.map(item => {
           item.top = (parseInt(item.top) / 375) * 100 + 'vw';
           return item.top
         });
       let mob_text_left =
-        this.fixed_text_count.mob_text_data.map(item => {
+        this.fixed_text_count.mob_text_temporarily_data.map(item => {
           item.left = (parseInt(item.left) / 375) * 100 + 'vw';
           return item.left
         });
       let mob_text_top =
-        this.fixed_text_count.mob_text_data.map(item => {
+        this.fixed_text_count.mob_text_temporarily_data.map(item => {
           item.top = (parseInt(item.top) / 375) * 100 + 'vw';
           return item.top
         });
       let mob_text_font =
-        this.fixed_text_count.mob_text_data.map(item => {
+        this.fixed_text_count.mob_text_temporarily_data.map(item => {
           item.fontSize = 'calc(' + (parseInt(item.fontSize) / 375) * 100 + 'vw)';
           return item.fontSize
         });
       let mob_btn_left =
-        this.fixed_btn_count.mob_btn_data.map(item => {
+        this.fixed_btn_count.mob_btn_temporarily_data.map(item => {
           item.left = (parseInt(item.left) / 375) * 100 + 'vw';
           return item.left
         });
       let mob_btn_top =
-        this.fixed_btn_count.mob_btn_data.map(item => {
+        this.fixed_btn_count.mob_btn_temporarily_data.map(item => {
           item.top = (parseInt(item.top) / 375) * 100 + 'vw';
           return item.top
         });
       let mob_btn_width =
-        this.fixed_btn_count.mob_btn_data.map(item => {
+        this.fixed_btn_count.mob_btn_temporarily_data.map(item => {
           item.width = (parseInt(item.width) / 375) * 100 + 'vw';
           return item.width
         });
       let mob_btn_height =
-        this.fixed_btn_count.mob_btn_data.map(item => {
+        this.fixed_btn_count.mob_btn_temporarily_data.map(item => {
           item.height = (parseInt(item.height) / 375) * 100 + 'vw';
           return item.height
         });
       let mob_btn_fontSize =
-        this.fixed_btn_count.mob_btn_data.map(item => {
+        this.fixed_btn_count.mob_btn_temporarily_data.map(item => {
           item.fontSize = 'calc(' + (parseInt(item.fontSize) / 375) * 100 + 'vw)';
           return item.fontSize
         });
@@ -917,7 +940,7 @@ var app = new Vue({
     // 改變外框寬度
     ChangeFrameWidth: function () {
       if (this.fixed_project_data.type_project == "YSL") {
-        document.querySelector('.display_zone_destop').style.width = "100%";
+        document.querySelector('#copy_scene').querySelector('.display_zone_destop').style.width = "100%";
       }
     },
     //視窗置頂
@@ -1479,24 +1502,46 @@ var app = new Vue({
       }
       // 送資料進去陣列
       let style
-      style = {
-        content: "文字",
-        foucs: false,
-        display: "block",
-        outline: "0px transparent solid",
-        width: "950px", // auto會導致拖曳到右邊時縮小
-        height: "auto",
-        border: "0px #000 solid",
-        backgroundColor: "transparent",
-        fontSize: "0",
-        zIndex: "1",
-        position: "absolute",
-        top: 0,
-        left: 0,
-        media: "(min-width:992px)",
-        srcset: "./images/pc/bg_01.jpg",
-        src: "./images/xs/bg_01.jpg"
-      };
+      if (this.pc_status == true) {
+        style = {
+          content: "文字",
+          foucs: false,
+          display: "block",
+          outline: "0px transparent solid",
+          width: "950px", // auto會導致拖曳到右邊時縮小
+          height: "auto",
+          border: "0px #000 solid",
+          backgroundColor: "transparent",
+          fontSize: "0",
+          zIndex: "1",
+          position: "absolute",
+          top: 0,
+          left: 0,
+          media: "(min-width:992px)",
+          srcset: "./images/pc/bg_01.jpg",
+          src: "./images/xs/bg_01.jpg"
+        };
+      } else if (this.mobile_status == true) {
+        style = {
+          content: "文字",
+          foucs: false,
+          display: "block",
+          outline: "0px transparent solid",
+          width: "375px", // auto會導致拖曳到右邊時縮小
+          height: "auto",
+          border: "0px #000 solid",
+          backgroundColor: "transparent",
+          fontSize: "0",
+          zIndex: "1",
+          position: "absolute",
+          top: 0,
+          left: 0,
+          media: "(min-width:992px)",
+          srcset: "./images/pc/bg_01.jpg",
+          src: "./images/xs/bg_01.jpg"
+        };
+      }
+
 
       ZONE_DATA.push(style);
       this.CloseImgFocus();
@@ -1628,17 +1673,15 @@ var app = new Vue({
     },
     // 印出程式碼
     PrintCode: function () {
-      this.ChangeUnit();  
+      this.CopyData();
+      this.ChangeUnit();
       this.ChangeFrameWidth();
       let self = this;
-      let execute = ()=>{
+      let execute = () => {
         let folder_name = self.fixed_project_data.name_folder;
         let code = document.querySelector("#loreal-compaign").innerHTML;
         document.querySelector("#code").style.display = "block";
-        if (document.querySelector("#add_size") != null) {
-          document.querySelector("#add_size").media = "(min-width:992px)";
-        }
-  
+
         let textChang = code
           .replace(new RegExp(".png", "g"), ".png?$staticlink$")
           .replace(new RegExp(".jpg", "g"), ".jpg?$staticlink$")
@@ -1654,9 +1697,9 @@ var app = new Vue({
           `<style>@media (min-width:992px){.display_zone_mobile {display: none !important;margin:0 auto;}}@media (max-width:991.9px) {.display_zone_destop {display: none !important;}}</style>` +
           textChang;
       }
-      setTimeout(function(){
+      setTimeout(function () {
         execute();
-      },300);
+      }, 300);
 
 
     },
