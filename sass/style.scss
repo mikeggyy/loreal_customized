@@ -6,19 +6,34 @@ $panelside-width: 280px;
 .container {
   height: 100vh;
 
+  &.moveRight {
+    .preview-setting {
+      .link-view {
+        right: 56px;
+        transition: all 0.4s ease;
+        transition-delay: 0.3s;
+      }
+    }
+    .toggle-destop-moblie {
+      right: 0;
+      transition: all 0.4s ease;
+      transition-delay: 0.3s;
+    }
+  }
+
   .panel-trigger {
     display: inline-block;
     position: absolute;
     width: 24px;
     height: 30px;
-    top: 0;
-    // right: -24px;
-    right: 0;
+    top: 30px;
+    left: 0;
+    opacity: 0;
+    // right: 0;
     background-color: #fff;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
     transition: all 0.25s ease;
-    width: 0;
     cursor: pointer;
     overflow: hidden;
     span {
@@ -27,20 +42,19 @@ $panelside-width: 280px;
       width: 12px;
       height: 12px;
       top: 6px;
-      left: 8px;
+      left: 4px;
       border-top: 1px solid #333;
       border-right: 1px solid #333;
-      transform: rotate(-135deg);
+      transform: rotate(45deg);
     }
   }
   .panel {
     position: fixed;
-    left: 0;
+    // left: 0;
     right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 200px;
-    // height: 100%;
+    width: $panel-width;
+    // height: 200px;
+    height: 100%;
     border-right: 1px solid #dedede;
     background-color: #fff;
     box-shadow: 0 1px 6px 0 rgba(#333, 0.2);
@@ -48,19 +62,20 @@ $panelside-width: 280px;
     transition: all 0.4s ease;
     transition-delay: 0.3s;
 
-    &.moveLeft {
+    &.moveRight {
+      transform: translateX($panel-width);
       transition: all 0.4s ease;
       .panel-trigger {
         width: 24px;
-        right: -24px;
+        left: -24px;
         opacity: 0.5;
         transition: all 0.25s ease;
         &:hover {
           opacity: 1;
         }
         span {
-          left: 2px;
-          transform: rotate(45deg);
+          left: 10px;
+          transform: rotate(-135deg);
           transition: all 0.25s ease;
         }
       }
@@ -68,8 +83,9 @@ $panelside-width: 280px;
 
     &:hover {
       .panel-trigger {
-        width: 24px;
-        right: -24px;
+        // width: 24px;
+        left: -24px;
+        opacity: 1;
         transition: all 0.25s ease;
       }
     }
@@ -268,37 +284,37 @@ $panelside-width: 280px;
       }
     }
   }
-
+  // 選擇圖片
   .panelside {
     position: fixed;
     top: 0;
-    // left: $panel-width;
+    right: -#{$panelside-width};
+    right: 0;
     height: 100%;
     width: $panelside-width;
     border-right: 1px solid #dedede;
     background-color: rgba(#fff, 0.8);
     box-shadow: 0 1px 6px 0 rgba(#333, 0.2);
-    transform: translateX(-#{$panelside-width});
+    transform: translateX(#{$panelside-width});
     transition: all 0.25s ease;
     transition-delay: 0.3s;
     // width: 0;
     visibility: hidden;
     z-index: 99;
     &.active {
-      transform: translateX(0);
+      transform: translateX(-#{$panel-width});
       transition: all 0.25s ease;
       // width: 0;
       visibility: visible;
     }
-    &.moveLeft {
-      transform: translateX(-#{$panelside-width});
+    &.moveRight {
+      transform: translateX(#{$panelside-width});
       transition: all 0.25s ease;
-      // visibility: hidden;
     }
     .icon-close {
       position: absolute;
       top: 5px;
-      right: 5px;
+      left: 5px;
       cursor: pointer;
     }
     .panelside-container {
@@ -374,11 +390,11 @@ $panelside-width: 280px;
       // padding-left: $panel-width + $panelside-width;
     }
 
-    &.moveLeft {
-      padding-left: 0;
-      transition: all 0.4s ease;
-      transition-delay: 0.3s;
-    }
+    // &.moveRight {
+    //   padding-left: 0;
+    //   transition: all 0.4s ease;
+    //   transition-delay: 0.3s;
+    // }
     .scene-container {
       width: 100%;
       position: relative;
@@ -398,10 +414,12 @@ $panelside-width: 280px;
       width: 30px;
       height: 30px;
       top: 0;
-      right: 56px;
+      right: calc(#{$panel-width} + 56px);
       border: 1px solid #aaa;
       z-index: 88;
       cursor: pointer;
+      transition: all 0.4s ease;
+      transition-delay: 0.3s;
       .fa-eye {
         position: absolute;
         opacity: 0;
@@ -418,12 +436,17 @@ $panelside-width: 280px;
         .fa-eye-slash {
           opacity: 0;
         }
+        svg {
+          path {
+            fill: #000;
+          }
+        }
       }
     }
   }
   .toggle-destop-moblie {
     position: fixed;
-    right: 0;
+    right: $panel-width;
     top: 0;
     border: 1px solid #aaa;
     color: #bbb;
@@ -431,6 +454,8 @@ $panelside-width: 280px;
     line-height: 1;
     font-size: 0;
     z-index: 90;
+    transition: all 0.4s ease;
+    transition-delay: 0.3s;
     &::before {
       content: "";
       display: inline-block;
@@ -622,10 +647,11 @@ $panelside-width: 280px;
 @media screen and (max-width: 1300px) {
   .container {
     .panel {
-      // width: 260px;
-      height: 160px;
-      &.moveLeft {
-        // left: -260px;
+      width: 260px;
+      // height: 160px;
+      &.moveRight {
+        // right: -260px;
+        transform: translateX(260px);
       }
       .element {
         font-size: 12px;
@@ -643,12 +669,24 @@ $panelside-width: 280px;
       }
     }
     .panelside {
-      // left: 260px;
+      right: 260px;
+      &.moveRight {
+        transform: translateX(260px);
+      }
     }
     .scene {
       // width: 260px;
       width: 100%;
       // padding-left: 260px;
+    }
+    // mobile / desktop mode
+    .preview-setting {
+      .link-view {
+        right: calc(260px + 56px);
+      }
+    }
+    .toggle-destop-moblie {
+      right: 260px;
     }
   }
 }

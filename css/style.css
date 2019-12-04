@@ -674,19 +674,35 @@ img {
   height: 100vh;
 }
 
+.container.moveRight .preview-setting .link-view {
+  right: 56px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+}
+
+.container.moveRight .toggle-destop-moblie {
+  right: 0;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+}
+
 .container .panel-trigger {
   display: inline-block;
   position: absolute;
   width: 24px;
   height: 30px;
-  top: 0;
-  right: 0;
+  top: 30px;
+  left: 0;
+  opacity: 0;
   background-color: #fff;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
-  width: 0;
   cursor: pointer;
   overflow: hidden;
 }
@@ -697,20 +713,18 @@ img {
   width: 12px;
   height: 12px;
   top: 6px;
-  left: 8px;
+  left: 4px;
   border-top: 1px solid #333;
   border-right: 1px solid #333;
-  -webkit-transform: rotate(-135deg);
-          transform: rotate(-135deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .container .panel {
   position: fixed;
-  left: 0;
   right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 200px;
+  width: 320px;
+  height: 100%;
   border-right: 1px solid #dedede;
   background-color: #fff;
   -webkit-box-shadow: 0 1px 6px 0 rgba(51, 51, 51, 0.2);
@@ -722,34 +736,36 @@ img {
           transition-delay: 0.3s;
 }
 
-.container .panel.moveLeft {
+.container .panel.moveRight {
+  -webkit-transform: translateX(320px);
+          transform: translateX(320px);
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
 
-.container .panel.moveLeft .panel-trigger {
+.container .panel.moveRight .panel-trigger {
   width: 24px;
-  right: -24px;
+  left: -24px;
   opacity: 0.5;
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
 }
 
-.container .panel.moveLeft .panel-trigger:hover {
+.container .panel.moveRight .panel-trigger:hover {
   opacity: 1;
 }
 
-.container .panel.moveLeft .panel-trigger span {
-  left: 2px;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+.container .panel.moveRight .panel-trigger span {
+  left: 10px;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
 }
 
 .container .panel:hover .panel-trigger {
-  width: 24px;
-  right: -24px;
+  left: -24px;
+  opacity: 1;
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
 }
@@ -942,14 +958,16 @@ img {
 .container .panelside {
   position: fixed;
   top: 0;
+  right: -280px;
+  right: 0;
   height: 100%;
   width: 280px;
   border-right: 1px solid #dedede;
   background-color: rgba(255, 255, 255, 0.8);
   -webkit-box-shadow: 0 1px 6px 0 rgba(51, 51, 51, 0.2);
           box-shadow: 0 1px 6px 0 rgba(51, 51, 51, 0.2);
-  -webkit-transform: translateX(-280px);
-          transform: translateX(-280px);
+  -webkit-transform: translateX(280px);
+          transform: translateX(280px);
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
   -webkit-transition-delay: 0.3s;
@@ -959,16 +977,16 @@ img {
 }
 
 .container .panelside.active {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+  -webkit-transform: translateX(-320px);
+          transform: translateX(-320px);
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
   visibility: visible;
 }
 
-.container .panelside.moveLeft {
-  -webkit-transform: translateX(-280px);
-          transform: translateX(-280px);
+.container .panelside.moveRight {
+  -webkit-transform: translateX(280px);
+          transform: translateX(280px);
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
 }
@@ -976,7 +994,7 @@ img {
 .container .panelside .icon-close {
   position: absolute;
   top: 5px;
-  right: 5px;
+  left: 5px;
   cursor: pointer;
 }
 
@@ -1070,14 +1088,6 @@ img {
   transition: all 0.4s ease;
 }
 
-.container .scene.moveLeft {
-  padding-left: 0;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-  -webkit-transition-delay: 0.3s;
-          transition-delay: 0.3s;
-}
-
 .container .scene .scene-container {
   width: 100%;
   position: relative;
@@ -1098,10 +1108,14 @@ img {
   width: 30px;
   height: 30px;
   top: 0;
-  right: 56px;
+  right: calc(320px + 56px);
   border: 1px solid #aaa;
   z-index: 88;
   cursor: pointer;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
 }
 
 .container .preview-setting .link-view .fa-eye {
@@ -1121,9 +1135,13 @@ img {
   opacity: 0;
 }
 
+.container .preview-setting .link-view.show svg path {
+  fill: #000;
+}
+
 .container .toggle-destop-moblie {
   position: fixed;
-  right: 0;
+  right: 320px;
   top: 0;
   border: 1px solid #aaa;
   color: #bbb;
@@ -1131,6 +1149,10 @@ img {
   line-height: 1;
   font-size: 0;
   z-index: 90;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
 }
 
 .container .toggle-destop-moblie::before {
@@ -1338,7 +1360,11 @@ img {
 
 @media screen and (max-width: 1300px) {
   .container .panel {
-    height: 160px;
+    width: 260px;
+  }
+  .container .panel.moveRight {
+    -webkit-transform: translateX(260px);
+            transform: translateX(260px);
   }
   .container .panel .element {
     font-size: 12px;
@@ -1350,7 +1376,20 @@ img {
   .container .panel .element .element-setting > .row-flex .label ~ .content {
     width: calc(100% - 60px);
   }
+  .container .panelside {
+    right: 260px;
+  }
+  .container .panelside.moveRight {
+    -webkit-transform: translateX(260px);
+            transform: translateX(260px);
+  }
   .container .scene {
     width: 100%;
+  }
+  .container .preview-setting .link-view {
+    right: calc(260px + 56px);
+  }
+  .container .toggle-destop-moblie {
+    right: 260px;
   }
 }

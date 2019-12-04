@@ -502,7 +502,7 @@
     <!-- 產出區 -->
     <!-- 選擇圖片時 scene 加上 panelside-show class -->
     <div class="scene" id="scene" draggable="false" onSelectStart="event.returnValue=false">
-      <div class="scene-container" onSelectStart="event.returnValue=false">
+      <div class="scene-container" id="loreal-compaign" onSelectStart="event.returnValue=false">
         <!-- 桌機區 -->
         <div class="display_zone_destop" style="width: 950px; position: relative; margin: initial;" v-show="pc_status">
           <!-- 產生圖片 -->
@@ -531,7 +531,7 @@
           <div class="main-img" v-on:mousedown="ImgMouseMoveGetXY()" v-bind:style="fixed_img_count.mob_img_data[index]"
             v-for="(item,index) in fixed_img_count.mob_img_data">
             <picture class="img" v-on:mousedown="ImgOutlineOpen(index)">
-              <source media="(min-width:2000px)" v-bind:srcset="fixed_img_count.mob_img_data[index].srcset" />
+              <source id="add_size" media="(min-width:2000px)" v-bind:srcset="fixed_img_count.mob_img_data[index].srcset" />
               <img v-bind:src="fixed_img_count.mob_img_data[index].src" alt="" />
             </picture>
           </div>
@@ -569,55 +569,6 @@
         <div v-on:click="ToggleMobile()" title="手機版"><i class="fas fa-mobile-alt"></i></div>
       </div>
     </div>
-    <!-- 程式碼複製 -->
-    <div id="copy_scene" style="display: none;">
-      <div class="scene-container" id="loreal-compaign" onSelectStart="event.returnValue=false">
-        <!-- 桌機區 -->
-        <div class="display_zone_destop" style="width: 950px; position: relative; margin: initial;" v-show="pc_status">
-          <!-- 產生圖片 -->
-          <div class="main-img" v-on:mousedown="ImgMouseMoveGetXY()" v-bind:style="fixed_img_count.pc_img_temporarily_data[index]"
-            v-for="(item,index) in fixed_img_count.pc_img_temporarily_data">
-            <picture class="img" v-on:mousedown="ImgOutlineOpen(index)">
-              <source media="(min-width:992px)" v-bind:srcset="fixed_img_count.pc_img_temporarily_data[index].srcset" />
-              <img v-bind:src="fixed_img_count.pc_img_temporarily_data[index].src" alt="" />
-            </picture>
-          </div>
-          <!-- 產生文字 -->
-          <div class="text" v-on:mousedown="TextMouseMoveGetXY()" onSelectStart="event.returnValue=false"
-            v-bind:style="fixed_text_count.pc_text_temporarily_data[index]" v-for="(item,index) in fixed_text_count.pc_text_temporarily_data">
-            <p v-on:mousedown="TextOutlineOpen(index)" v-html="fixed_text_count.pc_text_temporarily_data[index].content"></p>
-          </div>
-          <!-- 產生連結 -->
-          <div class="btn" v-on:mousedown="BtnMouseMoveGetXY()">
-            <a v-on:mousedown="BtnOutlineOpen(index)" onclick="return false;" onSelectStart="event.returnValue=false"
-              v-bind:style="fixed_btn_count.pc_btn_temporarily_data[index]" v-for="(item,index) in fixed_btn_count.pc_btn_temporarily_data"
-              v-html="fixed_btn_count.pc_btn_temporarily_data[index].content" v-bind:href="fixed_btn_count.pc_btn_temporarily_data[index].href" target="_blank"></a>
-          </div>
-        </div>
-        <!-- 手機區 -->
-        <div class="display_zone_mobile" style="width: 100%; position: relative;" v-show="mobile_status">
-          <!-- 產生圖片 -->
-          <div class="main-img" v-on:mousedown="ImgMouseMoveGetXY()" v-bind:style="fixed_img_count.mob_img_temporarily_data[index]"
-            v-for="(item,index) in fixed_img_count.mob_img_temporarily_data">
-            <picture class="img" v-on:mousedown="ImgOutlineOpen(index)">
-              <source media="(min-width:992px)" v-bind:srcset="fixed_img_count.mob_img_temporarily_data[index].srcset" />
-              <img v-bind:src="fixed_img_count.mob_img_temporarily_data[index].src" alt="" />
-            </picture>
-          </div>
-          <!-- 產生文字 -->
-          <div class="text" v-on:mousedown="TextMouseMoveGetXY()" onSelectStart="event.returnValue=false"
-            v-bind:style="fixed_text_count.mob_text_temporarily_data[index]" v-for="(item,index) in fixed_text_count.mob_text_temporarily_data">
-            <p v-on:mousedown="TextOutlineOpen(index)" v-html="fixed_text_count.mob_text_temporarily_data[index].content"></p>
-          </div>
-          <!-- 產生連結 -->
-          <div class="btn" v-on:mousedown="BtnMouseMoveGetXY()">
-            <a v-on:mousedown="BtnOutlineOpen(index)" onclick="return false;" v-bind:href="fixed_btn_count.mob_btn_temporarily_data[index].href" onSelectStart="event.returnValue=false"
-              v-bind:style="fixed_btn_count.mob_btn_temporarily_data[index]" v-for="(item,index) in fixed_btn_count.mob_btn_temporarily_data"
-              v-html="fixed_btn_count.mob_btn_temporarily_data[index].content" target="_blank"></a>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 
   <!-- lightbox - size: s/m/l -->
@@ -640,13 +591,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/js/all.min.js"></script>
   <script src="./js/data.js"></script>
-    <style>
-    .container .panel{
-      height: 100%;
-      left: unset;
-      width: 280px;
-    }
-    </style>
+
 </body>
 
 </html>
