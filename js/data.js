@@ -1000,6 +1000,7 @@ var app = new Vue({
     // 上傳圖片路徑
     ImgPcFileName: function() {
       const FILE_NAME = document.querySelector("#pc_file_name").files[0].name;
+      let self = this;
       if (FILE_NAME == "") {
         return;
       } else if (FILE_NAME != "") {
@@ -1022,6 +1023,7 @@ var app = new Vue({
           this.f_img_srcset = "./images/pc/" + FILE_NAME;
           target.srcset = "./images/pc/" + FILE_NAME;
         }
+        self.BodyHeight();
       }
     },
     ImgXsFileName: function() {
@@ -1713,6 +1715,9 @@ var app = new Vue({
     PrintCode: function() {
       this.CopyData();
       this.ChangeUnit();
+      this.CloseImgFocus();
+      this.CloseTextFocus();
+      this.CloseBtnFocus();
       let self = this;
       let code;
       let execute = () => {
