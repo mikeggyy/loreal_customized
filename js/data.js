@@ -990,11 +990,18 @@ var app = new Vue({
     BodyHeight: function() {
       let body_height = document.body.scrollHeight;
       if (this.pc_status == true) {
-        document.querySelector(".display_zone_destop").style.height =
+        document.querySelector(".display_zone_destop").style.height ='auto';
+        setTimeout(() => {
+          document.querySelector(".display_zone_destop").style.height =
           body_height + "px";
+        }, 100);
+
       } else if (this.mobile_status == true) {
-        document.querySelector(".display_zone_mobile").style.height =
+        document.querySelector(".display_zone_mobile").style.height ='auto';
+        setTimeout(() => {
+          document.querySelector(".display_zone_mobile").style.height =
           body_height + "px";
+        }, 100);
       }
     },
     // 上傳圖片路徑
@@ -1023,7 +1030,6 @@ var app = new Vue({
           this.f_img_srcset = "./images/pc/" + FILE_NAME;
           target.srcset = "./images/pc/" + FILE_NAME;
         }
-        self.BodyHeight();
       }
     },
     ImgXsFileName: function() {
