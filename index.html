@@ -38,15 +38,18 @@
                     <!-- <input v-model="f_name_project" type="text" class="input-s" /> -->
                     <div class="row row-flex justify-between">
                       <div class="flex-col-m-3">
-                        <input class="radio-button" type="radio" v-model="fixed_project_data.type_project" value="YSL" name="project" id="project-a">
+                        <input class="radio-button" type="radio" v-model="fixed_project_data.type_project" value="YSL"
+                          name="project" id="project-a">
                         <label for="project-a">YSL</label>
                       </div>
                       <div class="flex-col-m-3">
-                        <input class="radio-button" type="radio" v-model="fixed_project_data.type_project" value="GAB" name="project" id="project-b">
+                        <input class="radio-button" type="radio" v-model="fixed_project_data.type_project" value="GAB"
+                          name="project" id="project-b">
                         <label for="project-b">GAB</label>
                       </div>
                       <div class="flex-col-m-3">
-                        <input class="radio-button" type="radio" v-model="fixed_project_data.type_project" value="KLS" name="project" id="project-c">
+                        <input class="radio-button" type="radio" v-model="fixed_project_data.type_project" value="KLS"
+                          name="project" id="project-c">
                         <label for="project-c">KLS</label>
                       </div>
                     </div>
@@ -57,7 +60,8 @@
             <div class="row row-flex">
               <div class="flex-col-m-1">
                 <div class="row row-flex">
-                  <div class="label">資料夾<div class="required">*</div></div>
+                  <div class="label">資料夾<div class="required">*</div>
+                  </div>
                   <div class="content">
                     <input v-model="f_name_folder" type="text" />
                   </div>
@@ -112,7 +116,8 @@
             </div>
           </div>
           <!-- 判斷手機/電腦 -->
-          <div id="block-setting" class="element-setting" :class="{'is-desktop':this.pc_status, 'is-mobile':this.mobile_status}">
+          <div id="block-setting" class="element-setting"
+            :class="{'is-desktop':this.pc_status, 'is-mobile':this.mobile_status}">
             <div class="row row-flex">
               <div class="flex-col-m-2">
                 <div class="row row-flex">
@@ -171,13 +176,13 @@
                 </div>
               </div>
               <div class="flex-col-m-2">
-                  <div class="row row-flex">
-                    <div class="label">背景色</div>
-                    <div class="content">
-                      <input type="text" v-model="f_img_backgroundColor" placeholder="#ededed" />
-                    </div>
+                <div class="row row-flex">
+                  <div class="label">背景色</div>
+                  <div class="content">
+                    <input type="text" v-model="f_img_backgroundColor" placeholder="#ededed" />
                   </div>
                 </div>
+              </div>
             </div>
             <div class="row row-flex">
               <div class="flex-col-m-1">
@@ -246,8 +251,8 @@
               <div class="label">內距</div>
               <div class="content">
                 <div class="row row-flex">
-                    <input type="text" class="input-s"  placeholder="上下" />
-                    <input type="text" class="input-s" placeholder="左右" />
+                  <input type="text" class="input-s" placeholder="上下" />
+                  <input type="text" class="input-s" placeholder="左右" />
                   <!-- <div class="flex-col-m-4">
                     <input type="text" class="input-ss" v-model="f_text_paddingTop" placeholder="上" />
                   </div>
@@ -394,38 +399,38 @@
             </div>
             <div class="row row-flex">
               <div class="flex-col-m-2">
-                  <div class="row row-flex">
-                      <div class="label">z-index</div>
-                      <div class="content">
-                        <input type="number" v-model="f_btn_zIndex" />
-                      </div>
-                    </div>
+                <div class="row row-flex">
+                  <div class="label">z-index</div>
+                  <div class="content">
+                    <input type="number" v-model="f_btn_zIndex" />
+                  </div>
+                </div>
               </div>
               <div class="flex-col-m-2">
-                  <div class="row row-flex">
-                      <div class="label">外框</div>
-                      <div class="content">
-                        <input type="text" v-model="f_btn_border" placeholder="大小 顏色 線條" />
-                      </div>
-                    </div>
+                <div class="row row-flex">
+                  <div class="label">外框</div>
+                  <div class="content">
+                    <input type="text" v-model="f_btn_border" placeholder="大小 顏色 線條" />
+                  </div>
+                </div>
               </div>
             </div>
             <div class="row row-flex">
               <div class="flex-col-m-2">
-                  <div class="row row-flex">
-                      <div class="label">背景</div>
-                      <div class="content">
-                        <input type="text" v-model="f_btn_backgroundColor" placeholder="#ededed" />
-                      </div>
-                    </div>
+                <div class="row row-flex">
+                  <div class="label">背景</div>
+                  <div class="content">
+                    <input type="text" v-model="f_btn_backgroundColor" placeholder="#ededed" />
+                  </div>
+                </div>
               </div>
               <div class="flex-col-m-2">
-                  <div class="row row-flex">
-                      <div class="label">文字顏色</div>
-                      <div class="content">
-                        <input type="color" v-model="f_btn_color" />
-                      </div>
-                    </div>
+                <div class="row row-flex">
+                  <div class="label">文字顏色</div>
+                  <div class="content">
+                    <input type="color" v-model="f_btn_color" />
+                  </div>
+                </div>
               </div>
             </div>
             <div class="row row-flex">
@@ -444,7 +449,7 @@
               <div class="label">內距</div>
               <div class="content">
                 <div class="row row-flex">
-                  <input type="text" class="input-s"  placeholder="上下" />
+                  <input type="text" class="input-s" placeholder="上下" />
                   <input type="text" class="input-s" placeholder="左右" />
                   <!-- <div class="flex-col-m-4">
                     <input type="text" v-model="f_btn_paddingTop" class="input-ss" placeholder="上" />
@@ -466,7 +471,7 @@
                 <div class="row row-flex">
                   <div class="label">x軸</div>
                   <div class="content">
-                    <input type="text" v-on:keydown="KeyDownChangInt_BtnLeft()"v-model="f_btn_left" />
+                    <input type="text" v-on:keydown="KeyDownChangInt_BtnLeft()" v-model="f_btn_left" />
                   </div>
                 </div>
               </div>
@@ -522,7 +527,8 @@
           <div class="btn" v-on:mousedown="BtnMouseMoveGetXY()">
             <a v-on:mousedown="BtnOutlineOpen(index)" onclick="return false;" onSelectStart="event.returnValue=false"
               v-bind:style="fixed_btn_count.pc_btn_data[index]" v-for="(item,index) in fixed_btn_count.pc_btn_data"
-              v-html="fixed_btn_count.pc_btn_data[index].content" v-bind:href="fixed_btn_count.pc_btn_data[index].href" target="_blank"></a>
+              v-html="fixed_btn_count.pc_btn_data[index].content" v-bind:href="fixed_btn_count.pc_btn_data[index].href"
+              target="_blank"></a>
           </div>
         </div>
         <!-- 手機區 -->
@@ -531,7 +537,8 @@
           <div class="main-img" v-on:mousedown="ImgMouseMoveGetXY()" v-bind:style="fixed_img_count.mob_img_data[index]"
             v-for="(item,index) in fixed_img_count.mob_img_data">
             <picture class="img" v-on:mousedown="ImgOutlineOpen(index)">
-              <source id="add_size" media="(min-width:2000px)" v-bind:srcset="fixed_img_count.mob_img_data[index].srcset" />
+              <source id="add_size" media="(min-width:2000px)"
+                v-bind:srcset="fixed_img_count.mob_img_data[index].srcset" />
               <img v-bind:src="fixed_img_count.mob_img_data[index].src" alt="" />
             </picture>
           </div>
@@ -542,8 +549,61 @@
           </div>
           <!-- 產生連結 -->
           <div class="btn" v-on:mousedown="BtnMouseMoveGetXY()">
-            <a v-on:mousedown="BtnOutlineOpen(index)" onclick="return false;" v-bind:href="fixed_btn_count.mob_btn_data[index].href" onSelectStart="event.returnValue=false"
+            <a v-on:mousedown="BtnOutlineOpen(index)" onclick="return false;"
+              v-bind:href="fixed_btn_count.mob_btn_data[index].href" onSelectStart="event.returnValue=false"
               v-bind:style="fixed_btn_count.mob_btn_data[index]" v-for="(item,index) in fixed_btn_count.mob_btn_data"
+              v-html="fixed_btn_count.mob_btn_data[index].content" target="_blank"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 選擇圖片時 scene 加上 panelside-show class -->
+    <div class="scene" id="scene_ysl" draggable="false" onSelectStart="event.returnValue=false">
+      <div class="scene-container" id="loreal-compaign_ysl" onSelectStart="event.returnValue=false">
+        <!-- 桌機區 -->
+        <div class="display_zone_destop" style="width: 100%; position: relative; margin: initial;" v-show="pc_status">
+          <!-- 產生圖片 -->
+          <div class="main-img" v-on:mousedown="ImgMouseMoveGetXY()" v-bind:style="fixed_img_count.pc_img_temporarily_data[index]"
+            v-for="(item,index) in fixed_img_count.pc_img_data">
+            <picture class="img" v-on:mousedown="ImgOutlineOpen(index)">
+              <source media="(min-width:992px)" v-bind:srcset="fixed_img_count.pc_img_data[index].srcset" />
+              <img v-bind:src="fixed_img_count.pc_img_data[index].src" alt="" />
+            </picture>
+          </div>
+          <!-- 產生文字 -->
+          <div class="text" v-on:mousedown="TextMouseMoveGetXY()" onSelectStart="event.returnValue=false"
+            v-bind:style="fixed_text_count.pc_text_temporarily_data[index]" v-for="(item,index) in fixed_text_count.pc_text_data">
+            <p v-on:mousedown="TextOutlineOpen(index)" v-html="fixed_text_count.pc_text_data[index].content"></p>
+          </div>
+          <!-- 產生連結 -->
+          <div class="btn" v-on:mousedown="BtnMouseMoveGetXY()">
+            <a v-on:mousedown="BtnOutlineOpen(index)" onclick="return false;" onSelectStart="event.returnValue=false"
+              v-bind:style="fixed_btn_count.pc_btn_temporarily_data[index]" v-for="(item,index) in fixed_btn_count.pc_btn_data"
+              v-html="fixed_btn_count.pc_btn_data[index].content" v-bind:href="fixed_btn_count.pc_btn_data[index].href"
+              target="_blank"></a>
+          </div>
+        </div>
+        <!-- 手機區 -->
+        <div class="display_zone_mobile" style="width: 100%; position: relative;" v-show="mobile_status">
+          <!-- 產生圖片 -->
+          <div class="main-img" v-on:mousedown="ImgMouseMoveGetXY()" v-bind:style="fixed_img_count.mob_img_temporarily_data[index]"
+            v-for="(item,index) in fixed_img_count.mob_img_data">
+            <picture class="img" v-on:mousedown="ImgOutlineOpen(index)">
+              <source id="add_size" media="(min-width:2000px)"
+                v-bind:srcset="fixed_img_count.mob_img_data[index].srcset" />
+              <img v-bind:src="fixed_img_count.mob_img_data[index].src" alt="" />
+            </picture>
+          </div>
+          <!-- 產生文字 -->
+          <div class="text" v-on:mousedown="TextMouseMoveGetXY()" onSelectStart="event.returnValue=false"
+            v-bind:style="fixed_text_count.mob_text_temporarily_data[index]" v-for="(item,index) in fixed_text_count.mob_text_data">
+            <p v-on:mousedown="TextOutlineOpen(index)" v-html="fixed_text_count.mob_text_data[index].content"></p>
+          </div>
+          <!-- 產生連結 -->
+          <div class="btn" v-on:mousedown="BtnMouseMoveGetXY()">
+            <a v-on:mousedown="BtnOutlineOpen(index)" onclick="return false;"
+              v-bind:href="fixed_btn_count.mob_btn_data[index].href" onSelectStart="event.returnValue=false"
+              v-bind:style="fixed_btn_count.mob_btn_temporarily_data[index]" v-for="(item,index) in fixed_btn_count.mob_btn_data"
               v-html="fixed_btn_count.mob_btn_data[index].content" target="_blank"></a>
           </div>
         </div>
@@ -561,8 +621,8 @@
     <div class="preview-setting">
       <!-- toggle class "show" -->
       <div class="link-view" title="連結區塊預覽">
-          <i class="fas fa-eye"></i>
-          <i class="fas fa-eye-slash"></i>
+        <i class="fas fa-eye"></i>
+        <i class="fas fa-eye-slash"></i>
       </div>
       <div class="toggle-destop-moblie is-desktop">
         <div v-on:click="ToggleDestop()" title="電腦版"><i class="fas fa-desktop"></i></div>
@@ -585,9 +645,9 @@
           <a href="javascript:;" class="btn btn-lg btn-border btn-check">確定</a>
           <a href="javascript:;" class="btn btn-lg btn-border btn-cancel">取消</a>
         </div>
-        </div>
       </div>
     </div>
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/js/all.min.js"></script>
   <script src="./js/data.js"></script>

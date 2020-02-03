@@ -978,7 +978,7 @@ var app = new Vue({
     ChangeFrameWidth: function() {
       if (this.fixed_project_data.type_project == "YSL") {
         document
-          .querySelector("#scene")
+          .querySelector("#scene_ysl")
           .querySelector(".display_zone_destop").style.width = "100%";
       }
     },
@@ -1713,13 +1713,18 @@ var app = new Vue({
     PrintCode: function() {
       this.CopyData();
       this.ChangeUnit();
-      this.ChangeFrameWidth();
       let self = this;
+      let code;
       let execute = () => {
         let folder_name = self.fixed_project_data.name_folder;
-        let code = document.querySelector("#loreal-compaign").innerHTML;
+        if (this.fixed_project_data.type_project == "YSL"){
+          code = document.querySelector("#loreal-compaign_ysl").innerHTML;
+          self.ChangeFrameWidth();
+        }else{
+          code = document.querySelector("#loreal-compaign").innerHTML;
+        }
+        
         document.querySelector("#code").style.display = "block";
-
         let textChang = code
           .replace(new RegExp(".png", "g"), ".png?$staticlink$")
           .replace(new RegExp(".jpg", "g"), ".jpg?$staticlink$")
