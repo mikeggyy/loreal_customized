@@ -87,7 +87,7 @@ var app = new Vue({
   //
   //
   //
-  /   /-
+  //
   //
   //
   //
@@ -978,7 +978,7 @@ var app = new Vue({
     ChangeFrameWidth: function() {
       if (this.fixed_project_data.type_project == "YSL") {
         document
-          .querySelector("#copy_scene")
+          .querySelector("#scene")
           .querySelector(".display_zone_destop").style.width = "100%";
       }
     },
@@ -1640,7 +1640,7 @@ var app = new Vue({
       let style = {
         content: "新增連結",
         foucs: false,
-        display: "flex",
+        display: "block",
         outline: "0px transparent solid",
         width: "150px",
         height: "50px",
