@@ -839,73 +839,76 @@ var app = new Vue({
     },
     // 單位轉換
     ChangeUnit: function() {
+      let scrollHeight= (window.innerWidth - document.documentElement.clientWidth);
+      let body_height = document.body.scrollHeight;
+      let font_init = 6.2222;
       if (this.fixed_project_data.type_project == "YSL") {
         // 桌機版單位轉換
         let pc_img_left = this.fixed_img_count.pc_img_temporarily_data.map(
           item => {
-            item.left = (parseInt(item.left) / 950) * 100 + "vw";
+            item.left = (parseInt(item.left) / 950) * 100 + "%";
             return item.left;
           }
         );
         let pc_img_top = this.fixed_img_count.pc_img_temporarily_data.map(
           item => {
-            item.top = (parseInt(item.top) / 950) * 100 + "vw";
+            item.top = (parseInt(item.top) / body_height) * 100 + "%";
             return item.top;
           }
         );
         let pc_img_width = this.fixed_img_count.pc_img_temporarily_data.map(
           item => {
-            item.width = (parseInt(item.width) / 950) * 100 + "vw";
+            item.width = (parseInt(item.width) / 950) * 100 + "%";
             return item.width;
           }
         );
         let pc_text_left = this.fixed_text_count.pc_text_temporarily_data.map(
           item => {
-            item.left = (parseInt(item.left) / 950) * 100 + "vw";
+            item.left = (parseInt(item.left) / 950) * 100 + "%";
             return item.left;
           }
         );
         let pc_text_top = this.fixed_text_count.pc_text_temporarily_data.map(
           item => {
-            item.top = (parseInt(item.top) / 950) * 100 + "vw";
+            item.top = (parseInt(item.top) / body_height) * 100 + "%";
             return item.top;
           }
         );
         let pc_text_font = this.fixed_text_count.pc_text_temporarily_data.map(
           item => {
             item.fontSize =
-              "calc(" + (parseInt(item.fontSize) / 950) * 100 + "vw)";
+              "calc(" + (parseInt(item.fontSize)) * font_init + "%)";
             return item.fontSize;
           }
         );
         let pc_btn_left = this.fixed_btn_count.pc_btn_temporarily_data.map(
           item => {
-            item.left = (parseInt(item.left) / 950) * 100 + "vw";
+            item.left = (parseInt(item.left) / 950) * 100 + "%";
             return item.left;
           }
         );
         let pc_btn_top = this.fixed_btn_count.pc_btn_temporarily_data.map(
           item => {
-            item.top = (parseInt(item.top) / 950) * 100 + "vw";
+            item.top = (parseInt(item.top) / body_height) * 100 + "%";
             return item.top;
           }
         );
         let pc_btn_width = this.fixed_btn_count.pc_btn_temporarily_data.map(
           item => {
-            item.width = (parseInt(item.width) / 950) * 100 + "vw";
+            item.width = (parseInt(item.width) / 950) * 100 + "%";
             return item.width;
           }
         );
         let pc_btn_height = this.fixed_btn_count.pc_btn_temporarily_data.map(
           item => {
-            item.height = (parseInt(item.height) / 950) * 100 + "vw";
+            item.height = (parseInt(item.height) / body_height) * 100 + "%";
             return item.height;
           }
         );
         let pc_btn_fontSize = this.fixed_btn_count.pc_btn_temporarily_data.map(
           item => {
             item.fontSize =
-              "calc(" + (parseInt(item.fontSize) / 950) * 100 + "vw)";
+              "calc(" + (parseInt(item.fontSize)) * font_init + "%)";
             return item.fontSize;
           }
         );
@@ -990,16 +993,22 @@ var app = new Vue({
     BodyHeight: function() {
       let body_height = document.body.scrollHeight;
       if (this.pc_status == true) {
-        document.querySelector(".display_zone_destop").style.height ='auto';
+        document.querySelectorAll(".display_zone_destop")[0].style.height ='auto';
+        document.querySelectorAll(".display_zone_destop")[1].style.height ='auto';
         setTimeout(() => {
-          document.querySelector(".display_zone_destop").style.height =
+          document.querySelectorAll(".display_zone_destop")[0].style.height =
+          body_height + "px";
+          document.querySelectorAll(".display_zone_destop")[1].style.height =
           body_height + "px";
         }, 100);
 
       } else if (this.mobile_status == true) {
-        document.querySelector(".display_zone_mobile").style.height ='auto';
+        document.querySelectorAll(".display_zone_mobile")[0].style.height ='auto';
+        document.querySelectorAll(".display_zone_mobile")[1].style.height ='auto';
         setTimeout(() => {
-          document.querySelector(".display_zone_mobile").style.height =
+          document.querySelectorAll(".display_zone_mobile")[0].style.height =
+          body_height + "px";
+          document.querySelectorAll(".display_zone_mobile")[1].style.height =
           body_height + "px";
         }, 100);
       }

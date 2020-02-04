@@ -515,7 +515,7 @@
             v-for="(item,index) in fixed_img_count.pc_img_data">
             <picture class="img" v-on:mousedown="ImgOutlineOpen(index)">
               <source media="(min-width:992px)" v-bind:srcset="fixed_img_count.pc_img_data[index].srcset" />
-              <img v-bind:src="fixed_img_count.pc_img_data[index].src" alt="" />
+              <img style="width: 100%;" v-bind:src="fixed_img_count.pc_img_data[index].src" alt="" />
             </picture>
           </div>
           <!-- 產生文字 -->
@@ -539,7 +539,7 @@
             <picture class="img" v-on:mousedown="ImgOutlineOpen(index)">
               <source id="add_size" media="(min-width:2000px)"
                 v-bind:srcset="fixed_img_count.mob_img_data[index].srcset" />
-              <img v-bind:src="fixed_img_count.mob_img_data[index].src" alt="" />
+              <img style="width: 100%;" v-bind:src="fixed_img_count.mob_img_data[index].src" alt="" />
             </picture>
           </div>
           <!-- 產生文字 -->
@@ -567,7 +567,7 @@
             v-for="(item,index) in fixed_img_count.pc_img_data">
             <picture class="img" v-on:mousedown="ImgOutlineOpen(index)">
               <source media="(min-width:992px)" v-bind:srcset="fixed_img_count.pc_img_data[index].srcset" />
-              <img v-bind:src="fixed_img_count.pc_img_data[index].src" alt="" />
+              <img style="width: 100%;" v-bind:src="fixed_img_count.pc_img_data[index].src" alt="" />
             </picture>
           </div>
           <!-- 產生文字 -->
@@ -591,7 +591,7 @@
             <picture class="img" v-on:mousedown="ImgOutlineOpen(index)">
               <source id="add_size" media="(min-width:2000px)"
                 v-bind:srcset="fixed_img_count.mob_img_data[index].srcset" />
-              <img v-bind:src="fixed_img_count.mob_img_data[index].src" alt="" />
+              <img style="width: 100%;" v-bind:src="fixed_img_count.mob_img_data[index].src" alt="" />
             </picture>
           </div>
           <!-- 產生文字 -->
