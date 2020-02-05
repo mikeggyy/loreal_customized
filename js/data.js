@@ -108,20 +108,20 @@ var app = new Vue({
   //
   watch: {
     // 專案資料數值改變
-    f_name_project: function() {
+    f_name_project: function () {
       this.fixed_project_data.name_project = this.f_name_project;
     },
-    f_name_folder: function() {
+    f_name_folder: function () {
       this.fixed_project_data.name_folder = this.f_name_folder;
     },
-    f_code_campaign: function() {
+    f_code_campaign: function () {
       this.fixed_project_data.code_campaign = this.f_code_campaign;
     },
-    f_date_start: function() {
+    f_date_start: function () {
       this.fixed_project_data.date_start = this.f_date_start;
     },
     // 圖片區數值改變
-    f_img_width: function() {
+    f_img_width: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_img_count.pc_img_data;
@@ -129,17 +129,17 @@ var app = new Vue({
         ZONE_DATA = this.fixed_img_count.mob_img_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.width = this.f_img_width;
       }
     },
-    f_img_left: function() {
+    f_img_left: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_img_count.pc_img_data;
@@ -147,17 +147,17 @@ var app = new Vue({
         ZONE_DATA = this.fixed_img_count.mob_img_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.left = this.f_img_left;
       }
     },
-    f_img_top: function() {
+    f_img_top: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_img_count.pc_img_data;
@@ -165,17 +165,17 @@ var app = new Vue({
         ZONE_DATA = this.fixed_img_count.mob_img_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.top = this.f_img_top;
       }
     },
-    f_img_zIndex: function() {
+    f_img_zIndex: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_img_count.pc_img_data;
@@ -183,17 +183,17 @@ var app = new Vue({
         ZONE_DATA = this.fixed_img_count.mob_img_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.zIndex = this.f_img_zIndex;
       }
     },
-    f_img_backgroundColor: function() {
+    f_img_backgroundColor: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_img_count.pc_img_data;
@@ -201,17 +201,17 @@ var app = new Vue({
         ZONE_DATA = this.fixed_img_count.mob_img_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.backgroundColor = this.f_img_backgroundColor;
       }
     },
-    f_img_srcset: function() {
+    f_img_srcset: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_img_count.pc_img_data;
@@ -219,17 +219,17 @@ var app = new Vue({
         ZONE_DATA = this.fixed_img_count.mob_img_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.srcset = this.f_img_srcset;
       }
     },
-    f_img_src: function() {
+    f_img_src: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_img_count.pc_img_data;
@@ -237,18 +237,18 @@ var app = new Vue({
         ZONE_DATA = this.fixed_img_count.mob_img_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.src = this.f_img_src;
       }
     },
     // 文字區數值改變
-    f_text_content: function() {
+    f_text_content: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_text_count.pc_text_data;
@@ -256,18 +256,18 @@ var app = new Vue({
         ZONE_DATA = this.fixed_text_count.mob_text_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.content = this.f_text_content;
       }
     },
 
-    f_text_width: function() {
+    f_text_width: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_text_count.pc_text_data;
@@ -275,11 +275,11 @@ var app = new Vue({
         ZONE_DATA = this.fixed_text_count.mob_text_data;
       }
       if (
-        this.fixed_text_count.pc_text_data.find(function(item, index, array) {
+        this.fixed_text_count.pc_text_data.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = this.fixed_text_count.pc_text_data.find(function(
+        let target = this.fixed_text_count.pc_text_data.find(function (
           item,
           index,
           array
@@ -290,7 +290,7 @@ var app = new Vue({
       }
     },
 
-    f_text_height: function() {
+    f_text_height: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_text_count.pc_text_data;
@@ -298,18 +298,18 @@ var app = new Vue({
         ZONE_DATA = this.fixed_text_count.mob_text_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.height = this.f_text_height;
       }
     },
 
-    f_text_paddingTop: function() {
+    f_text_paddingTop: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_text_count.pc_text_data;
@@ -317,18 +317,18 @@ var app = new Vue({
         ZONE_DATA = this.fixed_text_count.mob_text_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.paddingTop = this.f_text_paddingTop;
       }
     },
 
-    f_text_paddingBottom: function() {
+    f_text_paddingBottom: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_text_count.pc_text_data;
@@ -336,18 +336,18 @@ var app = new Vue({
         ZONE_DATA = this.fixed_text_count.mob_text_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.paddingBottom = this.f_text_paddingBottom;
       }
     },
 
-    f_text_paddingLeft: function() {
+    f_text_paddingLeft: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_text_count.pc_text_data;
@@ -355,18 +355,18 @@ var app = new Vue({
         ZONE_DATA = this.fixed_text_count.mob_text_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.paddingLeft = this.f_text_paddingLeft;
       }
     },
 
-    f_text_paddingRight: function() {
+    f_text_paddingRight: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_text_count.pc_text_data;
@@ -374,18 +374,18 @@ var app = new Vue({
         ZONE_DATA = this.fixed_text_count.mob_text_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.paddingRight = this.f_text_paddingRight;
       }
     },
 
-    f_text_border: function() {
+    f_text_border: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_text_count.pc_text_data;
@@ -393,18 +393,18 @@ var app = new Vue({
         ZONE_DATA = this.fixed_text_count.mob_text_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.border = this.f_text_border;
       }
     },
 
-    f_text_color: function() {
+    f_text_color: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_text_count.pc_text_data;
@@ -412,18 +412,18 @@ var app = new Vue({
         ZONE_DATA = this.fixed_text_count.mob_text_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.color = this.f_text_color;
       }
     },
 
-    f_text_backgroundColor: function() {
+    f_text_backgroundColor: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_text_count.pc_text_data;
@@ -431,18 +431,18 @@ var app = new Vue({
         ZONE_DATA = this.fixed_text_count.mob_text_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.backgroundColor = this.f_text_backgroundColor;
       }
     },
 
-    f_text_fontSize: function() {
+    f_text_fontSize: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_text_count.pc_text_data;
@@ -450,18 +450,18 @@ var app = new Vue({
         ZONE_DATA = this.fixed_text_count.mob_text_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.fontSize = this.f_text_fontSize;
       }
     },
 
-    f_text_zIndex: function() {
+    f_text_zIndex: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_text_count.pc_text_data;
@@ -469,18 +469,18 @@ var app = new Vue({
         ZONE_DATA = this.fixed_text_count.mob_text_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.zIndex = this.f_text_zIndex;
       }
     },
 
-    f_text_top: function() {
+    f_text_top: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_text_count.pc_text_data;
@@ -488,18 +488,18 @@ var app = new Vue({
         ZONE_DATA = this.fixed_text_count.mob_text_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.top = this.f_text_top;
       }
     },
 
-    f_text_left: function() {
+    f_text_left: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_text_count.pc_text_data;
@@ -507,18 +507,18 @@ var app = new Vue({
         ZONE_DATA = this.fixed_text_count.mob_text_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.left = this.f_text_left;
       }
     },
     // 圖片區數值改變
-    f_btn_content: function() {
+    f_btn_content: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_btn_count.pc_btn_data;
@@ -526,17 +526,17 @@ var app = new Vue({
         ZONE_DATA = this.fixed_btn_count.mob_btn_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.content = this.f_btn_content;
       }
     },
-    f_btn_href: function() {
+    f_btn_href: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_btn_count.pc_btn_data;
@@ -544,17 +544,17 @@ var app = new Vue({
         ZONE_DATA = this.fixed_btn_count.mob_btn_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.href = this.f_btn_href;
       }
     },
-    f_btn_width: function() {
+    f_btn_width: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_btn_count.pc_btn_data;
@@ -562,17 +562,17 @@ var app = new Vue({
         ZONE_DATA = this.fixed_btn_count.mob_btn_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.width = this.f_btn_width;
       }
     },
-    f_btn_height: function() {
+    f_btn_height: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_btn_count.pc_btn_data;
@@ -580,17 +580,17 @@ var app = new Vue({
         ZONE_DATA = this.fixed_btn_count.mob_btn_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.height = this.f_btn_height;
       }
     },
-    f_btn_zIndex: function() {
+    f_btn_zIndex: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_btn_count.pc_btn_data;
@@ -598,17 +598,17 @@ var app = new Vue({
         ZONE_DATA = this.fixed_btn_count.mob_btn_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.zIndex = this.f_btn_zIndex;
       }
     },
-    f_btn_border: function() {
+    f_btn_border: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_btn_count.pc_btn_data;
@@ -616,17 +616,17 @@ var app = new Vue({
         ZONE_DATA = this.fixed_btn_count.mob_btn_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.border = this.f_btn_border;
       }
     },
-    f_btn_backgroundColor: function() {
+    f_btn_backgroundColor: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_btn_count.pc_btn_data;
@@ -634,17 +634,17 @@ var app = new Vue({
         ZONE_DATA = this.fixed_btn_count.mob_btn_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.backgroundColor = this.f_btn_backgroundColor;
       }
     },
-    f_btn_fontSize: function() {
+    f_btn_fontSize: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_btn_count.pc_btn_data;
@@ -652,17 +652,17 @@ var app = new Vue({
         ZONE_DATA = this.fixed_btn_count.mob_btn_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.fontSize = this.f_btn_fontSize;
       }
     },
-    f_btn_color: function() {
+    f_btn_color: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_btn_count.pc_btn_data;
@@ -670,17 +670,17 @@ var app = new Vue({
         ZONE_DATA = this.fixed_btn_count.mob_btn_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.color = this.f_btn_color;
       }
     },
-    f_btn_paddingTop: function() {
+    f_btn_paddingTop: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_btn_count.pc_btn_data;
@@ -688,17 +688,17 @@ var app = new Vue({
         ZONE_DATA = this.fixed_btn_count.mob_btn_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.paddingTop = this.f_btn_paddingTop;
       }
     },
-    f_btn_paddingRight: function() {
+    f_btn_paddingRight: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_btn_count.pc_btn_data;
@@ -706,17 +706,17 @@ var app = new Vue({
         ZONE_DATA = this.fixed_btn_count.mob_btn_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.paddingRight = this.f_btn_paddingRight;
       }
     },
-    f_btn_paddingBottom: function() {
+    f_btn_paddingBottom: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_btn_count.pc_btn_data;
@@ -724,17 +724,17 @@ var app = new Vue({
         ZONE_DATA = this.fixed_btn_count.mob_btn_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.paddingBottom = this.f_btn_paddingBottom;
       }
     },
-    f_btn_paddingLeft: function() {
+    f_btn_paddingLeft: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_btn_count.pc_btn_data;
@@ -742,17 +742,17 @@ var app = new Vue({
         ZONE_DATA = this.fixed_btn_count.mob_btn_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.paddingLeft = this.f_btn_paddingLeft;
       }
     },
-    f_btn_left: function() {
+    f_btn_left: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_btn_count.pc_btn_data;
@@ -760,17 +760,17 @@ var app = new Vue({
         ZONE_DATA = this.fixed_btn_count.mob_btn_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.left = this.f_btn_left;
       }
     },
-    f_btn_top: function() {
+    f_btn_top: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_btn_count.pc_btn_data;
@@ -778,11 +778,11 @@ var app = new Vue({
         ZONE_DATA = this.fixed_btn_count.mob_btn_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
-        let target = ZONE_DATA.find(function(item, index, array) {
+        let target = ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         });
         target.top = this.f_btn_top;
@@ -817,7 +817,7 @@ var app = new Vue({
   //
   methods: {
     // 資料拷貝
-    CopyData: function() {
+    CopyData: function () {
       this.fixed_img_count.pc_img_temporarily_data = JSON.parse(
         JSON.stringify(this.fixed_img_count.pc_img_data)
       );
@@ -838,8 +838,8 @@ var app = new Vue({
       );
     },
     // 單位轉換
-    ChangeUnit: function() {
-      let scrollHeight= (window.innerWidth - document.documentElement.clientWidth);
+    ChangeUnit: function () {
+      let scrollHeight = (window.innerWidth - document.documentElement.clientWidth);
       let body_height = document.body.scrollHeight;
       let font_init = 6.2222;
       if (this.fixed_project_data.type_project == "YSL") {
@@ -978,7 +978,7 @@ var app = new Vue({
       );
     },
     // 改變外框寬度
-    ChangeFrameWidth: function() {
+    ChangeFrameWidth: function () {
       if (this.fixed_project_data.type_project == "YSL") {
         document
           .querySelector("#scene_ysl")
@@ -986,35 +986,38 @@ var app = new Vue({
       }
     },
     //視窗置頂
-    GoScrollTop: function() {
+    GoScrollTop: function () {
       document.querySelector("html").scrollTop = 0;
     },
     // 給予桌機手機節點高度
-    BodyHeight: function() {
+    BodyHeight: function () {
+      let pc_banner_width = 950;
+      let mb_banner_width = 375;
+      let scroll_height = window.innerWidth - document.documentElement.clientWidth;
       let body_height = document.body.scrollHeight;
       if (this.pc_status == true) {
-        document.querySelectorAll(".display_zone_destop")[0].style.height ='auto';
-        document.querySelectorAll(".display_zone_destop")[1].style.height ='auto';
+        document.querySelectorAll(".display_zone_destop")[0].style.height = 'auto';
+        document.querySelectorAll(".display_zone_destop")[1].style.height = 'auto';
         setTimeout(() => {
           document.querySelectorAll(".display_zone_destop")[0].style.height =
-          body_height + "px";
+            body_height + "px";
           document.querySelectorAll(".display_zone_destop")[1].style.height =
-          body_height + "px";
+            (body_height / pc_banner_width) - (scroll_height / pc_banner_width) + "vw";
         }, 100);
 
       } else if (this.mobile_status == true) {
-        document.querySelectorAll(".display_zone_mobile")[0].style.height ='auto';
-        document.querySelectorAll(".display_zone_mobile")[1].style.height ='auto';
+        document.querySelectorAll(".display_zone_mobile")[0].style.height = 'auto';
+        document.querySelectorAll(".display_zone_mobile")[1].style.height = 'auto';
         setTimeout(() => {
           document.querySelectorAll(".display_zone_mobile")[0].style.height =
-          body_height + "px";
+            (body_height / mb_banner_width) + "vw";
           document.querySelectorAll(".display_zone_mobile")[1].style.height =
-          body_height + "px";
+            (body_height / mb_banner_width) + "vw";
         }, 100);
       }
     },
     // 上傳圖片路徑
-    ImgPcFileName: function() {
+    ImgPcFileName: function () {
       const FILE_NAME = document.querySelector("#pc_file_name").files[0].name;
       let self = this;
       if (FILE_NAME == "") {
@@ -1029,11 +1032,11 @@ var app = new Vue({
           ZONE_DATA = this.fixed_img_count.mob_img_data;
         }
         if (
-          ZONE_DATA.find(function(item, index, array) {
+          ZONE_DATA.find(function (item, index, array) {
             return item.foucs == true;
           })
         ) {
-          let target = ZONE_DATA.find(function(item, index, array) {
+          let target = ZONE_DATA.find(function (item, index, array) {
             return item.foucs == true;
           });
           this.f_img_srcset = "./images/pc/" + FILE_NAME;
@@ -1041,7 +1044,7 @@ var app = new Vue({
         }
       }
     },
-    ImgXsFileName: function() {
+    ImgXsFileName: function () {
       const FILE_NAME = document.querySelector("#xs_file_name").files[0].name;
       if (FILE_NAME == "") {
         return;
@@ -1053,11 +1056,11 @@ var app = new Vue({
           ZONE_DATA = this.fixed_img_count.mob_img_data;
         }
         if (
-          ZONE_DATA.find(function(item, index, array) {
+          ZONE_DATA.find(function (item, index, array) {
             return item.foucs == true;
           })
         ) {
-          let target = ZONE_DATA.find(function(item, index, array) {
+          let target = ZONE_DATA.find(function (item, index, array) {
             return item.foucs == true;
           });
           this.f_img_src = "./images/xs/" + FILE_NAME;
@@ -1066,28 +1069,28 @@ var app = new Vue({
       }
     },
     // 圖片區面板顯示
-    ImgZoneDisplayOpen: function() {
+    ImgZoneDisplayOpen: function () {
       this.fixed_img_count.display = true;
     },
-    ImgZoneDisplayClose: function() {
+    ImgZoneDisplayClose: function () {
       this.fixed_img_count.display = false;
     },
     // 文字區面板顯示
-    TextZoneDisplayOpen: function() {
+    TextZoneDisplayOpen: function () {
       this.fixed_text_count.display = true;
     },
-    TextZoneDisplayClose: function() {
+    TextZoneDisplayClose: function () {
       this.fixed_text_count.display = false;
     },
     // 按鈕區面板顯示
-    BtnZoneDisplayOpen: function() {
+    BtnZoneDisplayOpen: function () {
       this.fixed_btn_count.display = true;
     },
-    BtnZoneDisplayClose: function() {
+    BtnZoneDisplayClose: function () {
       this.fixed_btn_count.display = false;
     },
     // 創建的新圖片資料傳入input值
-    ImgInsertIntoInput: function() {
+    ImgInsertIntoInput: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_img_count.pc_img_data;
@@ -1106,7 +1109,7 @@ var app = new Vue({
       this.f_img_src = ZONE_DATA[ZONE_DATA.length - 1].src;
     },
     // 創建的新文字資料傳入input值
-    TextInsertIntoInput: function() {
+    TextInsertIntoInput: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_text_count.pc_text_data;
@@ -1130,7 +1133,7 @@ var app = new Vue({
       this.f_text_left = ZONE_DATA[ZONE_DATA.length - 1].left;
     },
     // 創建的新按鈕資料傳入input值
-    BtnInsertIntoInput: function() {
+    BtnInsertIntoInput: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_btn_count.pc_btn_data;
@@ -1155,7 +1158,7 @@ var app = new Vue({
       this.f_btn_href = ZONE_DATA[ZONE_DATA.length - 1].href;
     },
     // 圖片表單值輸入到資料中
-    ImgInputInsertIntoData: function(index) {
+    ImgInputInsertIntoData: function (index) {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_img_count.pc_img_data;
@@ -1173,7 +1176,7 @@ var app = new Vue({
       this.f_img_src = ZONE_DATA[index].src;
     },
     // 文字表單值輸入到資料中
-    TextInputInsertIntoData: function(index) {
+    TextInputInsertIntoData: function (index) {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_text_count.pc_text_data;
@@ -1196,7 +1199,7 @@ var app = new Vue({
       this.f_text_left = ZONE_DATA[index].left;
     },
     // 按鈕表單值輸入到資料中
-    BtnInputInsertIntoData: function(index) {
+    BtnInputInsertIntoData: function (index) {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_btn_count.pc_btn_data;
@@ -1220,7 +1223,7 @@ var app = new Vue({
       this.f_btn_href = ZONE_DATA[index].href;
     },
     // 關掉所有圖片foucs
-    CloseImgFocus: function() {
+    CloseImgFocus: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_img_count.pc_img_data;
@@ -1233,7 +1236,7 @@ var app = new Vue({
       });
     },
     // 關掉所有文字foucs
-    CloseTextFocus: function() {
+    CloseTextFocus: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_text_count.pc_text_data;
@@ -1246,7 +1249,7 @@ var app = new Vue({
       });
     },
     // 關掉所有按鈕foucs
-    CloseBtnFocus: function() {
+    CloseBtnFocus: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_btn_count.pc_btn_data;
@@ -1259,7 +1262,7 @@ var app = new Vue({
       });
     },
     // 打開新增的圖片outline
-    OpenImgFocus: function() {
+    OpenImgFocus: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_img_count.pc_img_data;
@@ -1270,7 +1273,7 @@ var app = new Vue({
       ZONE_DATA[ZONE_DATA.length - 1].foucs = true;
     },
     // 打開新增的文字outline
-    OpenTextFocus: function() {
+    OpenTextFocus: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_text_count.pc_text_data;
@@ -1281,7 +1284,7 @@ var app = new Vue({
       ZONE_DATA[ZONE_DATA.length - 1].foucs = true;
     },
     // 打開新增的按鈕outline
-    OpenBtnFocus: function() {
+    OpenBtnFocus: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_btn_count.pc_btn_data;
@@ -1292,7 +1295,7 @@ var app = new Vue({
       ZONE_DATA[ZONE_DATA.length - 1].foucs = true;
     },
     // 打開被選取的圖片outline
-    OpenImgClickFocus: function(index) {
+    OpenImgClickFocus: function (index) {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_img_count.pc_img_data;
@@ -1303,7 +1306,7 @@ var app = new Vue({
       ZONE_DATA[index].foucs = true;
     },
     // 打開被選取的文字outline
-    OpenTextClickFocus: function(index) {
+    OpenTextClickFocus: function (index) {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_text_count.pc_text_data;
@@ -1314,7 +1317,7 @@ var app = new Vue({
       ZONE_DATA[index].foucs = true;
     },
     // 打開被選取的按鈕outline
-    OpenBtnClickFocus: function(index) {
+    OpenBtnClickFocus: function (index) {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_btn_count.pc_btn_data;
@@ -1325,7 +1328,7 @@ var app = new Vue({
       ZONE_DATA[index].foucs = true;
     },
     // 清空圖片input值
-    ClearImgInputValue: function() {
+    ClearImgInputValue: function () {
       this.f_img_width = "";
       this.f_img_height = "";
       this.f_img_border = "";
@@ -1335,7 +1338,7 @@ var app = new Vue({
       this.f_img_top = "";
       this.f_img_left = "";
     }, // 清空文字input值
-    ClearTextInputValue: function() {
+    ClearTextInputValue: function () {
       this.f_text_content = "";
       this.f_text_width = "";
       this.f_text_height = "";
@@ -1352,7 +1355,7 @@ var app = new Vue({
       this.f_text_left = "";
     },
     // 清空按鈕input值
-    ClearBtnInputValue: function() {
+    ClearBtnInputValue: function () {
       this.f_btn_content = "";
       this.f_btn_width = "";
       this.f_btn_height = "";
@@ -1370,21 +1373,21 @@ var app = new Vue({
       this.f_btn_href = "";
     },
     // 圖片區鍵盤上下改變數值
-    KeyDownChangInt_ImgLeft: function() {
+    KeyDownChangInt_ImgLeft: function () {
       if (event.keyCode == 38) {
         this.f_img_left = parseInt(this.f_img_left) + 1 + "px";
       } else if (event.keyCode == 40) {
         this.f_img_left = parseInt(this.f_img_left) - 1 + "px";
       }
     },
-    KeyDownChangInt_ImgTop: function() {
+    KeyDownChangInt_ImgTop: function () {
       if (event.keyCode == 38) {
         this.f_img_top = parseInt(this.f_img_top) + 1 + "px";
       } else if (event.keyCode == 40) {
         this.f_img_top = parseInt(this.f_img_top) - 1 + "px";
       }
     },
-    KeyDownChangInt_ImgWidth: function() {
+    KeyDownChangInt_ImgWidth: function () {
       if (this.f_img_width == "auto") {
         this.f_img_width = "100px";
       }
@@ -1395,14 +1398,14 @@ var app = new Vue({
       }
     },
     // 文字區鍵盤上下改變數值
-    KeyDownChangInt_TextLeft: function() {
+    KeyDownChangInt_TextLeft: function () {
       if (event.keyCode == 38) {
         this.f_text_left = parseInt(this.f_text_left) + 1 + "px";
       } else if (event.keyCode == 40) {
         this.f_text_left = parseInt(this.f_text_left) - 1 + "px";
       }
     },
-    KeyDownChangInt_TextTop: function() {
+    KeyDownChangInt_TextTop: function () {
       if (event.keyCode == 38) {
         this.f_text_top = parseInt(this.f_text_top) + 1 + "px";
       } else if (event.keyCode == 40) {
@@ -1410,14 +1413,14 @@ var app = new Vue({
       }
     },
     // 按鈕區鍵盤上下改變數值
-    KeyDownChangInt_BtnLeft: function() {
+    KeyDownChangInt_BtnLeft: function () {
       if (event.keyCode == 38) {
         this.f_btn_left = parseInt(this.f_btn_left) + 1 + "px";
       } else if (event.keyCode == 40) {
         this.f_btn_left = parseInt(this.f_btn_left) - 1 + "px";
       }
     },
-    KeyDownChangInt_BtnTop: function() {
+    KeyDownChangInt_BtnTop: function () {
       if (event.keyCode == 38) {
         this.f_btn_top = parseInt(this.f_btn_top) + 1 + "px";
       } else if (event.keyCode == 40) {
@@ -1425,7 +1428,7 @@ var app = new Vue({
       }
     },
     // 圖片區滑鼠移動抓取x,y事件
-    ImgMouseMoveGetXY: function() {
+    ImgMouseMoveGetXY: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_img_count.pc_img_data;
@@ -1433,7 +1436,7 @@ var app = new Vue({
         ZONE_DATA = this.fixed_img_count.mob_img_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
@@ -1445,13 +1448,13 @@ var app = new Vue({
           ) +
           parseInt(
             window.getComputedStyle(document.querySelector("#scene"))
-              .paddingLeft
+            .paddingLeft
           );
         let self = this;
         let flag = true;
         let initX = e.offsetX,
           initY = e.offsetY;
-        zone_target.addEventListener("mousemove", function() {
+        zone_target.addEventListener("mousemove", function () {
           if (flag == true) {
             let e = event || window.event;
             let x = e.pageX - initX - left_scene;
@@ -1460,14 +1463,14 @@ var app = new Vue({
             self.f_img_top = y + "px";
           }
         });
-        zone_target.addEventListener("mouseup", function() {
+        zone_target.addEventListener("mouseup", function () {
           self.BodyHeight();
           flag = false;
         });
       }
     },
     // 文字區滑鼠移動抓取x,y事件
-    TextMouseMoveGetXY: function() {
+    TextMouseMoveGetXY: function () {
       let e = event;
       let ZONE_DATA;
       if (this.pc_status == true) {
@@ -1476,7 +1479,7 @@ var app = new Vue({
         ZONE_DATA = this.fixed_text_count.mob_text_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
@@ -1487,13 +1490,13 @@ var app = new Vue({
           ) +
           parseInt(
             window.getComputedStyle(document.querySelector("#scene"))
-              .paddingLeft
+            .paddingLeft
           );
         let self = this;
         let flag = true;
         let initX = e.offsetX,
           initY = e.offsetY;
-        zone_target.addEventListener("mousemove", function() {
+        zone_target.addEventListener("mousemove", function () {
           if (flag == true) {
             let e = event || window.event;
             let x = e.pageX - initX - left_scene;
@@ -1502,13 +1505,13 @@ var app = new Vue({
             self.f_text_top = y + "px";
           }
         });
-        zone_target.addEventListener("mouseup", function() {
+        zone_target.addEventListener("mouseup", function () {
           flag = false;
         });
       }
     },
     // 按鈕區滑鼠移動抓取x,y事件
-    BtnMouseMoveGetXY: function() {
+    BtnMouseMoveGetXY: function () {
       let e = event;
       let ZONE_DATA;
       if (this.pc_status == true) {
@@ -1517,7 +1520,7 @@ var app = new Vue({
         ZONE_DATA = this.fixed_btn_count.mob_btn_data;
       }
       if (
-        ZONE_DATA.find(function(item, index, array) {
+        ZONE_DATA.find(function (item, index, array) {
           return item.foucs == true;
         })
       ) {
@@ -1528,13 +1531,13 @@ var app = new Vue({
           ) +
           parseInt(
             window.getComputedStyle(document.querySelector("#scene"))
-              .paddingLeft
+            .paddingLeft
           );
         let self = this;
         let flag = true;
         let initX = e.offsetX,
           initY = e.offsetY;
-        zone_target.addEventListener("mousemove", function() {
+        zone_target.addEventListener("mousemove", function () {
           if (flag == true) {
             let e = event || window.event;
             let x = e.pageX - initX - left_scene;
@@ -1543,13 +1546,13 @@ var app = new Vue({
             self.f_btn_top = y + "px";
           }
         });
-        zone_target.addEventListener("mouseup", function() {
+        zone_target.addEventListener("mouseup", function () {
           flag = false;
         });
       }
     },
     // 新增圖片按鈕
-    ImgAddImg: function() {
+    ImgAddImg: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_img_count.pc_img_data;
@@ -1606,7 +1609,7 @@ var app = new Vue({
       this.GoScrollTop();
     },
     // 新增文字按鈕
-    TextAddText: function() {
+    TextAddText: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_text_count.pc_text_data;
@@ -1646,7 +1649,7 @@ var app = new Vue({
       this.GoScrollTop();
     },
     // 新增按鈕的按鈕
-    BtnAddBtn: function() {
+    BtnAddBtn: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_btn_count.pc_btn_data;
@@ -1685,49 +1688,49 @@ var app = new Vue({
       this.GoScrollTop();
     },
     // 打開圖片外框
-    ImgOutlineOpen: function(index) {
+    ImgOutlineOpen: function (index) {
       this.CloseImgFocus();
       this.OpenImgClickFocus(index);
       this.ImgInputInsertIntoData(index);
       this.ImgZoneDisplayOpen();
     },
     // 打開文字外框
-    TextOutlineOpen: function(index) {
+    TextOutlineOpen: function (index) {
       this.CloseTextFocus();
       this.OpenTextClickFocus(index);
       this.TextInputInsertIntoData(index);
       this.TextZoneDisplayOpen();
     },
     // 打開按鈕外框
-    BtnOutlineOpen: function(index) {
+    BtnOutlineOpen: function (index) {
       this.CloseBtnFocus();
       this.OpenBtnClickFocus(index);
       this.BtnInputInsertIntoData(index);
       this.BtnZoneDisplayOpen();
     },
     // 圖片區確定按鈕
-    ImgCheckBtn: function(index) {
+    ImgCheckBtn: function (index) {
       this.CloseImgFocus();
       this.ClearImgInputValue();
       this.ImgZoneDisplayClose();
       this.BodyHeight();
     },
     // 文字區確定按鈕
-    TextCheckBtn: function(index) {
+    TextCheckBtn: function (index) {
       this.CloseTextFocus();
       this.ClearTextInputValue();
       this.TextZoneDisplayClose();
       this.BodyHeight();
     },
     // 按鈕區確定按鈕
-    BtnCheckBtn: function(index) {
+    BtnCheckBtn: function (index) {
       this.CloseBtnFocus();
       this.ClearBtnInputValue();
       this.BtnZoneDisplayClose();
       this.BodyHeight();
     },
     // 印出程式碼
-    PrintCode: function() {
+    PrintCode: function () {
       this.CopyData();
       this.ChangeUnit();
       this.CloseImgFocus();
@@ -1737,13 +1740,13 @@ var app = new Vue({
       let code;
       let execute = () => {
         let folder_name = self.fixed_project_data.name_folder;
-        if (this.fixed_project_data.type_project == "YSL"){
+        if (this.fixed_project_data.type_project == "YSL") {
           code = document.querySelector("#loreal-compaign_ysl").innerHTML;
           self.ChangeFrameWidth();
-        }else{
+        } else {
           code = document.querySelector("#loreal-compaign").innerHTML;
         }
-        
+
         document.querySelector("#code").style.display = "block";
         let textChang = code
           .replace(new RegExp(".png", "g"), ".png?$staticlink$")
@@ -1760,19 +1763,19 @@ var app = new Vue({
           `<style>@media (min-width:992px){.display_zone_mobile {display: none !important;margin:0 auto;}}@media (max-width:991.9px) {.display_zone_destop {display: none !important;}}</style>` +
           textChang;
       };
-      setTimeout(function() {
+      setTimeout(function () {
         execute();
       }, 300);
     },
     // 圖片區取消按鈕
-    ImgRemoveBtn: function() {
+    ImgRemoveBtn: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_img_count.pc_img_data;
       } else if (this.mobile_status == true) {
         ZONE_DATA = this.fixed_img_count.mob_img_data;
       }
-      let i = ZONE_DATA.findIndex(function(item) {
+      let i = ZONE_DATA.findIndex(function (item) {
         return item.foucs == true;
       });
       ZONE_DATA.splice(i, 1);
@@ -1781,14 +1784,14 @@ var app = new Vue({
       this.BodyHeight();
     },
     // 文字區取消按鈕
-    TextRemoveBtn: function() {
+    TextRemoveBtn: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_text_count.pc_text_data;
       } else if (this.mobile_status == true) {
         ZONE_DATA = this.fixed_text_count.mob_text_data;
       }
-      let i = ZONE_DATA.findIndex(function(item) {
+      let i = ZONE_DATA.findIndex(function (item) {
         return item.foucs == true;
       });
       ZONE_DATA.splice(i, 1);
@@ -1797,14 +1800,14 @@ var app = new Vue({
       this.BodyHeight();
     },
     // 按鈕區取消按鈕
-    BtnRemoveBtn: function() {
+    BtnRemoveBtn: function () {
       let ZONE_DATA;
       if (this.pc_status == true) {
         ZONE_DATA = this.fixed_btn_count.pc_btn_data;
       } else if (this.mobile_status == true) {
         ZONE_DATA = this.fixed_btn_count.mob_btn_data;
       }
-      let i = ZONE_DATA.findIndex(function(item) {
+      let i = ZONE_DATA.findIndex(function (item) {
         return item.foucs == true;
       });
       ZONE_DATA.splice(i, 1);
@@ -1812,7 +1815,7 @@ var app = new Vue({
       this.BtnZoneDisplayClose();
       this.BodyHeight();
     },
-    CloseCode: function() {
+    CloseCode: function () {
       if (document.querySelector("#add_size") != null) {
         document.querySelector("#add_size").media = "(min-width:2000px)";
       }
@@ -1820,7 +1823,7 @@ var app = new Vue({
       code.style.display = "none";
     },
     // panel trigger
-    TogglePanel: function() {
+    TogglePanel: function () {
       let panel_tigger = document.querySelector(".panel-trigger");
       let panel = document.querySelector(".panel");
       let zone = document.querySelector("#zone_desktop");
@@ -1838,7 +1841,7 @@ var app = new Vue({
         // scene.classList.add("moveRight");
       }
     },
-    ToggleBlock: function() {
+    ToggleBlock: function () {
       let block_tigger = document.querySelector("#projectElement .trigger");
       let block = document.querySelector("#projectElement");
       let projectBlock = document.querySelector("#project-setting");
@@ -1849,7 +1852,7 @@ var app = new Vue({
         block.classList.add("active");
       }
     },
-    ToggleDestop: function() {
+    ToggleDestop: function () {
       this.BodyHeight();
       let toggle_destop_moblie = document.querySelector(
         ".toggle-destop-moblie"
@@ -1868,7 +1871,7 @@ var app = new Vue({
       this.ClearBtnInputValue();
       this.BtnZoneDisplayClose();
     },
-    ToggleMobile: function() {
+    ToggleMobile: function () {
       this.BodyHeight();
       let toggle_destop_moblie = document.querySelector(
         ".toggle-destop-moblie"
