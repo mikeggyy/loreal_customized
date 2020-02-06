@@ -1,3 +1,6 @@
+// 宣告cookie
+let allCookies = document.cookie;
+console.log(allCookies);
 var app = new Vue({
   el: "#zone_desktop",
   data: {
@@ -6,7 +9,7 @@ var app = new Vue({
     mobile_status: false,
     // 專案資料
     fixed_project_data: {
-      type_project: "GAB",
+      type_project: allCookies,
       name_project: "",
       name_folder: "",
       code_campaign: "",
@@ -926,6 +929,12 @@ var app = new Vue({
           return item.top;
         }
       );
+      let mob_img_width = this.fixed_img_count.mob_img_temporarily_data.map(
+        item => {
+          item.width = (parseInt(item.width) / 375) * 100 + "vw";
+          return item.width;
+        }
+      );
       let mob_text_left = this.fixed_text_count.mob_text_temporarily_data.map(
         item => {
           item.left = (parseInt(item.left) / 375) * 100 + "vw";
@@ -1002,7 +1011,7 @@ var app = new Vue({
           document.querySelectorAll(".display_zone_destop")[0].style.height =
             body_height + "px";
           document.querySelectorAll(".display_zone_destop")[1].style.height =
-            (body_height / pc_banner_width) - (scroll_height / pc_banner_width) + "vw";
+            ((body_height / (pc_banner_width - scroll_height)) - (scroll_height / pc_banner_width)) * 100 + "vw";
         }, 100);
 
       } else if (this.mobile_status == true) {
@@ -1010,9 +1019,9 @@ var app = new Vue({
         document.querySelectorAll(".display_zone_mobile")[1].style.height = 'auto';
         setTimeout(() => {
           document.querySelectorAll(".display_zone_mobile")[0].style.height =
-            (body_height / mb_banner_width) + "vw";
+            (body_height / mb_banner_width) * 100 + "vw";
           document.querySelectorAll(".display_zone_mobile")[1].style.height =
-            (body_height / mb_banner_width) + "vw";
+            (body_height / mb_banner_width) * 100 + "vw";
         }, 100);
       }
     },
@@ -1714,6 +1723,7 @@ var app = new Vue({
       this.ClearImgInputValue();
       this.ImgZoneDisplayClose();
       this.BodyHeight();
+      this.CookieSet();
     },
     // 文字區確定按鈕
     TextCheckBtn: function (index) {
@@ -1721,6 +1731,7 @@ var app = new Vue({
       this.ClearTextInputValue();
       this.TextZoneDisplayClose();
       this.BodyHeight();
+      this.CookieSet();
     },
     // 按鈕區確定按鈕
     BtnCheckBtn: function (index) {
@@ -1728,14 +1739,16 @@ var app = new Vue({
       this.ClearBtnInputValue();
       this.BtnZoneDisplayClose();
       this.BodyHeight();
+      this.CookieSet();
     },
     // 印出程式碼
     PrintCode: function () {
-      this.CopyData();
-      this.ChangeUnit();
       this.CloseImgFocus();
       this.CloseTextFocus();
       this.CloseBtnFocus();
+      this.CopyData();
+      this.ChangeUnit();
+      this.BodyHeight();
       let self = this;
       let code;
       let execute = () => {
@@ -1758,10 +1771,11 @@ var app = new Vue({
           )
           .replace(new RegExp("margin: initial;", "g"), "margin: 0 auto;")
           .replace(new RegExp('onclick="return false;"', "g"), '""')
-          .replace(new RegExp("display: none;", "g"), "display:block");
+          .replace(new RegExp("display: none;", "g"), "display:block")
+          .replace(new RegExp("min-width:2000px", "g"), "min-width:992px");
         self.zone_code =
-          `<style>@media (min-width:992px){.display_zone_mobile {display: none !important;margin:0 auto;}}@media (max-width:991.9px) {.display_zone_destop {display: none !important;}}</style>` +
-          textChang;
+          `<style>@media (min-width:992px){.display_zone_mobile {display: none !important;margin:0 auto;}}@media (max-width:991.9px) {html,body{
+            overflow-x: hidden;}.display_zone_destop {display: none !important;}}</style>` + textChang;
       };
       setTimeout(function () {
         execute();
@@ -1891,6 +1905,17 @@ var app = new Vue({
       this.CloseBtnFocus();
       this.ClearBtnInputValue();
       this.BtnZoneDisplayClose();
+    },
+    // 寫入cookie
+    CookieSet: function () {
+      let allCookies = document.cookie;
+      allCookies = [this.fixed_project_data.type_project, this.fixed_img_count.pc_img_data]
+      // `data_type_project : ${this.fixed_project_data.type_project};
+      // pc_img_data : ${this.fixed_img_count.pc_img_data};`;
+      console.log(JSON.parse(JSON.stringify(allCookies[1])));
+
+
     }
   }
+
 });
