@@ -1,6 +1,6 @@
 // 宣告cookie
 let allCookies = document.cookie;
-console.log(allCookies);
+console.log(JSON.parse(JSON.stringify(allCookies)));
 var app = new Vue({
   el: "#zone_desktop",
   data: {
@@ -1912,13 +1912,9 @@ var app = new Vue({
     // 寫入cookie
     CookieSet: function () {
       let allCookies = document.cookie;
-      allCookies = [this.fixed_project_data.type_project, this.fixed_img_count.pc_img_data]
-      // `data_type_project : ${this.fixed_project_data.type_project};
-      // pc_img_data : ${this.fixed_img_count.pc_img_data};`;
-      console.log(JSON.parse(JSON.stringify(allCookies[1])));
-
-
+      allCookies = [this.fixed_project_data.type_project, this.fixed_img_count.pc_img_data];
+      console.log(this.fixed_img_count.pc_img_data)
+      console.log(allCookies[0]);
     }
   }
-
 });
