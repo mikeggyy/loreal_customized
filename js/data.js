@@ -1011,7 +1011,7 @@ var app = new Vue({
           document.querySelectorAll(".display_zone_destop")[0].style.height =
             body_height + "px";
           document.querySelectorAll(".display_zone_destop")[1].style.height =
-            ((body_height / (pc_banner_width - scroll_height)) - (scroll_height / pc_banner_width)) * 100 + "vw";
+            (((body_height - scroll_height) / pc_banner_width) - (scroll_height / pc_banner_width)) * 100 + "vw";
         }, 100);
 
       } else if (this.mobile_status == true) {
@@ -1019,7 +1019,7 @@ var app = new Vue({
         document.querySelectorAll(".display_zone_mobile")[1].style.height = 'auto';
         setTimeout(() => {
           document.querySelectorAll(".display_zone_mobile")[0].style.height =
-            (body_height / mb_banner_width) * 100 + "vw";
+            body_height + "px";
           document.querySelectorAll(".display_zone_mobile")[1].style.height =
             (body_height / mb_banner_width) * 100 + "vw";
         }, 100);
@@ -1743,12 +1743,16 @@ var app = new Vue({
     },
     // 印出程式碼
     PrintCode: function () {
+      this.BodyHeight();
+      let mb_banner_width = 375;
+      let body_height = document.body.scrollHeight;
+      document.querySelectorAll(".display_zone_mobile")[1].style.height =
+        (body_height / mb_banner_width) * 100 + "vw";
       this.CloseImgFocus();
       this.CloseTextFocus();
       this.CloseBtnFocus();
       this.CopyData();
       this.ChangeUnit();
-      this.BodyHeight();
       let self = this;
       let code;
       let execute = () => {
@@ -1759,7 +1763,6 @@ var app = new Vue({
         } else {
           code = document.querySelector("#loreal-compaign").innerHTML;
         }
-
         document.querySelector("#code").style.display = "block";
         let textChang = code
           .replace(new RegExp(".png", "g"), ".png?$staticlink$")
