@@ -843,7 +843,7 @@ var app = new Vue({
     // 單位轉換
     ChangeUnit: function () {
       let scrollHeight = (window.innerWidth - document.documentElement.clientWidth);
-      let body_height = document.body.scrollHeight;
+      let body_height = document.body.scrollHeight-scrollHeight;
       let font_init = 6.2222;
       if (this.fixed_project_data.type_project == "YSL") {
         // 桌機版單位轉換
