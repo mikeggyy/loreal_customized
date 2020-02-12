@@ -7,9 +7,9 @@ var app = new Vue({
     mobile_status: false,
     // 專案資料
     fixed_project_data: {
-      type_project: 'YSL',
+      type_project: allCookies,
       name_project: "",
-      name_folder: "test-YSL",
+      name_folder: "",
       code_campaign: "",
       date_start: ""
     },
@@ -840,6 +840,7 @@ var app = new Vue({
     },
     // 單位轉換
     ChangeUnit: function () {
+      let scrollHeight = 17;
       let body_height = document.body.scrollHeight;
       let font_init = 6.2222;
       if (this.fixed_project_data.type_project == "YSL") {
@@ -999,6 +1000,7 @@ var app = new Vue({
     BodyHeight: function () {
       let pc_banner_width = 950;
       let mb_banner_width = 375;
+      let scroll_height = 17;
       let body_height = document.body.scrollHeight;
       if (this.pc_status == true) {
         document.querySelectorAll(".display_zone_destop")[0].style.height = 'auto';
@@ -1007,7 +1009,7 @@ var app = new Vue({
           document.querySelectorAll(".display_zone_destop")[0].style.height =
             body_height + "px";
           document.querySelectorAll(".display_zone_destop")[1].style.height =
-            (body_height / pc_banner_width) * 100 + "vw";
+            (((body_height - scroll_height) / pc_banner_width) - (scroll_height / pc_banner_width)) * 100 + "vw";
         }, 100);
 
       } else if (this.mobile_status == true) {
@@ -1719,6 +1721,7 @@ var app = new Vue({
       this.ClearImgInputValue();
       this.ImgZoneDisplayClose();
       this.BodyHeight();
+      this.CookieSet();
     },
     // 文字區確定按鈕
     TextCheckBtn: function (index) {
@@ -1726,6 +1729,7 @@ var app = new Vue({
       this.ClearTextInputValue();
       this.TextZoneDisplayClose();
       this.BodyHeight();
+      this.CookieSet();
     },
     // 按鈕區確定按鈕
     BtnCheckBtn: function (index) {
@@ -1733,6 +1737,7 @@ var app = new Vue({
       this.ClearBtnInputValue();
       this.BtnZoneDisplayClose();
       this.BodyHeight();
+      this.CookieSet();
     },
     // 印出程式碼
     PrintCode: function () {
@@ -1770,7 +1775,7 @@ var app = new Vue({
           .replace(new RegExp("display: none;", "g"), "display:block")
           .replace(new RegExp("min-width:2000px", "g"), "min-width:992px");
         self.zone_code =
-          `<style>@media (min-width:992px){::-webkit-scrollbar{width: 0px;}.display_zone_mobile {display: none !important;margin:0 auto;}}@media (max-width:991.9px) {html,body{
+          `<style>@media (min-width:992px){.display_zone_mobile {display: none !important;margin:0 auto;}}@media (max-width:991.9px) {html,body{
             overflow-x: hidden;}.display_zone_destop {display: none !important;}}</style>` + textChang;
       };
       setTimeout(function () {
