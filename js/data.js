@@ -1,6 +1,4 @@
-// 宣告cookie
-let allCookies = document.cookie;
-console.log(JSON.parse(JSON.stringify(allCookies)));
+
 var app = new Vue({
   el: "#zone_desktop",
   data: {
@@ -842,8 +840,8 @@ var app = new Vue({
     },
     // 單位轉換
     ChangeUnit: function () {
-      let scrollHeight = (window.innerWidth - document.documentElement.clientWidth);
-      let body_height = document.body.scrollHeight-scrollHeight;
+      let scrollHeight = 17;
+      let body_height = document.body.scrollHeight;
       let font_init = 6.2222;
       if (this.fixed_project_data.type_project == "YSL") {
         // 桌機版單位轉換
@@ -911,7 +909,7 @@ var app = new Vue({
         let pc_btn_fontSize = this.fixed_btn_count.pc_btn_temporarily_data.map(
           item => {
             item.fontSize =
-              "calc(" + (parseInt(item.fontSize)) * font_init + "%)";
+              'calc(' + (parseInt(item.fontSize)) * font_init + '%)';
             return item.fontSize;
           }
         );
@@ -1002,7 +1000,7 @@ var app = new Vue({
     BodyHeight: function () {
       let pc_banner_width = 950;
       let mb_banner_width = 375;
-      let scroll_height = window.innerWidth - document.documentElement.clientWidth;
+      let scroll_height = 17;
       let body_height = document.body.scrollHeight;
       if (this.pc_status == true) {
         document.querySelectorAll(".display_zone_destop")[0].style.height = 'auto';
@@ -1915,12 +1913,5 @@ var app = new Vue({
       this.ClearBtnInputValue();
       this.BtnZoneDisplayClose();
     },
-    // 寫入cookie
-    CookieSet: function () {
-      let allCookies = document.cookie;
-      allCookies = [this.fixed_project_data.type_project, this.fixed_img_count.pc_img_data];
-      console.log(this.fixed_img_count.pc_img_data)
-      console.log(allCookies[0]);
-    }
   }
 });
