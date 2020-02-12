@@ -1876,6 +1876,9 @@ var app = new Vue({
       );
       toggle_destop_moblie.classList = "toggle-destop-moblie is-desktop";
       // toggle_destop_moblie.querySelectorAll("div")[1].style.backgroundColor ="transparent";
+      this.CloseImgFocus();
+      this.CloseTextFocus();
+      this.CloseBtnFocus();
       this.pc_status = true;
       this.mobile_status = false;
       this.CloseImgFocus();
@@ -1897,6 +1900,9 @@ var app = new Vue({
       // toggle_destop_moblie.querySelectorAll("div")[0].style.backgroundColor = "transparent";
       // toggle_destop_moblie.querySelectorAll("div")[1].style.backgroundColor = "rgb(231, 187, 187)";
       // toggle_destop_moblie.querySelectorAll("div")[1].style.backgroundColor ="transparent";
+      this.CloseImgFocus();
+      this.CloseTextFocus();
+      this.CloseBtnFocus();
       this.pc_status = false;
       this.mobile_status = true;
       this.CloseImgFocus();
