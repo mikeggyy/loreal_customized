@@ -80,6 +80,9 @@ var app = new Vue({
     f_btn_left: '',
     f_btn_href: '',
     // 程式碼
+    web_status:{
+      pc_hight:'',
+    },
     zone_code: ''
   },
   //
@@ -817,8 +820,19 @@ var app = new Vue({
   //
   //
   methods: {
+    // 清空資料
+    ClearData:function(){
+      this.fixed_project_data.type_project='';
+      this.fixed_img_count.pc_img_data=[];
+      this.fixed_img_count.mob_img_data=[];
+      this.fixed_text_count.pc_text_data=[];
+      this.fixed_text_count.mob_text_data=[];
+      this.fixed_btn_count.pc_btn_data=[];
+      this.fixed_btn_count.mob_btn_data=[];
+      this.LocalStorage();
+    },
     // localStorage
-    localStorage: function () {
+    LocalStorage: function () {
       localStorage.setItem('type_project', this.fixed_project_data.type_project);
       localStorage.setItem('pc_img_data', JSON.stringify(this.fixed_img_count.pc_img_data));
       localStorage.setItem('mob_img_data', JSON.stringify(this.fixed_img_count.mob_img_data));
@@ -1730,7 +1744,7 @@ var app = new Vue({
       this.ClearImgInputValue();
       this.ImgZoneDisplayClose();
       this.BodyHeight();
-      this.localStorage();
+      this.LocalStorage();
     },
     // 文字區確定按鈕
     TextCheckBtn: function (index) {
@@ -1738,7 +1752,7 @@ var app = new Vue({
       this.ClearTextInputValue();
       this.TextZoneDisplayClose();
       this.BodyHeight();
-      this.localStorage();
+      this.LocalStorage();
     },
     // 按鈕區確定按鈕
     BtnCheckBtn: function (index) {
@@ -1746,11 +1760,11 @@ var app = new Vue({
       this.ClearBtnInputValue();
       this.BtnZoneDisplayClose();
       this.BodyHeight();
-      this.localStorage();
+      this.LocalStorage();
     },
     // 印出程式碼
     PrintCode: function () {
-      this.localStorage();
+      this.LocalStorage();
       this.BodyHeight();
       let mb_banner_width = 375;
       let body_height = document.body.scrollHeight;
@@ -1807,7 +1821,7 @@ var app = new Vue({
       this.ClearImgInputValue();
       this.ImgZoneDisplayClose();
       this.BodyHeight();
-      this.localStorage();
+      this.LocalStorage();
     },
     // 文字區取消按鈕
     TextRemoveBtn: function () {
@@ -1824,7 +1838,7 @@ var app = new Vue({
       this.ClearTextInputValue();
       this.TextZoneDisplayClose();
       this.BodyHeight();
-      this.localStorage();
+      this.LocalStorage();
     },
     // 按鈕區取消按鈕
     BtnRemoveBtn: function () {
@@ -1841,7 +1855,7 @@ var app = new Vue({
       this.ClearBtnInputValue();
       this.BtnZoneDisplayClose();
       this.BodyHeight();
-      this.localStorage();
+      this.LocalStorage();
     },
     CloseCode: function () {
       if (document.querySelector("#add_size") != null) {
@@ -1901,7 +1915,7 @@ var app = new Vue({
       this.CloseBtnFocus();
       this.ClearBtnInputValue();
       this.BtnZoneDisplayClose();
-      this.localStorage();
+      this.LocalStorage();
     },
     ToggleMobile: function () {
       this.BodyHeight();
@@ -1926,7 +1940,7 @@ var app = new Vue({
       this.CloseBtnFocus();
       this.ClearBtnInputValue();
       this.BtnZoneDisplayClose();
-      this.localStorage();
+      this.LocalStorage();
     },
   }
 });

@@ -495,6 +495,12 @@
         <div class="print_code">
           <a href="javascript:;" v-on:click="PrintCode()" class="btn btn-border btn-check">印出程式碼</a>
         </div>
+        <!-- 清除畫面 -->
+        <div class="clear__data_array" style="display: flex;justify-content: center;">
+          <div class="btn btn-border btn-check" v-on:click="ClearData()">
+            清除
+          </div>
+        </div>
       </div>
     </div>
     <!-- 選擇圖片時 panelside 加上 active class -->
@@ -561,7 +567,8 @@
     <div class="scene" id="scene_ysl" draggable="false" onSelectStart="event.returnValue=false" style="display: none;">
       <div class="scene-container" id="loreal-compaign_ysl" onSelectStart="event.returnValue=false">
         <!-- 桌機區 -->
-        <div class="display_zone_destop" style="width: 100%; position: relative; margin: initial;font-size: calc(1.578947vw);" v-show="pc_status">
+        <div class="display_zone_destop"
+          style="width: 100%; position: relative; margin: initial;font-size: calc(1.578947vw);" v-show="pc_status">
           <!-- 產生圖片 -->
           <div class="main-img" v-on:mousedown="ImgMouseMoveGetXY()"
             v-bind:style="fixed_img_count.pc_img_temporarily_data[index]"
