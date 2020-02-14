@@ -1,4 +1,3 @@
-
 var app = new Vue({
   el: "#zone_desktop",
   data: {
@@ -7,11 +6,11 @@ var app = new Vue({
     mobile_status: false,
     // 專案資料
     fixed_project_data: {
-      type_project: 'YSL',
-      name_project: "",
-      name_folder: "test-YSL",
-      code_campaign: "",
-      date_start: ""
+      type_project: window.localStorage.getItem('type_project') ? window.localStorage.getItem('type_project') : '',
+      name_project: '',
+      name_folder: '',
+      code_campaign: '',
+      date_start: ''
     },
     f_name_project: "",
     f_name_folder: "",
@@ -21,8 +20,8 @@ var app = new Vue({
     fixed_img_count: {
       display: false,
       img_file_name: "",
-      pc_img_data: [],
-      mob_img_data: [],
+      pc_img_data: window.localStorage.getItem('pc_img_data') ? JSON.parse(window.localStorage.getItem('pc_img_data')) : [],
+      mob_img_data: window.localStorage.getItem('mob_img_data') ? JSON.parse(window.localStorage.getItem('mob_img_data')) : [],
       pc_img_temporarily_data: [],
       mob_img_temporarily_data: []
     },
@@ -37,8 +36,8 @@ var app = new Vue({
     // 文字區資料
     fixed_text_count: {
       display: false,
-      pc_text_data: [],
-      mob_text_data: [],
+      pc_text_data: window.localStorage.getItem('pc_text_data') ? JSON.parse(window.localStorage.getItem('pc_text_data')) : [],
+      mob_text_data: window.localStorage.getItem('mob_text_data') ? JSON.parse(window.localStorage.getItem('mob_text_data')) : [],
       pc_text_temporarily_data: [],
       mob_text_temporarily_data: []
     },
@@ -59,28 +58,29 @@ var app = new Vue({
     // 按鈕區資料
     fixed_btn_count: {
       display: false,
-      pc_btn_data: [],
-      mob_btn_data: [],
+      pc_btn_data: window.localStorage.getItem('pc_btn_data') ? JSON.parse(window.localStorage.getItem('pc_btn_data')) : [],
+      mob_btn_data: window.localStorage.getItem('mob_btn_data') ? JSON.parse(window.localStorage.getItem('mob_btn_data')) : [],
       pc_btn_temporarily_data: [],
       mob_btn_temporarily_data: []
     },
-    f_btn_content: "",
-    f_btn_width: "",
-    f_btn_height: "",
-    f_btn_paddingTop: "",
-    f_btn_paddingBottom: "",
-    f_btn_paddingLeft: "",
-    f_btn_paddingRight: "",
-    f_btn_border: "",
-    f_btn_backgroundColor: "",
-    f_btn_color: "",
-    f_btn_fontSize: "",
-    f_btn_zIndex: "",
-    f_btn_top: "",
-    f_btn_left: "",
-    f_btn_href: "",
+    f_btn_content: '',
+    f_btn_width: '',
+    f_btn_height: '',
+    f_btn_lineHeight: '',
+    f_btn_paddingTop: '',
+    f_btn_paddingBottom: '',
+    f_btn_paddingLeft: '',
+    f_btn_paddingRight: '',
+    f_btn_border: '',
+    f_btn_backgroundColor: '',
+    f_btn_color: '',
+    f_btn_fontSize: '',
+    f_btn_zIndex: '',
+    f_btn_top: '',
+    f_btn_left: '',
+    f_btn_href: '',
     // 程式碼
-    zone_code: ""
+    zone_code: ''
   },
   //
   //
@@ -817,6 +817,17 @@ var app = new Vue({
   //
   //
   methods: {
+    // localStorage
+    localStorage: function () {
+      localStorage.setItem('type_project', this.fixed_project_data.type_project);
+      localStorage.setItem('pc_img_data', JSON.stringify(this.fixed_img_count.pc_img_data));
+      localStorage.setItem('mob_img_data', JSON.stringify(this.fixed_img_count.mob_img_data));
+      localStorage.setItem('pc_text_data', JSON.stringify(this.fixed_text_count.pc_text_data));
+      localStorage.setItem('mob_text_data', JSON.stringify(this.fixed_text_count.mob_text_data));
+      localStorage.setItem('pc_btn_data', JSON.stringify(this.fixed_btn_count.pc_btn_data));
+      localStorage.setItem('mob_btn_data', JSON.stringify(this.fixed_btn_count.mob_btn_data));
+    },
+
     // 資料拷貝
     CopyData: function () {
       this.fixed_img_count.pc_img_temporarily_data = JSON.parse(
@@ -1663,27 +1674,27 @@ var app = new Vue({
       }
       // 送資料進去陣列
       let style = {
-        content: "新增連結",
+        content: '新增連結',
         foucs: false,
-        display: "block",
-        outline: "0px transparent solid",
-        width: "150px",
-        height: "50px",
-        justifyContent: "center",
-        alignItems: "center",
-        paddingTop: "auto",
-        paddingBottom: "auto",
-        paddingLeft: "auto",
-        paddingRight: "auto",
-        border: "0px #000 solid",
-        color: "black",
-        backgroundColor: "transparent",
-        fontSize: "22px",
-        zIndex: "2",
-        position: "absolute",
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        outline: '0px transparent solid',
+        width: '150px',
+        height: '50px',
+        paddingTop: 'auto',
+        paddingBottom: 'auto',
+        paddingLeft: 'auto',
+        paddingRight: 'auto',
+        border: '0px #000 solid',
+        color: 'black',
+        backgroundColor: 'transparent',
+        fontSize: '22px',
+        zIndex: '2',
+        position: 'absolute',
         top: 0,
         left: 0,
-        href: "javascript:;"
+        href: 'javascript:;'
       };
       ZONE_DATA.push(style);
       this.CloseBtnFocus();
@@ -1719,6 +1730,7 @@ var app = new Vue({
       this.ClearImgInputValue();
       this.ImgZoneDisplayClose();
       this.BodyHeight();
+      this.localStorage();
     },
     // 文字區確定按鈕
     TextCheckBtn: function (index) {
@@ -1726,6 +1738,7 @@ var app = new Vue({
       this.ClearTextInputValue();
       this.TextZoneDisplayClose();
       this.BodyHeight();
+      this.localStorage();
     },
     // 按鈕區確定按鈕
     BtnCheckBtn: function (index) {
@@ -1733,9 +1746,11 @@ var app = new Vue({
       this.ClearBtnInputValue();
       this.BtnZoneDisplayClose();
       this.BodyHeight();
+      this.localStorage();
     },
     // 印出程式碼
     PrintCode: function () {
+      this.localStorage();
       this.BodyHeight();
       let mb_banner_width = 375;
       let body_height = document.body.scrollHeight;
@@ -1792,6 +1807,7 @@ var app = new Vue({
       this.ClearImgInputValue();
       this.ImgZoneDisplayClose();
       this.BodyHeight();
+      this.localStorage();
     },
     // 文字區取消按鈕
     TextRemoveBtn: function () {
@@ -1808,6 +1824,7 @@ var app = new Vue({
       this.ClearTextInputValue();
       this.TextZoneDisplayClose();
       this.BodyHeight();
+      this.localStorage();
     },
     // 按鈕區取消按鈕
     BtnRemoveBtn: function () {
@@ -1824,6 +1841,7 @@ var app = new Vue({
       this.ClearBtnInputValue();
       this.BtnZoneDisplayClose();
       this.BodyHeight();
+      this.localStorage();
     },
     CloseCode: function () {
       if (document.querySelector("#add_size") != null) {
@@ -1883,6 +1901,7 @@ var app = new Vue({
       this.CloseBtnFocus();
       this.ClearBtnInputValue();
       this.BtnZoneDisplayClose();
+      this.localStorage();
     },
     ToggleMobile: function () {
       this.BodyHeight();
@@ -1907,6 +1926,7 @@ var app = new Vue({
       this.CloseBtnFocus();
       this.ClearBtnInputValue();
       this.BtnZoneDisplayClose();
+      this.localStorage();
     },
   }
 });

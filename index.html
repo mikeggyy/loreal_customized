@@ -521,7 +521,7 @@
           <!-- 產生文字 -->
           <div class="text" v-on:mousedown="TextMouseMoveGetXY()" onSelectStart="event.returnValue=false"
             v-bind:style="fixed_text_count.pc_text_data[index]" v-for="(item,index) in fixed_text_count.pc_text_data">
-            <p v-on:mousedown="TextOutlineOpen(index)" v-html="fixed_text_count.pc_text_data[index].content"></p>
+            <div v-on:mousedown="TextOutlineOpen(index)" v-html="fixed_text_count.pc_text_data[index].content"></div>
           </div>
           <!-- 產生連結 -->
           <div class="btn" v-on:mousedown="BtnMouseMoveGetXY()">
@@ -545,7 +545,7 @@
           <!-- 產生文字 -->
           <div class="text" v-on:mousedown="TextMouseMoveGetXY()" onSelectStart="event.returnValue=false"
             v-bind:style="fixed_text_count.mob_text_data[index]" v-for="(item,index) in fixed_text_count.mob_text_data">
-            <p v-on:mousedown="TextOutlineOpen(index)" v-html="fixed_text_count.mob_text_data[index].content"></p>
+            <div v-on:mousedown="TextOutlineOpen(index)" v-html="fixed_text_count.mob_text_data[index].content"></div>
           </div>
           <!-- 產生連結 -->
           <div class="btn" v-on:mousedown="BtnMouseMoveGetXY()">
@@ -575,7 +575,7 @@
           <div class="text" v-on:mousedown="TextMouseMoveGetXY()" onSelectStart="event.returnValue=false"
             v-bind:style="fixed_text_count.pc_text_temporarily_data[index]"
             v-for="(item,index) in fixed_text_count.pc_text_data">
-            <p v-on:mousedown="TextOutlineOpen(index)" v-html="fixed_text_count.pc_text_data[index].content"></p>
+            <div v-on:mousedown="TextOutlineOpen(index)" v-html="fixed_text_count.pc_text_data[index].content"></div>
           </div>
           <!-- 產生連結 -->
           <div class="btn" v-on:mousedown="BtnMouseMoveGetXY()">
@@ -601,7 +601,7 @@
           <div class="text" v-on:mousedown="TextMouseMoveGetXY()" onSelectStart="event.returnValue=false"
             v-bind:style="fixed_text_count.mob_text_temporarily_data[index]"
             v-for="(item,index) in fixed_text_count.mob_text_data">
-            <p v-on:mousedown="TextOutlineOpen(index)" v-html="fixed_text_count.mob_text_data[index].content"></p>
+            <div v-on:mousedown="TextOutlineOpen(index)" v-html="fixed_text_count.mob_text_data[index].content"></div>
           </div>
           <!-- 產生連結 -->
           <div class="btn" v-on:mousedown="BtnMouseMoveGetXY()">
