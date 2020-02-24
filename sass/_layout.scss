@@ -33,6 +33,9 @@
   justify-content: space-between;
 }
 
+.justify-center {
+  justify-content: center;
+}
 @media only screen and (max-width: 991.9px) {
   .row-flex {
     .flex-col-s-1 {

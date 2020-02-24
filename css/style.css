@@ -12,6 +12,7 @@ html {
   -webkit-text-size-adjust: 100%;
   /* 2 */
 }
+
 /* Sections
    ========================================================================== */
 /**
@@ -647,6 +648,12 @@ img {
           justify-content: space-between;
 }
 
+.justify-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 @media only screen and (max-width: 991.9px) {
   .row-flex .flex-col-s-1 {
     width: 100%;
@@ -952,6 +959,10 @@ img {
           transform: rotate(45deg) translateY(7px);
   -webkit-transition: all 0.45s ease;
   transition: all 0.45s ease;
+}
+
+.container .panel .button-row {
+  padding: 10px 0;
 }
 
 .container .panelside {
