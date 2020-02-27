@@ -31,11 +31,14 @@ select {
   outline: 0;
 }
 input {
-  padding: 4px;
-  margin-right: 5px;
-  &:only-of-type {
-    margin-right: 0;
-    width: 100%;
+  &[type="text"],
+  &[type="number"] {
+    padding: 4px;
+    margin-right: 5px;
+    &:only-of-type {
+      margin-right: 0;
+      width: 100%;
+    }
   }
 }
 .input-m {
@@ -61,9 +64,51 @@ input[type="text"] {
     width: 40px;
   }
 }
-input[type="checkbox"] {
+input.checkbox[type="checkbox"] {
+  visibility: hidden;
+  appearance: none;
   & ~ label {
-    margin-left: 5px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 15px;
+    cursor: pointer;
+    span {
+      position: absolute;
+      display: inline-block;
+      vertical-align: middle;
+      width: 15px;
+      height: 15px;
+      left: -3px;
+      border: 1px solid #aaa;
+      margin-right: 5px;
+      &::before {
+        content: "";
+        position: absolute;
+        display: inline-block;
+        left: 3.5px;
+        width: 5px;
+        height: 9px;
+        border-bottom: 1px solid #000;
+        border-right: 1px solid #000;
+        opacity: 0;
+        visibility: hidden;
+        transform: rotate(0);
+        transition: all 0.15s ease;
+      }
+    }
+  }
+  &:checked {
+    & ~ label {
+      span {
+        &::before {
+          opacity: 1;
+          visibility: visible;
+          transform: rotate(45deg);
+          transition: all 0.15s ease;
+        }
+      }
+    }
   }
 }
 input.radio-button[type="radio"] {
