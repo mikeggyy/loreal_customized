@@ -896,7 +896,9 @@ function method() {
                 position: 'absolute',
                 top: 0,
                 left: 0,
-                href: 'javascript:;'
+                href: 'javascript:;',
+                class:'',
+                pref_class:''
             };
             ZONE_DATA.push(style);
             this.CloseBtnFocus();

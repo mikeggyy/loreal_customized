@@ -680,6 +680,44 @@ function watch() {
                 });
                 target.top = this.f_btn_top;
             }
+        },
+        // popup值改變
+        f_popup_check: function () {
+            let ZONE_DATA;
+            if (this.pc_status == true) {
+                ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+            } else if (this.mobile_status == true) {
+                ZONE_DATA = this.fixed_btn_count.mob_btn_data;
+            }
+            if(this.f_popup_check==true){
+                if(this.fixed_project_data.type_project=="GAB"){
+                    if (
+                        ZONE_DATA.find(function (item, index, array) {
+                            return item.foucs == true;
+                        })
+                    ) {
+                        let target = ZONE_DATA.find(function (item, index, array) {
+                            return item.foucs == true;
+                        });
+                        target.class = 'js_quickshoppopin';
+                    }
+                }else if(this.fixed_project_data.type_project=="YSL"){
+                    if (
+                        ZONE_DATA.find(function (item, index, array) {
+                            return item.foucs == true;
+                        })
+                    ) {
+                        let target = ZONE_DATA.find(function (item, index, array) {
+                            return item.foucs == true;
+                        });
+                        target.class = 'js_quickviewbutton';
+                        target.pref_class = 'contentcarousel_list';
+                    }
+                }
+            }else{
+                return;
+            }
+
         }
     }
 }

@@ -5,10 +5,15 @@ function data() {
         mobile_status: false,
         // 專案資料
         fixed_project_data: {
+            // 專案類型 YSL GAB KLS
             type_project: window.localStorage.getItem('type_project') ? window.localStorage.getItem('type_project') : '',
+            // 專案名稱 暫時沒路用
             name_project: '',
+            // 資料夾名稱 影響圖片路徑
             name_folder: '',
+            // 活動ID 影響送出GTM資料
             code_campaign: '',
+            // 上線日期 影響送出GTM資料
             date_start: ''
         },
         f_name_project: "",
@@ -60,7 +65,7 @@ function data() {
             pc_btn_data: window.localStorage.getItem('pc_btn_data') ? JSON.parse(window.localStorage.getItem('pc_btn_data')) : [],
             mob_btn_data: window.localStorage.getItem('mob_btn_data') ? JSON.parse(window.localStorage.getItem('mob_btn_data')) : [],
             pc_btn_temporarily_data: [],
-            mob_btn_temporarily_data: []
+            mob_btn_temporarily_data: [],
         },
         f_btn_content: '',
         f_btn_width: '',
@@ -78,6 +83,8 @@ function data() {
         f_btn_top: '',
         f_btn_left: '',
         f_btn_href: '',
+        // popup視窗確定
+        f_popup_check:false,
         // 程式碼
         web_status: {
             pc_height: '',

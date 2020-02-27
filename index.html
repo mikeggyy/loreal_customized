@@ -351,7 +351,7 @@
           <div id="button-setting" class="element-setting">
             <div class="row row-flex">
               <div class="flex-col-m-1">
-                  <input type="checkbox" id="link-popup" class="checkbox">
+                  <input type="checkbox" id="link-popup" class="checkbox" v-model="f_popup_check">
                   <label for="link-popup"><span></span>以popup彈跳視窗開啟</label>
               </div>
             </div>
@@ -534,7 +534,7 @@
           </div>
           <!-- 產生連結 -->
           <div class="btn" v-on:mousedown="BtnMouseMoveGetXY()">
-            <a v-on:mousedown="BtnOutlineOpen(index)" onclick="return false;" onSelectStart="event.returnValue=false"
+            <a v-bind:class="fixed_btn_count.pc_btn_data[index].class" v-on:mousedown="BtnOutlineOpen(index)" onclick="return false;" onSelectStart="event.returnValue=false"
               v-bind:style="fixed_btn_count.pc_btn_data[index]" v-for="(item,index) in fixed_btn_count.pc_btn_data"
               v-html="fixed_btn_count.pc_btn_data[index].content" v-bind:href="fixed_btn_count.pc_btn_data[index].href"
               target="_blank"></a>
