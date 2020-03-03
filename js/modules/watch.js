@@ -158,7 +158,7 @@ function watch() {
                 target.id = this.f_img_id;
             }
         },
-        f_img_className:function(){
+        f_img_className: function () {
             let ZONE_DATA;
             if (this.pc_status == true) {
                 ZONE_DATA = this.fixed_img_count.pc_img_data;
@@ -464,7 +464,7 @@ function watch() {
                 target.id = this.f_text_id;
             }
         },
-        f_text_className:function(){
+        f_text_className: function () {
             let ZONE_DATA;
             if (this.pc_status == true) {
                 ZONE_DATA = this.fixed_text_count.pc_text_data;
@@ -753,7 +753,7 @@ function watch() {
                 target.top = this.f_btn_top;
             }
         },
-        f_btn_id:function(){
+        f_btn_id: function () {
             let ZONE_DATA;
             if (this.pc_status == true) {
                 ZONE_DATA = this.fixed_btn_count.pc_btn_data;
@@ -771,7 +771,7 @@ function watch() {
                 target.id = this.f_btn_id;
             }
         },
-        f_btn_className:function(){
+        f_btn_className: function () {
             let ZONE_DATA;
             if (this.pc_status == true) {
                 ZONE_DATA = this.fixed_btn_count.pc_btn_data;
@@ -797,8 +797,8 @@ function watch() {
             } else if (this.mobile_status == true) {
                 ZONE_DATA = this.fixed_btn_count.mob_btn_data;
             }
-            if(this.f_popup_check==true){
-                if(this.fixed_project_data.type_project=="GAB"){
+            if (this.f_popup_check == true) {
+                if (this.fixed_project_data.type_project == "GAB") {
                     if (
                         ZONE_DATA.find(function (item, index, array) {
                             return item.foucs == true;
@@ -808,8 +808,9 @@ function watch() {
                             return item.foucs == true;
                         });
                         target.class = 'js_quickshoppopin';
+                        target.pref_class = '';
                     }
-                }else if(this.fixed_project_data.type_project=="YSL"){
+                } else if (this.fixed_project_data.type_project == "YSL") {
                     if (
                         ZONE_DATA.find(function (item, index, array) {
                             return item.foucs == true;
@@ -822,8 +823,12 @@ function watch() {
                         target.pref_class = 'contentcarousel_list';
                     }
                 }
-            }else{
-                return;
+            } else {
+                let target = ZONE_DATA.find(function (item, index, array) {
+                    return item.foucs == true;
+                });
+                target.class = '';
+                target.pref_class = '';
             }
 
         }

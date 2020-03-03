@@ -87,6 +87,7 @@ function data() {
         f_btn_top: '',
         f_btn_left: '',
         f_btn_href: '',
+        f_btn_class:'',
         f_btn_className:'',
         f_btn_id:'',
         // popup視窗確定

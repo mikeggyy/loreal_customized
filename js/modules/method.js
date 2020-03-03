@@ -443,6 +443,11 @@ function method() {
             this.f_btn_href = ZONE_DATA[index].href;
             this.f_btn_id = ZONE_DATA[index].id;
             this.f_btn_className = ZONE_DATA[index].className;
+            if (ZONE_DATA[index].class == 'js_quickshoppopin' || ZONE_DATA[index].class == 'js_quickviewbutton') {
+                this.f_popup_check = true;
+            } else {
+                this.f_popup_check = false;
+            }
         },
         // 關掉所有圖片foucs
         CloseImgFocus: function () {
@@ -599,6 +604,7 @@ function method() {
             this.f_btn_href = "";
             this.f_btn_id = "";
             this.f_btn_className = "";
+
         },
         // 圖片區鍵盤上下改變數值
         KeyDownChangInt_ImgLeft: function () {
@@ -791,8 +797,8 @@ function method() {
             let style;
             if (this.pc_status == true) {
                 style = {
-                    id:'',
-                    className:'',
+                    id: '',
+                    className: '',
                     content: "文字",
                     foucs: false,
                     display: "block",
@@ -812,8 +818,8 @@ function method() {
                 };
             } else if (this.mobile_status == true) {
                 style = {
-                    id:'',
-                    className:'',
+                    id: '',
+                    className: '',
                     content: "文字",
                     foucs: false,
                     display: "block",
@@ -851,8 +857,8 @@ function method() {
             }
             // 送資料進去陣列
             let style = {
-                id:'',
-                className:'',
+                id: '',
+                className: '',
                 content: "新增文字",
                 foucs: false,
                 display: "block",
@@ -894,8 +900,8 @@ function method() {
             }
             // 送資料進去陣列
             let style = {
-                id:'',
-                className:'',
+                id: '',
+                className: '',
                 content: '新增連結',
                 foucs: false,
                 display: 'flex',
@@ -917,8 +923,8 @@ function method() {
                 top: 0,
                 left: 0,
                 href: 'javascript:;',
-                class:'',
-                pref_class:''
+                class: '',
+                pref_class: ''
             };
             ZONE_DATA.push(style);
             this.CloseBtnFocus();
@@ -975,6 +981,9 @@ function method() {
         },
         // 印出程式碼
         PrintCode: function () {
+            this.ImgZoneDisplayClose();
+            this.BtnZoneDisplayClose();
+            this.TextZoneDisplayClose();
             this.LocalStorage();
             this.BodyHeight();
             let mb_banner_width = 375;
