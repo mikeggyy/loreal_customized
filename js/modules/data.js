@@ -37,6 +37,8 @@ function data() {
         f_img_left: "",
         f_img_srcset: "",
         f_img_src: "",
+        f_img_className:'',
+        f_img_id:'',
         // 文字區資料
         fixed_text_count: {
             display: false,
@@ -59,6 +61,8 @@ function data() {
         f_text_zIndex: "",
         f_text_top: "",
         f_text_left: "",
+        f_text_className:'',
+        f_text_id:'',
         // 按鈕區資料
         fixed_btn_count: {
             display: false,
@@ -83,6 +87,8 @@ function data() {
         f_btn_top: '',
         f_btn_left: '',
         f_btn_href: '',
+        f_btn_className:'',
+        f_btn_id:'',
         // popup視窗確定
         f_popup_check:false,
         // 程式碼

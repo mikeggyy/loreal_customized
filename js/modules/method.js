@@ -390,6 +390,8 @@ function method() {
             this.f_img_left = ZONE_DATA[index].left;
             this.f_img_srcset = ZONE_DATA[index].srcset;
             this.f_img_src = ZONE_DATA[index].src;
+            this.f_img_id = ZONE_DATA[index].id;
+            this.f_img_className = ZONE_DATA[index].className;
         },
         // 文字表單值輸入到資料中
         TextInputInsertIntoData: function (index) {
@@ -413,6 +415,8 @@ function method() {
             this.f_text_zIndex = ZONE_DATA[index].zIndex;
             this.f_text_top = ZONE_DATA[index].top;
             this.f_text_left = ZONE_DATA[index].left;
+            this.f_text_id = ZONE_DATA[index].id;
+            this.f_text_className = ZONE_DATA[index].className;
         },
         // 按鈕表單值輸入到資料中
         BtnInputInsertIntoData: function (index) {
@@ -437,6 +441,8 @@ function method() {
             this.f_btn_top = ZONE_DATA[index].top;
             this.f_btn_left = ZONE_DATA[index].left;
             this.f_btn_href = ZONE_DATA[index].href;
+            this.f_btn_id = ZONE_DATA[index].id;
+            this.f_btn_className = ZONE_DATA[index].className;
         },
         // 關掉所有圖片foucs
         CloseImgFocus: function () {
@@ -553,6 +559,8 @@ function method() {
             this.f_img_zIndex = "";
             this.f_img_top = "";
             this.f_img_left = "";
+            this.f_img_id = "";
+            this.f_img_className = "";
         }, // 清空文字input值
         ClearTextInputValue: function () {
             this.f_text_content = "";
@@ -569,6 +577,8 @@ function method() {
             this.f_text_zIndex = "";
             this.f_text_top = "";
             this.f_text_left = "";
+            this.f_text_id = "";
+            this.f_text_className = "";
         },
         // 清空按鈕input值
         ClearBtnInputValue: function () {
@@ -587,6 +597,8 @@ function method() {
             this.f_btn_top = "";
             this.f_btn_left = "";
             this.f_btn_href = "";
+            this.f_btn_id = "";
+            this.f_btn_className = "";
         },
         // 圖片區鍵盤上下改變數值
         KeyDownChangInt_ImgLeft: function () {
@@ -779,6 +791,8 @@ function method() {
             let style;
             if (this.pc_status == true) {
                 style = {
+                    id:'',
+                    className:'',
                     content: "文字",
                     foucs: false,
                     display: "block",
@@ -798,6 +812,8 @@ function method() {
                 };
             } else if (this.mobile_status == true) {
                 style = {
+                    id:'',
+                    className:'',
                     content: "文字",
                     foucs: false,
                     display: "block",
@@ -835,6 +851,8 @@ function method() {
             }
             // 送資料進去陣列
             let style = {
+                id:'',
+                className:'',
                 content: "新增文字",
                 foucs: false,
                 display: "block",
@@ -876,6 +894,8 @@ function method() {
             }
             // 送資料進去陣列
             let style = {
+                id:'',
+                className:'',
                 content: '新增連結',
                 foucs: false,
                 display: 'flex',

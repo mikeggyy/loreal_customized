@@ -140,6 +140,42 @@ function watch() {
                 target.src = this.f_img_src;
             }
         },
+        f_img_id: function () {
+            let ZONE_DATA;
+            if (this.pc_status == true) {
+                ZONE_DATA = this.fixed_img_count.pc_img_data;
+            } else if (this.mobile_status == true) {
+                ZONE_DATA = this.fixed_img_count.mob_img_data;
+            }
+            if (
+                ZONE_DATA.find(function (item, index, array) {
+                    return item.foucs == true;
+                })
+            ) {
+                let target = ZONE_DATA.find(function (item, index, array) {
+                    return item.foucs == true;
+                });
+                target.id = this.f_img_id;
+            }
+        },
+        f_img_className:function(){
+            let ZONE_DATA;
+            if (this.pc_status == true) {
+                ZONE_DATA = this.fixed_img_count.pc_img_data;
+            } else if (this.mobile_status == true) {
+                ZONE_DATA = this.fixed_img_count.mob_img_data;
+            }
+            if (
+                ZONE_DATA.find(function (item, index, array) {
+                    return item.foucs == true;
+                })
+            ) {
+                let target = ZONE_DATA.find(function (item, index, array) {
+                    return item.foucs == true;
+                });
+                target.className = this.f_img_className;
+            }
+        },
         // 文字區數值改變
         f_text_content: function () {
             let ZONE_DATA;
@@ -410,7 +446,43 @@ function watch() {
                 target.left = this.f_text_left;
             }
         },
-        // 圖片區數值改變
+        f_text_id: function () {
+            let ZONE_DATA;
+            if (this.pc_status == true) {
+                ZONE_DATA = this.fixed_text_count.pc_text_data;
+            } else if (this.mobile_status == true) {
+                ZONE_DATA = this.fixed_text_count.mob_text_data;
+            }
+            if (
+                ZONE_DATA.find(function (item, index, array) {
+                    return item.foucs == true;
+                })
+            ) {
+                let target = ZONE_DATA.find(function (item, index, array) {
+                    return item.foucs == true;
+                });
+                target.id = this.f_text_id;
+            }
+        },
+        f_text_className:function(){
+            let ZONE_DATA;
+            if (this.pc_status == true) {
+                ZONE_DATA = this.fixed_text_count.pc_text_data;
+            } else if (this.mobile_status == true) {
+                ZONE_DATA = this.fixed_text_count.mob_text_data;
+            }
+            if (
+                ZONE_DATA.find(function (item, index, array) {
+                    return item.foucs == true;
+                })
+            ) {
+                let target = ZONE_DATA.find(function (item, index, array) {
+                    return item.foucs == true;
+                });
+                target.className = this.f_text_className;
+            }
+        },
+        // 按鈕區數值改變
         f_btn_content: function () {
             let ZONE_DATA;
             if (this.pc_status == true) {
@@ -679,6 +751,42 @@ function watch() {
                     return item.foucs == true;
                 });
                 target.top = this.f_btn_top;
+            }
+        },
+        f_btn_id:function(){
+            let ZONE_DATA;
+            if (this.pc_status == true) {
+                ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+            } else if (this.mobile_status == true) {
+                ZONE_DATA = this.fixed_btn_count.mob_btn_data;
+            }
+            if (
+                ZONE_DATA.find(function (item, index, array) {
+                    return item.foucs == true;
+                })
+            ) {
+                let target = ZONE_DATA.find(function (item, index, array) {
+                    return item.foucs == true;
+                });
+                target.id = this.f_btn_id;
+            }
+        },
+        f_btn_className:function(){
+            let ZONE_DATA;
+            if (this.pc_status == true) {
+                ZONE_DATA = this.fixed_btn_count.pc_btn_data;
+            } else if (this.mobile_status == true) {
+                ZONE_DATA = this.fixed_btn_count.mob_btn_data;
+            }
+            if (
+                ZONE_DATA.find(function (item, index, array) {
+                    return item.foucs == true;
+                })
+            ) {
+                let target = ZONE_DATA.find(function (item, index, array) {
+                    return item.foucs == true;
+                });
+                target.className = this.f_btn_className;
             }
         },
         // popup值改變
