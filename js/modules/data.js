@@ -92,6 +92,11 @@ function data() {
         f_btn_id:'',
         // popup視窗確定
         f_popup_check:false,
+        // 錨點設定
+        anchor_data:{
+            pc_top:'',
+            mob_top:'',
+        },
         // 程式碼
         web_status: {
             pc_height: '',

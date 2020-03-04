@@ -663,6 +663,12 @@ function method() {
         },
         // 圖片區滑鼠移動抓取x,y事件
         ImgMouseMoveGetXY: function () {
+            this.TextZoneDisplayClose();
+            this.BtnZoneDisplayClose();
+            this.CloseTextFocus();
+            this.ClearTextInputValue();
+            this.CloseBtnFocus();
+            this.ClearBtnInputValue();
             let ZONE_DATA;
             if (this.pc_status == true) {
                 ZONE_DATA = this.fixed_img_count.pc_img_data;
@@ -705,6 +711,12 @@ function method() {
         },
         // 文字區滑鼠移動抓取x,y事件
         TextMouseMoveGetXY: function () {
+            this.ImgZoneDisplayClose();
+            this.BtnZoneDisplayClose();
+            this.CloseImgFocus();
+            this.ClearImgInputValue();
+            this.CloseBtnFocus();
+            this.ClearBtnInputValue();
             let e = event;
             let ZONE_DATA;
             if (this.pc_status == true) {
@@ -746,6 +758,12 @@ function method() {
         },
         // 按鈕區滑鼠移動抓取x,y事件
         BtnMouseMoveGetXY: function () {
+            this.ImgZoneDisplayClose();
+            this.TextZoneDisplayClose();
+            this.CloseImgFocus();
+            this.ClearImgInputValue();
+            this.CloseTextFocus();
+            this.ClearTextInputValue();
             let e = event;
             let ZONE_DATA;
             if (this.pc_status == true) {
@@ -840,6 +858,12 @@ function method() {
             }
 
             ZONE_DATA.push(style);
+            this.TextZoneDisplayClose();
+            this.BtnZoneDisplayClose();
+            this.CloseTextFocus();
+            this.ClearTextInputValue();
+            this.CloseBtnFocus();
+            this.ClearBtnInputValue();
             this.CloseImgFocus();
             this.OpenImgFocus();
             this.ImgInsertIntoInput();
@@ -883,6 +907,12 @@ function method() {
                 left: 0
             };
             ZONE_DATA.push(style);
+            this.ImgZoneDisplayClose();
+            this.BtnZoneDisplayClose();
+            this.CloseImgFocus();
+            this.ClearImgInputValue();
+            this.CloseBtnFocus();
+            this.ClearBtnInputValue();
             this.CloseTextFocus();
             this.OpenTextFocus();
             this.TextInsertIntoInput();
@@ -927,6 +957,12 @@ function method() {
                 pref_class: ''
             };
             ZONE_DATA.push(style);
+            this.ImgZoneDisplayClose();
+            this.TextZoneDisplayClose();
+            this.CloseImgFocus();
+            this.ClearImgInputValue();
+            this.CloseTextFocus();
+            this.ClearTextInputValue();
             this.CloseBtnFocus();
             this.OpenBtnFocus();
             this.BtnInsertIntoInput();
@@ -1000,10 +1036,10 @@ function method() {
             let execute = () => {
                 let folder_name = self.fixed_project_data.name_folder;
                 if (this.fixed_project_data.type_project == "YSL") {
-                    code = document.querySelector("#loreal-compaign_ysl").innerHTML;
+                    code = document.querySelector(".loreal-compaign_ysl").innerHTML;
                     self.ChangeFrameWidth();
                 } else {
-                    code = document.querySelector("#loreal-compaign").innerHTML;
+                    code = document.querySelector(".loreal-compaign").innerHTML;
                 }
                 document.querySelector("#code").style.display = "block";
                 let textChang = code
