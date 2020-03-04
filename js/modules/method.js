@@ -9,6 +9,8 @@ function method() {
             this.fixed_text_count.mob_text_data = [];
             this.fixed_btn_count.pc_btn_data = [];
             this.fixed_btn_count.mob_btn_data = [];
+            this.web_status.pc_height = [];
+            this.web_status.mobile_height = [];
             this.ImgZoneDisplayClose();
             this.TextZoneDisplayClose();
             this.BtnZoneDisplayClose();
@@ -24,6 +26,8 @@ function method() {
             localStorage.setItem('mob_text_data', JSON.stringify(this.fixed_text_count.mob_text_data));
             localStorage.setItem('pc_btn_data', JSON.stringify(this.fixed_btn_count.pc_btn_data));
             localStorage.setItem('mob_btn_data', JSON.stringify(this.fixed_btn_count.mob_btn_data));
+            localStorage.setItem('pc_height', this.web_status.pc_height);
+            localStorage.setItem('mobile_height', this.web_status.mobile_height);
         },
 
         // 資料拷貝
@@ -46,12 +50,14 @@ function method() {
             this.fixed_btn_count.mob_btn_temporarily_data = JSON.parse(
                 JSON.stringify(this.fixed_btn_count.mob_btn_data)
             );
+            this.web_status.pc_height = this.web_status.pc_height;
+            this.web_status.mobile_height = this.web_status.mobile_height;
         },
         // 單位轉換
         ChangeUnit: function () {
             let pc_height = this.web_status.pc_height;
             let font_init = 6.2222;
-            if (this.fixed_project_data.type_project == "YSL") {
+            if (this.fixed_project_data.type_project == "YSL" || this.ysl_light_box_check.compile_rwd == true) {
                 // 桌機版單位轉換
                 let pc_img_left = this.fixed_img_count.pc_img_temporarily_data.map(
                     item => {
@@ -194,7 +200,7 @@ function method() {
         },
         // 改變外框寬度
         ChangeFrameWidth: function () {
-            if (this.fixed_project_data.type_project == "YSL") {
+            if (this.fixed_project_data.type_project == "YSL" || this.ysl_light_box_check.compile_rwd == true) {
                 document
                     .querySelector("#scene_ysl")
                     .querySelector(".display_zone_destop").style.width = "100%";
@@ -1017,6 +1023,10 @@ function method() {
         },
         // 印出程式碼
         PrintCode: function () {
+            if (this.fixed_project_data.type_project == "YSL") {
+                this.ysl_light_box_check.check = true;
+                return;
+            }
             this.ImgZoneDisplayClose();
             this.BtnZoneDisplayClose();
             this.TextZoneDisplayClose();
@@ -1035,12 +1045,7 @@ function method() {
             let code;
             let execute = () => {
                 let folder_name = self.fixed_project_data.name_folder;
-                if (this.fixed_project_data.type_project == "YSL") {
-                    code = document.querySelector(".loreal-compaign_ysl").innerHTML;
-                    self.ChangeFrameWidth();
-                } else {
-                    code = document.querySelector(".loreal-compaign").innerHTML;
-                }
+                code = document.querySelector(".loreal-compaign").innerHTML;
                 document.querySelector("#code").style.display = "block";
                 let textChang = code
                     .replace(new RegExp(".png", "g"), ".png?$staticlink$")
@@ -1197,6 +1202,95 @@ function method() {
             this.ClearBtnInputValue();
             this.BtnZoneDisplayClose();
             this.LocalStorage();
+        },
+        // YSL_RWD
+        BtnYslRwd: function () {
+            this.ysl_light_box_check.check = false;
+            this.ysl_light_box_check.compile_rwd = true;
+            this.ImgZoneDisplayClose();
+            this.BtnZoneDisplayClose();
+            this.TextZoneDisplayClose();
+            this.LocalStorage();
+            this.BodyHeight();
+            let mb_banner_width = 375;
+            let body_height = document.body.scrollHeight;
+            document.querySelectorAll(".display_zone_mobile")[1].style.height =
+                (body_height / mb_banner_width) * 100 + "vw";
+            this.CloseImgFocus();
+            this.CloseTextFocus();
+            this.CloseBtnFocus();
+            this.CopyData();
+            this.ChangeUnit();
+            let self = this;
+            let code;
+            let execute = () => {
+                let folder_name = self.fixed_project_data.name_folder;
+                code = document.querySelector(".loreal-compaign_ysl").innerHTML;
+                self.ChangeFrameWidth();
+                document.querySelector("#code").style.display = "block";
+                let textChang = code
+                    .replace(new RegExp(".png", "g"), ".png?$staticlink$")
+                    .replace(new RegExp(".jpg", "g"), ".jpg?$staticlink$")
+                    .replace(new RegExp(".gif", "g"), ".gif?$staticlink$")
+                    .replace(
+                        new RegExp("./images", "g"),
+                        "event-o2o-page/" + folder_name + "/images"
+                    )
+                    .replace(new RegExp("margin: initial;", "g"), "margin: 0 auto;")
+                    .replace(new RegExp('onclick="return false;"', "g"), '""')
+                    .replace(new RegExp("display: none;", "g"), "display:block")
+                    .replace(new RegExp("min-width:2000px", "g"), "min-width:992px");
+                self.zone_code =
+                    `<style>@media (min-width:992px){body {-ms-overflow-style: none;}::-webkit-scrollbar{width: 0px;}.display_zone_mobile {display: none !important;margin:0 auto;}}@media (max-width:991.9px) {html,body{
+              overflow-x: hidden;}.display_zone_destop {display: none !important;}}</style>` + textChang;
+            };
+            setTimeout(function () {
+                execute();
+            }, 300);
+        },
+        // YSL_Fixed
+        BtnYslFixed: function () {
+            this.ysl_light_box_check.check = false;
+            this.ysl_light_box_check.compile_rwd = false;
+            this.ImgZoneDisplayClose();
+            this.BtnZoneDisplayClose();
+            this.TextZoneDisplayClose();
+            this.LocalStorage();
+            this.BodyHeight();
+            let mb_banner_width = 375;
+            let body_height = document.body.scrollHeight;
+            document.querySelectorAll(".display_zone_mobile")[1].style.height =
+                (body_height / mb_banner_width) * 100 + "vw";
+            this.CloseImgFocus();
+            this.CloseTextFocus();
+            this.CloseBtnFocus();
+            this.CopyData();
+            this.ChangeUnit();
+            let self = this;
+            let code;
+            let execute = () => {
+                let folder_name = self.fixed_project_data.name_folder;
+                code = document.querySelector(".loreal-compaign").innerHTML;
+                document.querySelector("#code").style.display = "block";
+                let textChang = code
+                    .replace(new RegExp(".png", "g"), ".png?$staticlink$")
+                    .replace(new RegExp(".jpg", "g"), ".jpg?$staticlink$")
+                    .replace(new RegExp(".gif", "g"), ".gif?$staticlink$")
+                    .replace(
+                        new RegExp("./images", "g"),
+                        "event-o2o-page/" + folder_name + "/images"
+                    )
+                    .replace(new RegExp("margin: initial;", "g"), "margin: 0 auto;")
+                    .replace(new RegExp('onclick="return false;"', "g"), '""')
+                    .replace(new RegExp("display: none;", "g"), "display:block")
+                    .replace(new RegExp("min-width:2000px", "g"), "min-width:992px");
+                self.zone_code =
+                    `<style>@media (min-width:992px){body {-ms-overflow-style: none;}::-webkit-scrollbar{width: 0px;}.display_zone_mobile {display: none !important;margin:0 auto;}}@media (max-width:991.9px) {html,body{
+              overflow-x: hidden;}.display_zone_destop {display: none !important;}}</style>` + textChang;
+            };
+            setTimeout(function () {
+                execute();
+            }, 300);
         }
     }
 }

@@ -99,9 +99,15 @@ function data() {
         },
         // 程式碼
         web_status: {
-            pc_height: '',
-            mobile_height: ''
+            pc_height: window.localStorage.getItem('pc_height') ? window.localStorage.getItem('pc_height') : '',
+            mobile_height: window.localStorage.getItem('mobile_height') ? window.localStorage.getItem('mobile_height') : ''
         },
+        // ysl尺寸選擇視窗
+        ysl_light_box_check:{
+            check:false,
+            compile_rwd:false,
+        },
+
         zone_code: ''
     }
 }
