@@ -94,9 +94,13 @@ function data() {
         f_popup_check:false,
         // 錨點設定
         anchor_data:{
-            pc_top:'',
-            mob_top:'',
+            display:false,
+            attributes:[],
         },
+        f_anchor_id:'',
+        f_anchor_zIndex:'',
+        f_anchor_pc_top:'',
+        f_anchor_mob_top:'',
         // 程式碼
         web_status: {
             pc_height: window.localStorage.getItem('pc_height') ? window.localStorage.getItem('pc_height') : '',
@@ -107,10 +111,10 @@ function data() {
             check:false,
             compile_rwd:false,
         },
-
         zone_code: ''
     }
 }
+// 輸出
 export {
     data
 };

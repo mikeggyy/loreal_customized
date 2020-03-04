@@ -311,6 +311,13 @@ function method() {
         BtnZoneDisplayClose: function () {
             this.fixed_btn_count.display = false;
         },
+        // 錨點區面板顯示
+        AnchorZoneDisplayOpen: function () {
+            this.anchor_data.display = true;
+        },
+        AnchorZoneDisplayClose: function () {
+            this.anchor_data.display = false;
+        },
         // 創建的新圖片資料傳入input值
         ImgInsertIntoInput: function () {
             let ZONE_DATA;
@@ -378,6 +385,15 @@ function method() {
             this.f_btn_top = ZONE_DATA[ZONE_DATA.length - 1].top;
             this.f_btn_left = ZONE_DATA[ZONE_DATA.length - 1].left;
             this.f_btn_href = ZONE_DATA[ZONE_DATA.length - 1].href;
+        },
+        // 創建的新錨點資料傳入input值
+        AnchorInsertIntoInput: function () {
+            let ZONE_DATA;
+            ZONE_DATA = this.anchor_data.attributes;
+            this.f_anchor_id = ZONE_DATA[ZONE_DATA.length - 1].id;
+            this.f_anchor_zIndex = ZONE_DATA[ZONE_DATA.length - 1].zIndex;
+            this.f_anchor_pc_top = ZONE_DATA[ZONE_DATA.length - 1].pc_top;
+            this.f_anchor_mob_top = ZONE_DATA[ZONE_DATA.length - 1].mob_top;
         },
         // 圖片表單值輸入到資料中
         ImgInputInsertIntoData: function (index) {
@@ -454,6 +470,14 @@ function method() {
             } else {
                 this.f_popup_check = false;
             }
+        }, // 錨點表單值輸入到資料中
+        AnchorInputInsertIntoData: function (index) {
+            let ZONE_DATA;
+            ZONE_DATA = this.anchor_data.attributes;
+            this.f_anchor_id = ZONE_DATA[index].id;
+            this.f_anchor_zIndex = ZONE_DATA[index].zIndex;
+            this.f_anchor_pc_top = ZONE_DATA[index].pc_top;
+            this.f_anchor_mob_top = ZONE_DATA[index].mob_top;
         },
         // 關掉所有圖片foucs
         CloseImgFocus: function () {
@@ -494,6 +518,15 @@ function method() {
                 ZONE_DATA[array].foucs = "false";
             });
         },
+        // 關掉新增的錨點foucs
+        CloseAnchorFocus: function () {
+            let ZONE_DATA;
+            ZONE_DATA = this.anchor_data.attributes;
+            ZONE_DATA.forEach((item, array) => {
+                ZONE_DATA[array].outline = "0px transparent solid";
+                ZONE_DATA[array].foucs = "false";
+            });
+        },
         // 打開新增的圖片outline
         OpenImgFocus: function () {
             let ZONE_DATA;
@@ -527,6 +560,13 @@ function method() {
             ZONE_DATA[ZONE_DATA.length - 1].outline = "1px #aaa dashed";
             ZONE_DATA[ZONE_DATA.length - 1].foucs = true;
         },
+        // 打開新增的錨點outline
+        OpenAnchorFocus: function () {
+            let ZONE_DATA;
+            ZONE_DATA = this.anchor_data.attributes;
+            ZONE_DATA[ZONE_DATA.length - 1].outline = "1px red dashed";
+            ZONE_DATA[ZONE_DATA.length - 1].foucs = true;
+        },
         // 打開被選取的圖片outline
         OpenImgClickFocus: function (index) {
             let ZONE_DATA;
@@ -557,6 +597,13 @@ function method() {
             } else if (this.mobile_status == true) {
                 ZONE_DATA = this.fixed_btn_count.mob_btn_data;
             }
+            ZONE_DATA[index].outline = "1px #aaa dashed";
+            ZONE_DATA[index].foucs = true;
+        },
+        // 打開被選取的錨點outline
+        OpenAnchorClickFocus: function (index) {
+            let ZONE_DATA;
+            ZONE_DATA = this.anchor_data.attributes;
             ZONE_DATA[index].outline = "1px #aaa dashed";
             ZONE_DATA[index].foucs = true;
         },
@@ -610,7 +657,13 @@ function method() {
             this.f_btn_href = "";
             this.f_btn_id = "";
             this.f_btn_className = "";
-
+        },
+        // 清空錨點input值
+        ClearAnchorInputValue: function () {
+            this.f_anchor_id = "";
+            this.f_anchor_zIndex = "";
+            this.f_anchor_pc_top = "";
+            this.f_anchor_mob_top = "";
         },
         // 圖片區鍵盤上下改變數值
         KeyDownChangInt_ImgLeft: function () {
@@ -809,6 +862,43 @@ function method() {
                 });
             }
         },
+        // 錨點區滑鼠移動抓取y事件
+        AnchorMouseMoveGetY: function () {
+            this.ImgZoneDisplayClose();
+            this.TextZoneDisplayClose();
+            this.BtnZoneDisplayClose();
+            this.CloseImgFocus();
+            this.ClearImgInputValue();
+            this.CloseTextFocus();
+            this.ClearTextInputValue();
+            this.CloseBtnFocus();
+            this.ClearBtnInputValue();
+            let e = event;
+            let ZONE_DATA;
+            ZONE_DATA = this.anchor_data.attributes;
+            if (
+                ZONE_DATA.find(function (item, index, array) {
+                    return item.foucs == true;
+                })
+            ) {
+                let zone_target = document.querySelector("#scene");
+                let self = this;
+                let flag = true;
+                let initY = e.offsetY;
+
+                zone_target.addEventListener("mousemove", function () {
+                    if (flag == true) {
+                        let e = event || window.event;
+                        let y = e.pageY - initY;
+                        self.f_anchor_pc_top = y + "px";
+                    }
+
+                });
+                zone_target.addEventListener("mouseup", function () {
+                    flag = false;
+                });
+            }
+        },
         // 新增圖片按鈕
         ImgAddImg: function () {
             let ZONE_DATA;
@@ -976,6 +1066,34 @@ function method() {
             this.GoScrollTop();
             this.LocalStorage();
         },
+        // 新增錨點的按鈕
+        AnchorAddBtn: function () {
+            let ZONE_DATA;
+            ZONE_DATA = this.anchor_data.attributes;
+            let style = {
+                foucs: false,
+                id: '',
+                zIndex: '99',
+                pc_top: 0,
+                mob_top: 0
+            }
+            ZONE_DATA.push(style);
+            this.ImgZoneDisplayClose();
+            this.TextZoneDisplayClose();
+            this.BtnZoneDisplayClose();
+            this.CloseImgFocus();
+            this.ClearImgInputValue();
+            this.CloseTextFocus();
+            this.ClearTextInputValue();
+            this.CloseBtnFocus();
+            this.ClearBtnInputValue();
+            this.CloseAnchorFocus();
+            this.OpenAnchorFocus();
+            this.AnchorInsertIntoInput();
+            this.AnchorZoneDisplayOpen();
+            this.GoScrollTop();
+            this.LocalStorage();
+        },
         // 打開圖片外框
         ImgOutlineOpen: function (index) {
             this.CloseImgFocus();
@@ -996,6 +1114,13 @@ function method() {
             this.OpenBtnClickFocus(index);
             this.BtnInputInsertIntoData(index);
             this.BtnZoneDisplayOpen();
+        },
+        // 打開錨點外框
+        AnchorOutlineOpen: function (index) {
+            this.CloseAnchorFocus();
+            this.OpenAnchorClickFocus(index);
+            this.AnchorInputInsertIntoData(index);
+            this.AnchorZoneDisplayOpen();
         },
         // 圖片區確定按鈕
         ImgCheckBtn: function (index) {
@@ -1018,6 +1143,14 @@ function method() {
             this.CloseBtnFocus();
             this.ClearBtnInputValue();
             this.BtnZoneDisplayClose();
+            this.BodyHeight();
+            this.LocalStorage();
+        },
+        // 錨點區確定按鈕
+        AnchorCheckBtn: function (index) {
+            this.CloseAnchorFocus();
+            this.ClearAnchorInputValue();
+            this.AnchorZoneDisplayClose();
             this.BodyHeight();
             this.LocalStorage();
         },
@@ -1118,6 +1251,20 @@ function method() {
             this.BodyHeight();
             this.LocalStorage();
         },
+        // 錨點區取消按鈕
+        AnchorRemoveBtn: function () {
+            let ZONE_DATA;
+            ZONE_DATA = this.anchor_data.attributes;
+
+            let i = ZONE_DATA.findIndex(function (item) {
+                return item.foucs == true;
+            });
+            ZONE_DATA.splice(i, 1);
+            this.ClearAnchorInputValue();
+            this.AnchorZoneDisplayClose();
+            this.BodyHeight();
+            this.LocalStorage();
+        },
         CloseCode: function () {
             if (document.querySelector("#add_size") != null) {
                 document.querySelector("#add_size").media = "(min-width:2000px)";
@@ -1203,7 +1350,7 @@ function method() {
             this.BtnZoneDisplayClose();
             this.LocalStorage();
         },
-        // YSL_RWD
+        // 轉成YSL_RWD
         BtnYslRwd: function () {
             this.ysl_light_box_check.check = false;
             this.ysl_light_box_check.compile_rwd = true;
@@ -1248,7 +1395,7 @@ function method() {
                 execute();
             }, 300);
         },
-        // YSL_Fixed
+        // 轉成YSL_Fixed
         BtnYslFixed: function () {
             this.ysl_light_box_check.check = false;
             this.ysl_light_box_check.compile_rwd = false;
@@ -1294,6 +1441,7 @@ function method() {
         }
     }
 }
+// 輸出
 export {
     method
 };

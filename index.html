@@ -115,7 +115,7 @@
             </ul>
           </div>
         </div>
-        <!-- 圖片 -->
+        <!-- 圖片參數 -->
         <div class="element" v-show="fixed_img_count.display">
           <div class="setting-leader setting-leader-selection">
             <div class="row row-flex">
@@ -221,7 +221,7 @@
             </div>
           </div>
         </div>
-        <!-- 文字 -->
+        <!-- 文字參數 -->
         <div class="element" v-show="fixed_text_count.display">
           <div class="setting-leader setting-leader-selection">
             <div class="row row-flex">
@@ -348,7 +348,7 @@
             </div>
           </div>
         </div>
-        <!-- 連結 -->
+        <!-- 連結參數 -->
         <div class="element" v-show="fixed_btn_count.display">
           <div class="setting-leader setting-leader-selection">
             <div class="row row-flex">
@@ -505,6 +505,63 @@
             </div>
           </div>
         </div>
+        <!-- 錨點參數 -->
+        <div class="element" v-show="anchor_data.display">
+          <div class="setting-leader setting-leader-selection">
+            <div class="row row-flex">
+              <span>錨點設定</span>
+            </div>
+          </div>
+          <div id="button-setting" class="element-setting">
+            <div class="row row-flex">
+              <div class="flex-col-m-2">
+                <div class="row row-flex">
+                  <div class="label">錨點名稱</div>
+                  <div class="content">
+                    <input type="text" v-model="f_anchor_id" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row row-flex">
+              <div class="flex-col-m-2">
+                <div class="row row-flex">
+                  <div class="label">z-index</div>
+                  <div class="content">
+                    <input type="number" v-model="f_anchor_zIndex" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row row-flex">
+              <div class="flex-col-m-2">
+                <div class="row row-flex">
+                  <div class="label">PC_y軸</div>
+                  <div class="content">
+                    <input type="text" v-model="f_anchor_pc_top" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row row-flex">
+              <div class="flex-col-m-2">
+                <div class="row row-flex">
+                  <div class="label">MOB_y軸</div>
+                  <div class="content">
+                    <input type="text" v-model="f_anchor_mob_top" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="element-button">
+            <div class="row row-flex">
+              <a href="javascript:;" v-on:click="AnchorCheckBtn()" class="btn btn-border btn-check">確定</a>
+              <a href="javascript:;" v-on:click="AnchorRemoveBtn()" class="btn btn-border btn-cancel">刪除</a>
+            </div>
+          </div>
+        </div>
+        <!-- 印出程式碼區塊 -->
         <div class="row row-flex button-row justify-center">
           <a href="javascript:;" v-on:click="PrintCode()" class="btn btn-border btn-check">印出程式碼</a>
           <a href="javascript:;" class="btn btn-border btn-check" v-on:click="ClearData()">
@@ -526,7 +583,7 @@
       <div class="scene-container loreal-compaign" onSelectStart="event.returnValue=false">
         <!-- 桌機區 -->
         <div id="loreal-compaign">
-          <div class="display_zone_destop border__red" v-bind:style="{height:web_status.pc_height+'px'}"
+          <div class="display_zone_destop outline__red" v-bind:style="{height:web_status.pc_height+'px'}"
             style="width: 950px; position: relative; margin: initial;" v-show="pc_status">
             <!-- 產生圖片 -->
             <div v-bind:class="fixed_img_count.pc_img_data[index].className" class="main-img"
@@ -553,7 +610,8 @@
             </div>
           </div>
           <!-- 手機區 -->
-          <div class="display_zone_mobile border__red" style="width: 375px; position: relative;" v-show="mobile_status">
+          <div class="display_zone_mobile outline__red" style="width: 375px; position: relative;"
+            v-show="mobile_status">
             <!-- 產生圖片 -->
             <div v-bind:class="fixed_img_count.mob_img_data[index].className" class="main-img"
               v-on:mousedown="ImgMouseMoveGetXY()" v-bind:style="fixed_img_count.mob_img_data[index]"
@@ -580,6 +638,13 @@
                 v-bind:href="fixed_btn_count.mob_btn_data[index].href" onSelectStart="event.returnValue=false"
                 v-bind:style="fixed_btn_count.mob_btn_data[index]" v-html="fixed_btn_count.mob_btn_data[index].content"
                 target="_blank"></a>
+            </div>
+          </div>
+          <!-- 產生錨點 -->
+          <div class="anchor__list">
+            <div v-on:mousedown="[AnchorMouseMoveGetY(),AnchorOutlineOpen(index)]" v-bind:style="{top:anchor_data.attributes[index].pc_top,zIndex:anchor_data.attributes[index].zIndex}"
+              v-bind:id="anchor_data.attributes[index].id" v-for="(item,index) in anchor_data.attributes"
+              class="outline__green style__anchor" style="width: 35px;height: 0px;position: absolute;text-align: center;" v-text="anchor_data.attributes[index].id?anchor_data.attributes[index].id:'錨點'">
             </div>
           </div>
         </div>
@@ -672,12 +737,11 @@
         <div v-on:click="ToggleMobile()" title="手機版"><i class="fas fa-mobile-alt"></i></div>
       </div>
     </div>
-      <!-- 確認YSL類型 -->
-  <div class="check__size_ysl" v-show="ysl_light_box_check.check">
-    <a href="javascript:;" v-on:click="BtnYslRwd()">RWD</a>
-    <a href="javascript:;" v-on:click="BtnYslFixed()">固定尺寸</a>
-  </div>
-
+    <!-- 確認YSL類型 -->
+    <div class="check__size_ysl" v-show="ysl_light_box_check.check">
+      <a href="javascript:;" v-on:click="BtnYslRwd()">RWD</a>
+      <a href="javascript:;" v-on:click="BtnYslFixed()">固定尺寸</a>
+    </div>
   </div>
 
   <!-- lightbox - size: s/m/l -->
@@ -716,35 +780,42 @@
   <script src="./js/load.js"></script>
 
   <style>
-    .border__red {
+    .outline__red {
       outline: 1px solid red;
     }
+    .outline__green {
+      outline: 1px solid green;
+    }
+    .style__anchor {
+      left: 960px !important;
+    }
   </style>
-    <style>
-      .check__size_ysl{
-        width: 300px;
-        height: 100px;
-        position: fixed;
-        display: flex;
-        justify-content: center;
-        border: 1px solid black;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        z-index: 999;
-        background-color: blanchedalmond;
-        align-items: center;
-      }
-      .check__size_ysl a{
-        width: 80px;
-        background-color: gray;
-        text-align: center;
-        margin-left: 10px;
-        margin-right: 10px;
-      }
-    </style>
+  <style>
+    .check__size_ysl {
+      width: 300px;
+      height: 100px;
+      position: fixed;
+      display: flex;
+      justify-content: center;
+      border: 1px solid black;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      z-index: 999;
+      background-color: blanchedalmond;
+      align-items: center;
+    }
+
+    .check__size_ysl a {
+      width: 80px;
+      background-color: gray;
+      text-align: center;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  </style>
 </body>
 
 </html>

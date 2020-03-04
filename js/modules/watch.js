@@ -789,6 +789,63 @@ function watch() {
                 target.className = this.f_btn_className;
             }
         },
+        // 錨點區數值改變
+        f_anchor_id:function(){
+            let ZONE_DATA;
+                ZONE_DATA = this.anchor_data.attributes;
+            if (
+                ZONE_DATA.find(function (item, index, array) {
+                    return item.foucs == true;
+                })
+            ) {
+                let target = ZONE_DATA.find(function (item, index, array) {
+                    return item.foucs == true;
+                });
+                target.id = this.f_anchor_id;
+            }
+        },
+        f_anchor_pc_top:function(){
+            let ZONE_DATA;
+                ZONE_DATA = this.anchor_data.attributes;
+            if (
+                ZONE_DATA.find(function (item, index, array) {
+                    return item.foucs == true;
+                })
+            ) {
+                let target = ZONE_DATA.find(function (item, index, array) {
+                    return item.foucs == true;
+                });
+                target.pc_top = this.f_anchor_pc_top;
+            }
+        },
+        f_anchor_mob_top:function(){
+            let ZONE_DATA;
+                ZONE_DATA = this.anchor_data.attributes;
+            if (
+                ZONE_DATA.find(function (item, index, array) {
+                    return item.foucs == true;
+                })
+            ) {
+                let target = ZONE_DATA.find(function (item, index, array) {
+                    return item.foucs == true;
+                });
+                target.mob_top = this.f_anchor_mob_top;
+            }
+        },
+        f_anchor_zIndex:function(){
+            let ZONE_DATA;
+                ZONE_DATA = this.anchor_data.attributes;
+            if (
+                ZONE_DATA.find(function (item, index, array) {
+                    return item.foucs == true;
+                })
+            ) {
+                let target = ZONE_DATA.find(function (item, index, array) {
+                    return item.foucs == true;
+                });
+                target.zIndex = this.f_anchor_zIndex;
+            }
+        },
         // popup值改變
         f_popup_check: function () {
             let ZONE_DATA;
@@ -834,6 +891,7 @@ function watch() {
         }
     }
 }
+// 輸出
 export {
     watch
 };
