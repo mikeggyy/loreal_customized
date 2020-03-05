@@ -641,10 +641,19 @@
             </div>
           </div>
           <!-- 產生錨點 -->
-          <div class="anchor__list">
-            <div v-on:mousedown="[AnchorMouseMoveGetY(),AnchorOutlineOpen(index)]" v-bind:style="{top:anchor_data.attributes[index].pc_top,zIndex:anchor_data.attributes[index].zIndex}"
-              v-bind:id="anchor_data.attributes[index].id" v-for="(item,index) in anchor_data.attributes"
-              class="outline__green style__anchor" style="width: 35px;height: 0px;position: absolute;text-align: center;" v-text="anchor_data.attributes[index].id?anchor_data.attributes[index].id:'錨點'">
+          <div class="anchor__list" v-bind:id="anchor_data.attributes[index].id"
+            v-for="(item,index) in anchor_data.attributes">
+            <div v-if="pc_status" v-on:mousedown="[AnchorPcMouseMoveGetY(),AnchorOutlineOpen(index)]"
+              v-bind:style="{top:anchor_data.attributes[index].pc_top,zIndex:anchor_data.attributes[index].zIndex}"
+              class="outline__green style__anchor__pc"
+              style="width: 35px;height: 0px;position: absolute;text-align: center;"
+              v-text="anchor_data.attributes[index].id?anchor_data.attributes[index].id:'錨點'">
+            </div>
+            <div v-if="mobile_status" v-on:mousedown="[AnchorMobMouseMoveGetY(),AnchorOutlineOpen(index)]"
+              v-bind:style="{top:anchor_data.attributes[index].mob_top,zIndex:anchor_data.attributes[index].zIndex}"
+              class="outline__green style__anchor__mob"
+              style="width: 35px;height: 0px;position: absolute;text-align: center;"
+              v-text="anchor_data.attributes[index].id?anchor_data.attributes[index].id:'錨點'">
             </div>
           </div>
         </div>
@@ -783,11 +792,17 @@
     .outline__red {
       outline: 1px solid red;
     }
+
     .outline__green {
       outline: 1px solid green;
     }
-    .style__anchor {
+
+    .style__anchor__pc {
       left: 960px !important;
+    }
+
+    .style__anchor__mob {
+      left: 385px !important;
     }
   </style>
   <style>

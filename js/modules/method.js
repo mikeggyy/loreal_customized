@@ -862,8 +862,8 @@ function method() {
                 });
             }
         },
-        // 錨點區滑鼠移動抓取y事件
-        AnchorMouseMoveGetY: function () {
+        // PC錨點區滑鼠移動抓取y事件
+        AnchorPcMouseMoveGetY: function () {
             this.ImgZoneDisplayClose();
             this.TextZoneDisplayClose();
             this.BtnZoneDisplayClose();
@@ -891,6 +891,43 @@ function method() {
                         let e = event || window.event;
                         let y = e.pageY - initY;
                         self.f_anchor_pc_top = y + "px";
+                    }
+
+                });
+                zone_target.addEventListener("mouseup", function () {
+                    flag = false;
+                });
+            }
+        },
+        // 手機錨點區滑鼠移動抓取y事件
+        AnchorMobMouseMoveGetY: function () {
+            this.ImgZoneDisplayClose();
+            this.TextZoneDisplayClose();
+            this.BtnZoneDisplayClose();
+            this.CloseImgFocus();
+            this.ClearImgInputValue();
+            this.CloseTextFocus();
+            this.ClearTextInputValue();
+            this.CloseBtnFocus();
+            this.ClearBtnInputValue();
+            let e = event;
+            let ZONE_DATA;
+            ZONE_DATA = this.anchor_data.attributes;
+            if (
+                ZONE_DATA.find(function (item, index, array) {
+                    return item.foucs == true;
+                })
+            ) {
+                let zone_target = document.querySelector("#scene");
+                let self = this;
+                let flag = true;
+                let initY = e.offsetY;
+
+                zone_target.addEventListener("mousemove", function () {
+                    if (flag == true) {
+                        let e = event || window.event;
+                        let y = e.pageY - initY;
+                        self.f_anchor_mob_top = y + "px";
                     }
 
                 });

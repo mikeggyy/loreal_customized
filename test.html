@@ -14,8 +14,31 @@
         <img src="./images/pc/02_banner-1109.jpg" alt="">
         <img src="./images/pc/02_product_2.jpg" alt="">
     </div>
+    <div class="anchor a01"></div>
+    <div class="anchor a02"></div>
     <script>
-        document.querySelector('div').querySelectorAll('img')[2].setAttribute('id', 'aa')
+        let data = {
+            anchor: [{
+                pc_top: '300px',
+                mob_top: '20vw'
+            }, {
+                pc_top: '600px',
+                mob_top: '30vw'
+            }]
+        }
+        let anchor = document.querySelectorAll('.anchor');
+        let anchorData = data.anchor.map(function (index, array, item) {
+            return index
+        });
+        if (document.body.clientWidth > 992) {
+            anchor.forEach(function (index, array) {
+                anchor[array].setAttribute('top', anchorData[array].pc_top);
+            });
+        } else {
+            anchor.forEach(function (index, array) {
+                anchor[array].setAttribute('top', anchorData[array].mob_top);
+            });
+        }
     </script>
 </body>
 
