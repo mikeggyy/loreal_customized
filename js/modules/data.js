@@ -95,7 +95,7 @@ function data() {
         // 錨點設定
         anchor_data:{
             display:false,
-            attributes:[],
+            attributes:window.localStorage.getItem('anchor_data') ? JSON.parse(window.localStorage.getItem('anchor_data')) : [],
         },
         f_anchor_id:'',
         f_anchor_zIndex:'',
@@ -111,7 +111,8 @@ function data() {
             check:false,
             compile_rwd:false,
         },
-        zone_code: ''
+        zone_code: '',
+        outline__red:'outline__red'
     }
 }
 // 輸出

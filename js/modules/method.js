@@ -11,9 +11,11 @@ function method() {
             this.fixed_btn_count.mob_btn_data = [];
             this.web_status.pc_height = [];
             this.web_status.mobile_height = [];
+            this.anchor_data.attributes=[];
             this.ImgZoneDisplayClose();
             this.TextZoneDisplayClose();
             this.BtnZoneDisplayClose();
+            this.AnchorZoneDisplayClose();
             this.LocalStorage();
         },
         // localStorage
@@ -28,6 +30,7 @@ function method() {
             localStorage.setItem('mob_btn_data', JSON.stringify(this.fixed_btn_count.mob_btn_data));
             localStorage.setItem('pc_height', this.web_status.pc_height);
             localStorage.setItem('mobile_height', this.web_status.mobile_height);
+            localStorage.setItem('anchor_data', JSON.stringify(this.anchor_data.attributes));
         },
 
         // 資料拷貝
