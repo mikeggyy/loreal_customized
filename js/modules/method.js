@@ -9,9 +9,9 @@ function method() {
             this.fixed_text_count.mob_text_data = [];
             this.fixed_btn_count.pc_btn_data = [];
             this.fixed_btn_count.mob_btn_data = [];
-            this.web_status.pc_height = [];
-            this.web_status.mobile_height = [];
-            this.anchor_data.attributes=[];
+            this.web_status.pc_height = 0;
+            this.web_status.mobile_height = 0;
+            this.anchor_data.attributes = [];
             this.ImgZoneDisplayClose();
             this.TextZoneDisplayClose();
             this.BtnZoneDisplayClose();
@@ -218,14 +218,20 @@ function method() {
             let pc_banner_width = 950;
             let mb_banner_width = 375;
             let body_height = document.body.scrollHeight;
+            let self = this;
             if (this.pc_status == true) {
                 document.querySelectorAll(".display_zone_destop")[0].style.height = 'auto';
                 document.querySelectorAll(".display_zone_destop")[1].style.height = 'auto';
                 setTimeout(() => {
                     document.querySelectorAll(".display_zone_destop")[0].style.height =
                         body_height + "px";
-                    document.querySelectorAll(".display_zone_destop")[1].style.height =
-                        (body_height / pc_banner_width) * 100 + "vw";
+                    if (self.fixed_project_data.type_project == "YSL") {
+                        document.querySelectorAll(".display_zone_destop")[1].style.height =
+                            (body_height / pc_banner_width) * 100 + "vw";
+                    } else {
+                        document.querySelectorAll(".display_zone_destop")[1].style.height = body_height + "px";
+                    }
+
                     this.web_status.pc_height = body_height;
                 }, 100);
 
@@ -235,6 +241,7 @@ function method() {
                 setTimeout(() => {
                     document.querySelectorAll(".display_zone_mobile")[0].style.height =
                         body_height + "px";
+
                     document.querySelectorAll(".display_zone_mobile")[1].style.height =
                         (body_height / mb_banner_width) * 100 + "vw";
                     this.web_status.mobile_height = body_height;
@@ -769,6 +776,10 @@ function method() {
                     self.BodyHeight();
                     flag = false;
                 });
+                zone_target.addEventListener("mouseover", function () {
+                    self.BodyHeight();
+                    flag = false;
+                });
             }
         },
         // 文字區滑鼠移動抓取x,y事件
@@ -900,6 +911,7 @@ function method() {
                 zone_target.addEventListener("mouseup", function () {
                     flag = false;
                 });
+
             }
         },
         // 手機錨點區滑鼠移動抓取y事件
@@ -932,7 +944,6 @@ function method() {
                         let y = e.pageY - initY;
                         self.f_anchor_mob_top = y + "px";
                     }
-
                 });
                 zone_target.addEventListener("mouseup", function () {
                     flag = false;
@@ -1205,10 +1216,6 @@ function method() {
             this.TextZoneDisplayClose();
             this.LocalStorage();
             this.BodyHeight();
-            let mb_banner_width = 375;
-            let body_height = document.body.scrollHeight;
-            document.querySelectorAll(".display_zone_mobile")[1].style.height =
-                (body_height / mb_banner_width) * 100 + "vw";
             this.CloseImgFocus();
             this.CloseTextFocus();
             this.CloseBtnFocus();
@@ -1217,8 +1224,12 @@ function method() {
             let self = this;
             let code;
             let execute = () => {
+                // let data = self.anchor_data.attributes;
+                // console.log(data);
+                // let js = `<script>${(data)}</script>`;
+                // console.log(js)
                 let folder_name = self.fixed_project_data.name_folder;
-                code = document.querySelector(".loreal-compaign").innerHTML;
+                code = document.querySelector(".loreal-compaign_new").innerHTML;
                 document.querySelector("#code").style.display = "block";
                 let textChang = code
                     .replace(new RegExp(".png", "g"), ".png?$staticlink$")
@@ -1232,9 +1243,24 @@ function method() {
                     .replace(new RegExp('onclick="return false;"', "g"), '""')
                     .replace(new RegExp("display: none;", "g"), "display:block")
                     .replace(new RegExp("min-width:2000px", "g"), "min-width:992px");
-                self.zone_code =
-                    `<style>@media (min-width:992px){body {-ms-overflow-style: none;}::-webkit-scrollbar{width: 0px;}.display_zone_mobile {display: none !important;margin:0 auto;}}@media (max-width:991.9px) {html,body{
-              overflow-x: hidden;}.display_zone_destop {display: none !important;}}</style>` + textChang;
+                let css = `<style>
+                #loreal-compaign{
+                    position: relative;
+                }
+                #loreal-compaign_new{
+                    position: relative;
+                }
+                @media (min-width:992px){
+                    body {-ms-overflow-style: none;}
+                    ::-webkit-scrollbar{width: 0px;}
+                    .display_zone_mobile {display: none !important;margin:0 auto;}
+                }
+                @media (max-width:991.9px) {
+                    html,body{overflow-x: hidden;}
+                        .display_zone_destop {display: none !important;}
+                    }
+                        </style>`;
+                self.zone_code = css + textChang;
             };
             setTimeout(function () {
                 execute();
@@ -1399,10 +1425,6 @@ function method() {
             this.TextZoneDisplayClose();
             this.LocalStorage();
             this.BodyHeight();
-            let mb_banner_width = 375;
-            let body_height = document.body.scrollHeight;
-            document.querySelectorAll(".display_zone_mobile")[1].style.height =
-                (body_height / mb_banner_width) * 100 + "vw";
             this.CloseImgFocus();
             this.CloseTextFocus();
             this.CloseBtnFocus();
@@ -1412,7 +1434,7 @@ function method() {
             let code;
             let execute = () => {
                 let folder_name = self.fixed_project_data.name_folder;
-                code = document.querySelector(".loreal-compaign_ysl").innerHTML;
+                code = document.querySelector(".loreal-compaign_new").innerHTML;
                 self.ChangeFrameWidth();
                 document.querySelector("#code").style.display = "block";
                 let textChang = code
@@ -1444,10 +1466,6 @@ function method() {
             this.TextZoneDisplayClose();
             this.LocalStorage();
             this.BodyHeight();
-            let mb_banner_width = 375;
-            let body_height = document.body.scrollHeight;
-            document.querySelectorAll(".display_zone_mobile")[1].style.height =
-                (body_height / mb_banner_width) * 100 + "vw";
             this.CloseImgFocus();
             this.CloseTextFocus();
             this.CloseBtnFocus();

@@ -661,8 +661,8 @@
     </div>
     <!-- 選擇圖片時 scene 加上 panelside-show class -->
     <div class="scene" id="scene_ysl" draggable="false" onSelectStart="event.returnValue=false" style="display: none;">
-      <div class="scene-container loreal-compaign_ysl" onSelectStart="event.returnValue=false">
-        <div id="loreal-compaign_ysl">
+      <div class="scene-container loreal-compaign_new" onSelectStart="event.returnValue=false">
+        <div id="loreal-compaign_new">
           <!-- 桌機區 -->
           <div class="display_zone_destop"
             style="width: 100%; position: relative; margin: initial;font-size: calc(1.578947vw);" v-show="pc_status">
@@ -672,7 +672,6 @@
               v-for="(item,index) in fixed_img_count.pc_img_data">
               <picture class="img" v-on:mousedown="ImgOutlineOpen(index)">
                 <source media="(min-width:992px)" v-bind:srcset="fixed_img_count.pc_img_data[index].srcset" />
-                <img style="width: 100%;" v-bind:src="fixed_img_count.pc_img_data[index].src" alt="" />
               </picture>
             </div>
             <!-- 產生文字 -->
@@ -700,8 +699,7 @@
               v-on:mousedown="ImgMouseMoveGetXY()" v-bind:style="fixed_img_count.mob_img_temporarily_data[index]"
               v-for="(item,index) in fixed_img_count.mob_img_data">
               <picture class="img" v-on:mousedown="ImgOutlineOpen(index)">
-                <source id="add_size" media="(min-width:2000px)"
-                  v-bind:srcset="fixed_img_count.mob_img_data[index].srcset" />
+                <source media="(min-width:2000px)"/>
                 <img style="width: 100%;" v-bind:src="fixed_img_count.mob_img_data[index].src" alt="" />
               </picture>
             </div>
