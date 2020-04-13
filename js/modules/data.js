@@ -96,6 +96,7 @@ function data() {
         anchor_data:{
             display:false,
             attributes:window.localStorage.getItem('anchor_data') ? JSON.parse(window.localStorage.getItem('anchor_data')) : [],
+            attributes_temporarily:[]
         },
         f_anchor_id:'',
         f_anchor_zIndex:'',

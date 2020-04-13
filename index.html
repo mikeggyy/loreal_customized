@@ -665,13 +665,14 @@
         <div id="loreal-compaign_new">
           <!-- 桌機區 -->
           <div class="display_zone_destop"
-            style="width: 100%; position: relative; margin: initial;font-size: calc(1.578947vw);" v-show="pc_status">
+            style="position: relative; margin: initial;font-size: calc(1.578947vw);" v-show="pc_status">
             <!-- 產生圖片 -->
             <div v-bind:class="fixed_img_count.pc_img_data[index].className" class="main-img"
               v-on:mousedown="ImgMouseMoveGetXY()" v-bind:style="fixed_img_count.pc_img_temporarily_data[index]"
               v-for="(item,index) in fixed_img_count.pc_img_data">
               <picture class="img" v-on:mousedown="ImgOutlineOpen(index)">
                 <source media="(min-width:992px)" v-bind:srcset="fixed_img_count.pc_img_data[index].srcset" />
+                <img src="" alt="" style="width: 100%;">
               </picture>
             </div>
             <!-- 產生文字 -->
@@ -699,7 +700,7 @@
               v-on:mousedown="ImgMouseMoveGetXY()" v-bind:style="fixed_img_count.mob_img_temporarily_data[index]"
               v-for="(item,index) in fixed_img_count.mob_img_data">
               <picture class="img" v-on:mousedown="ImgOutlineOpen(index)">
-                <source media="(min-width:2000px)"/>
+                <source media="(min-width:2000px)" />
                 <img style="width: 100%;" v-bind:src="fixed_img_count.mob_img_data[index].src" alt="" />
               </picture>
             </div>
@@ -720,6 +721,10 @@
                 v-bind:style="fixed_btn_count.mob_btn_temporarily_data[index]"
                 v-html="fixed_btn_count.mob_btn_data[index].content" target="_blank"></a>
             </div>
+          </div>
+          <!-- 產生錨點 -->
+          <div class="anchor__list" v-bind:id="anchor_data.attributes_temporarily[index].id"
+            v-for="(item,index) in anchor_data.attributes_temporarily">
           </div>
         </div>
       </div>
@@ -793,6 +798,30 @@
 
     .outline__green {
       outline: 1px solid green;
+    }
+
+    .outline__green::before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 9px;
+      height: 2px;
+      top: 2px;
+      left: -2px;
+      background-color: green;
+      transform: rotateZ(45deg);
+    }
+
+    .outline__green::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 9px;
+      height: 2px;
+      top: -4px;
+      left: -2px;
+      background-color: green;
+      transform: rotateZ(-45deg);
     }
 
     .style__anchor__pc {

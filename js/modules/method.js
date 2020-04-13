@@ -53,6 +53,9 @@ function method() {
             this.fixed_btn_count.mob_btn_temporarily_data = JSON.parse(
                 JSON.stringify(this.fixed_btn_count.mob_btn_data)
             );
+            this.anchor_data.attributes_temporarily = JSON.parse(
+                JSON.stringify(this.anchor_data.attributes)
+            );
             this.web_status.pc_height = this.web_status.pc_height;
             this.web_status.mobile_height = this.web_status.mobile_height;
         },
@@ -60,7 +63,7 @@ function method() {
         ChangeUnit: function () {
             let pc_height = this.web_status.pc_height;
             let font_init = 6.2222;
-            if (this.fixed_project_data.type_project == "YSL" || this.ysl_light_box_check.compile_rwd == true) {
+            if (this.fixed_project_data.type_project == "YSL" && this.ysl_light_box_check.compile_rwd == true) {
                 // 桌機版單位轉換
                 let pc_img_left = this.fixed_img_count.pc_img_temporarily_data.map(
                     item => {
@@ -130,6 +133,11 @@ function method() {
                         return item.fontSize;
                     }
                 );
+                let attributes_temporarily_pc_top = this.anchor_data.attributes_temporarily.map(
+                    item => {
+                        item.pc_top = (parseInt(item.pc_top) / pc_height) * 100 + "%";
+                        return item.pc_top;
+                    });
             }
             // 手機版單位轉換
             let mob_img_left = this.fixed_img_count.mob_img_temporarily_data.map(
@@ -200,6 +208,11 @@ function method() {
                     return item.fontSize;
                 }
             );
+            let attributes_temporarily_mob_top = this.anchor_data.attributes_temporarily.map(
+                item => {
+                    item.mob_top = (parseInt(item.mob_top) / 375) * 100 + "vw";
+                    return item.mob_top;
+                });
         },
         // 改變外框寬度
         ChangeFrameWidth: function () {
@@ -225,7 +238,7 @@ function method() {
                 setTimeout(() => {
                     document.querySelectorAll(".display_zone_destop")[0].style.height =
                         body_height + "px";
-                    if (self.fixed_project_data.type_project == "YSL") {
+                    if (self.fixed_project_data.type_project == "YSL" && self.ysl_light_box_check.compile_rwd == true) {
                         document.querySelectorAll(".display_zone_destop")[1].style.height =
                             (body_height / pc_banner_width) * 100 + "vw";
                     } else {
@@ -480,7 +493,8 @@ function method() {
             } else {
                 this.f_popup_check = false;
             }
-        }, // 錨點表單值輸入到資料中
+        },
+        // 錨點表單值輸入到資料中
         AnchorInputInsertIntoData: function (index) {
             let ZONE_DATA;
             ZONE_DATA = this.anchor_data.attributes;
@@ -1205,67 +1219,6 @@ function method() {
             this.BodyHeight();
             this.LocalStorage();
         },
-        // 印出程式碼
-        PrintCode: function () {
-            if (this.fixed_project_data.type_project == "YSL") {
-                this.ysl_light_box_check.check = true;
-                return;
-            }
-            this.ImgZoneDisplayClose();
-            this.BtnZoneDisplayClose();
-            this.TextZoneDisplayClose();
-            this.LocalStorage();
-            this.BodyHeight();
-            this.CloseImgFocus();
-            this.CloseTextFocus();
-            this.CloseBtnFocus();
-            this.CopyData();
-            this.ChangeUnit();
-            let self = this;
-            let code;
-            let execute = () => {
-                // let data = self.anchor_data.attributes;
-                // console.log(data);
-                // let js = `<script>${(data)}</script>`;
-                // console.log(js)
-                let folder_name = self.fixed_project_data.name_folder;
-                code = document.querySelector(".loreal-compaign_new").innerHTML;
-                document.querySelector("#code").style.display = "block";
-                let textChang = code
-                    .replace(new RegExp(".png", "g"), ".png?$staticlink$")
-                    .replace(new RegExp(".jpg", "g"), ".jpg?$staticlink$")
-                    .replace(new RegExp(".gif", "g"), ".gif?$staticlink$")
-                    .replace(
-                        new RegExp("./images", "g"),
-                        "event-o2o-page/" + folder_name + "/images"
-                    )
-                    .replace(new RegExp("margin: initial;", "g"), "margin: 0 auto;")
-                    .replace(new RegExp('onclick="return false;"', "g"), '""')
-                    .replace(new RegExp("display: none;", "g"), "display:block")
-                    .replace(new RegExp("min-width:2000px", "g"), "min-width:992px");
-                let css = `<style>
-                #loreal-compaign{
-                    position: relative;
-                }
-                #loreal-compaign_new{
-                    position: relative;
-                }
-                @media (min-width:992px){
-                    body {-ms-overflow-style: none;}
-                    ::-webkit-scrollbar{width: 0px;}
-                    .display_zone_mobile {display: none !important;margin:0 auto;}
-                }
-                @media (max-width:991.9px) {
-                    html,body{overflow-x: hidden;}
-                        .display_zone_destop {display: none !important;}
-                    }
-                        </style>`;
-                self.zone_code = css + textChang;
-            };
-            setTimeout(function () {
-                execute();
-            }, 300);
-        },
         // 圖片區取消按鈕
         ImgRemoveBtn: function () {
             let ZONE_DATA;
@@ -1416,6 +1369,92 @@ function method() {
             this.BtnZoneDisplayClose();
             this.LocalStorage();
         },
+        // 印出程式碼
+        PrintCode: function () {
+            if (this.fixed_project_data.type_project == 'YSL') {
+                this.ysl_light_box_check.check = true;
+                return;
+            }
+            this.ImgZoneDisplayClose();
+            this.BtnZoneDisplayClose();
+            this.TextZoneDisplayClose();
+            this.LocalStorage();
+            this.BodyHeight();
+            this.CloseImgFocus();
+            this.CloseTextFocus();
+            this.CloseBtnFocus();
+            this.CopyData();
+            this.ChangeUnit();
+            let self = this;
+            let code;
+            let execute = () => {
+                document.querySelector('#scene_ysl').querySelector('.display_zone_destop').style.width = '950px';
+                let data = self.anchor_data.attributes_temporarily;
+                let data_pc_top = data.map(function (value, index, array) {
+                    return `document.querySelectorAll('.anchor__list')[${index}].style.top='${value.pc_top}';`
+                });
+                let data_mob_top = data.map(function (value, index, array) {
+                    return `document.querySelectorAll('.anchor__list')[${index}].style.top='${value.mob_top}';`
+                });
+                let js = `<script>
+                if (document.body.clientWidth > 992) {
+                    ${data_pc_top}
+                } else {
+                    ${data_mob_top}
+                }
+                </script>`;
+                js = js.replace(new RegExp(";,", "g"), ";")
+                let folder_name = self.fixed_project_data.name_folder;
+                code = document.querySelector(".loreal-compaign_new").innerHTML;
+                document.querySelector("#code").style.display = "block";
+                let textChang = code
+                    .replace(new RegExp(".png", "g"), ".png?$staticlink$")
+                    .replace(new RegExp(".jpg", "g"), ".jpg?$staticlink$")
+                    .replace(new RegExp(".gif", "g"), ".gif?$staticlink$")
+                    .replace(
+                        new RegExp("./images", "g"),
+                        "event-o2o-page/" + folder_name + "/images"
+                    )
+                    .replace(new RegExp("margin: initial;", "g"), "margin: 0 auto;")
+                    .replace(new RegExp('onclick="return false;"', "g"), '""')
+                    .replace(new RegExp("display: none;", "g"), "display:block")
+                    .replace(new RegExp("min-width:2000px", "g"), "min-width:992px");
+                let css = `<style>
+                        #loreal-compaign{
+                            position: relative;
+                        }
+                        #loreal-compaign_new{
+                            position: relative;
+                        }
+                        #loreal-compaign_new .anchor__list{
+                            position: absolute;
+                            left:0;
+                            width:100%;
+                        }
+                        .g-wrapper_inner-main_content{
+                            padding-left: 0;
+                            padding-right: 0;
+                        }
+                        body .main .content{
+                            padding-left: 0;
+                            padding-right: 0;
+                        }
+                        @media (min-width:992px){
+                            body {-ms-overflow-style: none;}
+                            ::-webkit-scrollbar{width: 0px;}
+                            .display_zone_mobile {display: none !important;margin:0 auto;}
+                        }
+                        @media (max-width:991.9px) {
+                            html,body{overflow-x: hidden;}
+                                .display_zone_destop {display: none !important;}
+                            }
+                                </style>`;
+                self.zone_code = css + textChang + js;
+            };
+            setTimeout(function () {
+                execute();
+            }, 300);
+        },
         // 轉成YSL_RWD
         BtnYslRwd: function () {
             this.ysl_light_box_check.check = false;
@@ -1433,6 +1472,22 @@ function method() {
             let self = this;
             let code;
             let execute = () => {
+                document.querySelector('#scene_ysl').querySelector('.display_zone_destop').style.width = '100%';
+                let data = self.anchor_data.attributes_temporarily;
+                let data_pc_top = data.map(function (value, index, array) {
+                    return `document.querySelectorAll('.anchor__list')[${index}].style.top='${value.pc_top}';`
+                });
+                let data_mob_top = data.map(function (value, index, array) {
+                    return `document.querySelectorAll('.anchor__list')[${index}].style.top='${value.mob_top}';`
+                });
+                let js = `<script>
+                if (document.body.clientWidth > 992) {
+                    ${data_pc_top}
+                } else {
+                    ${data_mob_top}
+                }
+                </script>`;
+                js = js.replace(new RegExp(";,", "g"), ";")
                 let folder_name = self.fixed_project_data.name_folder;
                 code = document.querySelector(".loreal-compaign_new").innerHTML;
                 self.ChangeFrameWidth();
@@ -1449,9 +1504,38 @@ function method() {
                     .replace(new RegExp('onclick="return false;"', "g"), '""')
                     .replace(new RegExp("display: none;", "g"), "display:block")
                     .replace(new RegExp("min-width:2000px", "g"), "min-width:992px");
+                let css = `<style>
+                    #loreal-compaign{
+                        position: relative;
+                    }
+                    #loreal-compaign_new{
+                        position: relative;
+                    }
+                    #loreal-compaign_new .anchor__list{
+                        position: absolute;
+                        left:0;
+                        width:100%;
+                    }
+                    .g-wrapper_inner-main_content{
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+                    body .main .content{
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+                    @media (min-width:992px){
+                        body {-ms-overflow-style: none;}
+                        ::-webkit-scrollbar{width: 0px;}
+                        .display_zone_mobile {display: none !important;margin:0 auto;}
+                    }
+                    @media (max-width:991.9px) {
+                        html,body{overflow-x: hidden;}
+                            .display_zone_destop {display: none !important;}
+                        }
+                            </style>`;
                 self.zone_code =
-                    `<style>@media (min-width:992px){body {-ms-overflow-style: none;}::-webkit-scrollbar{width: 0px;}.display_zone_mobile {display: none !important;margin:0 auto;}}@media (max-width:991.9px) {html,body{
-              overflow-x: hidden;}.display_zone_destop {display: none !important;}}</style>` + textChang;
+                    css + textChang + js;
             };
             setTimeout(function () {
                 execute();
@@ -1474,8 +1558,24 @@ function method() {
             let self = this;
             let code;
             let execute = () => {
+                document.querySelector('#scene_ysl').querySelector('.display_zone_destop').style.width = '950px';
+                let data = self.anchor_data.attributes_temporarily;
+                let data_pc_top = data.map(function (value, index, array) {
+                    return `document.querySelectorAll('.anchor__list')[${index}].style.top='${value.pc_top}';`
+                });
+                let data_mob_top = data.map(function (value, index, array) {
+                    return `document.querySelectorAll('.anchor__list')[${index}].style.top='${value.mob_top}';`
+                });
+                let js = `<script>
+                if (document.body.clientWidth > 992) {
+                    ${data_pc_top}
+                } else {
+                    ${data_mob_top}
+                }
+                </script>`;
+                js = js.replace(new RegExp(";,", "g"), ";")
                 let folder_name = self.fixed_project_data.name_folder;
-                code = document.querySelector(".loreal-compaign").innerHTML;
+                code = document.querySelector(".loreal-compaign_new").innerHTML;
                 document.querySelector("#code").style.display = "block";
                 let textChang = code
                     .replace(new RegExp(".png", "g"), ".png?$staticlink$")
@@ -1489,9 +1589,38 @@ function method() {
                     .replace(new RegExp('onclick="return false;"', "g"), '""')
                     .replace(new RegExp("display: none;", "g"), "display:block")
                     .replace(new RegExp("min-width:2000px", "g"), "min-width:992px");
+                let css = `<style>
+                    #loreal-compaign{
+                        position: relative;
+                    }
+                    #loreal-compaign_new{
+                        position: relative;
+                    }
+                    #loreal-compaign_new .anchor__list{
+                        position: absolute;
+                        left:0;
+                        width:100%;
+                    }
+                    .g-wrapper_inner-main_content{
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+                    body .main .content{
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+                    @media (min-width:992px){
+                        body {-ms-overflow-style: none;}
+                        ::-webkit-scrollbar{width: 0px;}
+                        .display_zone_mobile {display: none !important;margin:0 auto;}
+                    }
+                    @media (max-width:991.9px) {
+                        html,body{overflow-x: hidden;}
+                            .display_zone_destop {display: none !important;}
+                        }
+                            </style>`;
                 self.zone_code =
-                    `<style>@media (min-width:992px){body {-ms-overflow-style: none;}::-webkit-scrollbar{width: 0px;}.display_zone_mobile {display: none !important;margin:0 auto;}}@media (max-width:991.9px) {html,body{
-              overflow-x: hidden;}.display_zone_destop {display: none !important;}}</style>` + textChang;
+                    css + textChang + js;
             };
             setTimeout(function () {
                 execute();
